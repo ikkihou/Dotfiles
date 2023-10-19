@@ -1,0 +1,304 @@
+{
+  "workbench.colorTheme": "Mayukai Mirage Gruvbox Darktooth",
+  "RainbowBrackets.depreciation-notice": false,
+  "terminal.integrated.inheritEnv": false,
+  "editor.fontFamily": "JetBrainsMonoNL Nerd Font, Monaco, Menlo, 'Courier New', monospace",
+  "terminal.integrated.fontSize": 15,
+  "editor.fontWeight": "500",
+  "terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font, Hack Nerd Font",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "vim.leader": " ",
+  "vim.camelCaseMotion.enable": true,
+  "vim.easymotion": true,
+  "vim.foldfix": true,
+  "vim.sneak": false,
+  "vim.surround": true,
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false,
+    "<C-a>": false
+  },
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "whichkey.show"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "m"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "g",
+        "q"
+      ],
+      "commands": [
+        "workbench.action.closeEditorsInGroup"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        "editor.action.rename"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "w"
+      ],
+      "commands": [
+        ":w!"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "q"
+      ],
+      "commands": [
+        ":q!"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "x"
+      ],
+      "commands": [
+        ":x!"
+      ]
+    },
+    {
+      "after": [
+        "g",
+        "g",
+        "V",
+        "G"
+      ],
+      "before": [
+        "<c-a>"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "k"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ]
+    },
+    {
+      "before": [
+        "[",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.prev"
+      ]
+    },
+    {
+      "before": [
+        "]",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.next"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "a"
+      ],
+      "commands": [
+        "editor.action.quickFix"
+      ]
+    },
+    {
+      "after": [
+        "^"
+      ],
+      "before": [
+        "H"
+      ]
+    },
+    {
+      "after": [
+        "$"
+      ],
+      "before": [
+        "L"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "i"
+      ],
+      "commands": [
+        "extension.toggleBool"
+      ]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Escape>"
+      ]
+    },
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Escape>"
+      ]
+    }
+  ],
+  "files.autoSave": "afterDelay",
+  "notebook.lineNumbers": "on",
+  "editor.fontSize": 15,
+  "jupyter.askForKernelRestart": false,
+  "editor.indentSize": "tabSize",
+  "editor.minimap.enabled": false,
+  "catppuccin.extraBordersEnabled": true,
+  "cmake.configureOnOpen": true,
+  "explorer.confirmDelete": false,
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.formatting": "clangFormat",
+  "C_Cpp.clang_format_path": "/opt/homebrew/bin/clang-format",
+  "cmake.cmakePath": "/opt/homebrew/bin/cmake",
+  "cmake.additionalCompilerSearchDirs": [
+    "/usr/bin/"
+  ],
+  "cmake.debugConfig": {
+    "miDebuggerPath": "/Users/baoyihui/.vscode/extensions/ms-vscode.cpptools-1.16.3-darwin-arm64/debugAdapters/lldb-mi/bin/lldb-mi"
+  },
+  "indentRainbow.indentSetter": {},
+  "RainbowBrackets.showBracketsInRuler": true,
+  "editor.wordWrap": "on",
+  "explorer.confirmDragAndDrop": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.formatOnSave": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "clang-format.fallbackStyle": "Google",
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "window.commandCenter": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "remote.SSH.defaultForwardedPorts": [],
+  "remote.SSH.showLoginTerminal": true,
+  "remote.SSH.configFile": "/Users/baoyihui/.ssh/config",
+  "git.ignoreLegacyWarning": true,
+  "git.openRepositoryInParentFolders": "never",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "lldb.verboseLogging": true,
+  "lldb.dbgconfig": {},
+  "window.zoomLevel": -1,
+  "editor.accessibilitySupport": "off",
+  "clangd.path": "/usr/bin/clangd",
+  "workbench.iconTheme": "ayu",
+  "[cmake]": {
+    "editor.defaultFormatter": "cheshirekow.cmake-format"
+  },
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "xelatex",
+      "tools": [
+        "xelatex"
+      ]
+    },
+    {
+      "name": "xe*2",
+      "tools": [
+        "xelatex",
+        "xelatex"
+      ]
+    },
+    {
+      "name": "xelatex -> bibtex -> xelatex*2",
+      "tools": [
+        "xelatex",
+        "bibtex",
+        "xelatex",
+        "xelatex"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipe.default": "lastUsed",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": [
+        "%DOCFILE%"
+      ]
+    }
+  ],
+  "latex-workshop.view.pdf.viewer": "tab",
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": false
+}
