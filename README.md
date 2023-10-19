@@ -3,4 +3,5 @@
 - zsh
 - kitty
 - neovim
+- vscode
 - ...
