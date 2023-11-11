@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Mayukai Mirage Gruvbox Darktooth",
+  "workbench.colorTheme": "Catppuccin Frappé",
   "RainbowBrackets.depreciation-notice": false,
   "terminal.integrated.inheritEnv": false,
   "editor.fontFamily": "JetBrainsMonoNL Nerd Font, Monaco, Menlo, 'Courier New', monospace",
@@ -237,7 +237,6 @@
   "window.zoomLevel": -1,
   "editor.accessibilitySupport": "off",
   "clangd.path": "/usr/bin/clangd",
-  "workbench.iconTheme": "ayu",
   "[cmake]": {
     "editor.defaultFormatter": "cheshirekow.cmake-format"
   },
@@ -300,5 +299,13 @@
   "[latex]": {
     "editor.defaultFormatter": "James-Yu.latex-workshop"
   },
-  "terminal.integrated.enableMultiLinePasteWarning": false
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "workbench.iconTheme": "catppuccin-frappe",
+  "jupyter.widgetScriptSources": [
+    "jsdelivr.com",
+    "unpkg.com"
+  ],
+  "workbench.editorAssociations": {
+    "*.py": "default"
+  }
 }

@@ -54,5 +54,28 @@
         "key": "ctrl+j",
         "command": "workbench.action.navigateDown",
         "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-    }
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.terminal.focusPrevious"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.terminal.focusNext"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+[",
+        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'",
+        "command": "workbench.action.decreaseViewSize"
+    },
+    {
+        "key": "shift+]",
+        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'",
+        "command": "workbench.action.increaseViewSize"
+    },
 ]
