@@ -12,6 +12,10 @@ local sources = {
   -- all
   b.diagnostics.codespell,
 
+  -- go--
+  b.diagnostics.golangci_lint,
+  b.formatting.gofumpt,
+
   -- Lua
   b.diagnostics.luacheck,
   b.formatting.stylua.with {
@@ -24,7 +28,8 @@ local sources = {
   },
 
   -- cmake
-  b.formatting.cmakelang,
+  b.formatting.cmake_format,
+  b.diagnostics.cmake_lint,
 
   -- python
   -- b.diagnostics.mypy.with {

@@ -23,7 +23,7 @@ local plugins = {
   {
     "goolord/alpha-nvim",
     enabled = true,
-    event = "BufWinEnter",
+    event = "VimEnter",
     config = function()
       require "custom.configs.external.alpha"
     end,
@@ -80,7 +80,6 @@ local plugins = {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    -- event = "VeryLazy",
     event = { "CursorHold", "CursorHoldI" },
     opts = overrides.treesitter,
   },
@@ -180,6 +179,17 @@ local plugins = {
   },
 
   ------------------tools------------------------
+  -- {
+  --   "kdheepak/lazygit.nvim",
+  --   -- optional for floating window border decoration
+  --   dependencies = {
+  --     "nvim-telescope/telescope.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --   },
+  --   config = function()
+  --     require("telescope").load_extension "lazygit"
+  --   end,
+  -- },
   {
     "lervag/vimtex",
     ft = { "tex", "cls" },
@@ -195,6 +205,16 @@ local plugins = {
       vim.g.tex_comment_nospell = 1
       vim.g.vimtex_compiler_progname = "nvr"
       vim.g.vimtex_view_general_options = [[--unique file:@pdf\#src:@line@tex]]
+    end,
+  },
+  {
+    "iurimateus/luasnip-latex-snippets.nvim",
+    -- vimtex isn't required if using treesitter
+    requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
+    config = function()
+      require("luasnip-latex-snippets").setup()
+      -- or setup({ use_treesitter = true })
+      require("luasnip").config.setup { enable_autosnippets = true }
     end,
   },
   {

@@ -1,6 +1,8 @@
 local opt = vim.opt
 local g = vim.g
 
+-- require "custom.autocmds"
+
 ------------------- options -------------------
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
@@ -27,15 +29,15 @@ g.vscode_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/snippets"
 
 -------------- custom python provider ---------------
 local function isempty(s)
-    return s == nil or s == ""
+  return s == nil or s == ""
 end
 
 g.loaded_python3_provider = 1
 local conda_prefix = os.getenv "CONDA_PREFIX"
 if not isempty(conda_prefix) then
-    g.python_host_prog = conda_prefix .. "/bin/python"
-    g.python3_host_prog = conda_prefix .. "/bin/python"
+  g.python_host_prog = conda_prefix .. "/bin/python"
+  g.python3_host_prog = conda_prefix .. "/bin/python"
 else
-    g.python_host_prog = "python"
-    g.python3_host_prog = "python3"
+  g.python_host_prog = "python"
+  g.python3_host_prog = "python3"
 end

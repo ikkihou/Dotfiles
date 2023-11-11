@@ -3,9 +3,10 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lsp_config = require "lspconfig"
+local util = require "lspconfig/util"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "pyright", "clangd", "bashls", "cmake", "jsonls", "tsserver", "texlab" }
+local servers = { "pyright", "clangd", "bashls", "cmake", "jsonls", "tsserver", "texlab", "gopls" }
 
 for _, lsp in ipairs(servers) do
   lsp_config[lsp].setup {
@@ -16,27 +17,40 @@ end
 
 lsp_config.cmake.setup {
   on_attach = function(client, bufnr)
-    require("lsp_signature").on_attach({
+    require("lsp_signature").on_attach(bufnr, {
       bind = true,
       handler_opts = {
         border = "rounded",
       },
-    }, bufnr)
+    })
   end,
 }
 
-lsp_config.texlab.setup {
+---------------- go ----------------
+lsp_config.gopls.setup {
   on_attach = function(client, bufnr)
-    require("lsp_signature").on_attach({
+    require("lsp_signature").on_attach(bufnr, {
       bind = true,
       handler_opts = {
         border = "rounded",
       },
-    }, bufnr)
+    })
   end,
-  filetypes = { "tex", "cls" },
+  cmd = { "gopls" },
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      },
+    },
+  },
 }
 
+------------------ latex ----------------------
 lsp_config.texlab.setup {
   on_attach = function(client, bufnr)
     require("lsp_signature").on_attach({
