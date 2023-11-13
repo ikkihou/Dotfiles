@@ -191,6 +191,15 @@ local plugins = {
   --   end,
   -- },
   {
+    "danymat/neogen",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    event = "LspAttach",
+    config = function(_, opts)
+      require("neogen").setup { snippet_engine = "luasnip" }
+      require("core.utils").load_mappings "neogen"
+    end,
+  },
+  {
     "lervag/vimtex",
     ft = { "tex", "cls" },
     init = function()

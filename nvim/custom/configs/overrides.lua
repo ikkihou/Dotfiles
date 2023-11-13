@@ -10,6 +10,13 @@ end
 
 ------------------ cmp -------------------
 M.cmp = {
+  sources = {
+    { name = "luasnip" },
+    { name = "nvim_lsp" },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" },
+  },
   formatting = {
     fields = { "abbr", "kind", "menu" },
     format = function(entry, vim_item)

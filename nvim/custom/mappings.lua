@@ -71,6 +71,21 @@ M.general = {
   t = {
     ["qq"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
     ["jk"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
+    ["<C-]>"] = { "<cmd> vertical resize -4 <CR>", "window: Resize -4 vertically" },
+    ["<C-[>"] = { "<cmd> vertical resize +4 <CR>", "window: Resize +4 vertically" },
+    ["<C-;>"] = { "<cmd> resize -2 <CR>", "window: Resize -2 horizontally" },
+    ["<C-'>"] = { "<cmd> resize +2 <CR>", "window: Resize +2 horizontally" },
+  },
+  i = {
+    ["<C-]>"] = { "<cmd> vertical resize -4 <CR>", "window: Resize -4 vertically" },
+    ["<C-'>"] = { "<cmd> resize +2 <CR>", "window: Resize +2 horizontally" },
+  },
+}
+
+M.neogen = {
+  plugin = true,
+  n = {
+    ["<leader>dg"] = { "<cmd> Neogen <CR>", "Generating Doctring" },
   },
 }
 
