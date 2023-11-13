@@ -1,11 +1,11 @@
 {
-  "workbench.colorTheme": "Catppuccin Frappé",
   "RainbowBrackets.depreciation-notice": false,
   "terminal.integrated.inheritEnv": false,
-  "editor.fontFamily": "JetBrainsMonoNL Nerd Font, Monaco, Menlo, 'Courier New', monospace",
+  "editor.fontFamily": "'Monaspace Neon', JetBrainsMonoNL Nerd Font, Monaco, Menlo, 'Courier New', monospace",
   "terminal.integrated.fontSize": 15,
+  "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02',",
   "editor.fontWeight": "500",
-  "terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font, Hack Nerd Font",
+  "terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font, Hack Nerd Font, 'Monaspace Neon'",
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
@@ -13,7 +13,7 @@
   "vim.camelCaseMotion.enable": true,
   "vim.easymotion": true,
   "vim.foldfix": true,
-  "vim.sneak": false,
+  "vim.sneak": true,
   "vim.surround": true,
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
@@ -25,16 +25,16 @@
   },
   "vim.hlsearch": true,
   "vim.incsearch": true,
-  "vim.normalModeKeyBindings": [
-    {
-      "before": [
-        "<space>"
-      ],
-      "commands": [
-        "whichkey.show"
-      ]
-    }
-  ],
+  // "vim.normalModeKeyBindings": [
+  //   {
+  //     "before": [
+  //       "<leader>"
+  //     ],
+  //     "commands": [
+  //       "whichkey.show"
+  //     ]
+  //   }
+  // ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -188,7 +188,7 @@
   ],
   "files.autoSave": "afterDelay",
   "notebook.lineNumbers": "on",
-  "editor.fontSize": 15,
+  "editor.fontSize": 14,
   "jupyter.askForKernelRestart": false,
   "editor.indentSize": "tabSize",
   "editor.minimap.enabled": false,
@@ -307,5 +307,7 @@
   ],
   "workbench.editorAssociations": {
     "*.py": "default"
-  }
+  },
+  "workbench.colorTheme": "Catppuccin Frappé",
+  "todohighlight.isEnable": true
 }
