@@ -1,11 +1,10 @@
 {
   "RainbowBrackets.depreciation-notice": false,
   "terminal.integrated.inheritEnv": false,
-  "editor.fontFamily": "'Monaspace Neon', JetBrainsMonoNL Nerd Font, Monaco, Menlo, 'Courier New', monospace",
+  "editor.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font Propo, JetBrainsMonoNL Nerd Font Propo, Monaspace Neon, Monaco, Menlo",
   "terminal.integrated.fontSize": 15,
-  "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02',",
   "editor.fontWeight": "500",
-  "terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font, Hack Nerd Font, 'Monaspace Neon'",
+  "terminal.integrated.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font, JetBrainsMonoNL Nerd Font",
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
@@ -19,22 +18,13 @@
   "vim.useSystemClipboard": true,
   "vim.handleKeys": {
     "<C-d>": true,
-    "<C-s>": false,
+    "<C-s>": true,
     "<C-z>": false,
     "<C-a>": false
   },
   "vim.hlsearch": true,
   "vim.incsearch": true,
-  // "vim.normalModeKeyBindings": [
-  //   {
-  //     "before": [
-  //       "<leader>"
-  //     ],
-  //     "commands": [
-  //       "whichkey.show"
-  //     ]
-  //   }
-  // ],
+  "vim.normalModeKeyBindings": [],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -188,7 +178,7 @@
   ],
   "files.autoSave": "afterDelay",
   "notebook.lineNumbers": "on",
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "jupyter.askForKernelRestart": false,
   "editor.indentSize": "tabSize",
   "editor.minimap.enabled": false,
@@ -219,7 +209,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "clang-format.fallbackStyle": "Google",
   "C_Cpp.intelliSenseEngine": "disabled",
-  "window.commandCenter": true,
+  "window.commandCenter": false,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -300,7 +290,6 @@
     "editor.defaultFormatter": "James-Yu.latex-workshop"
   },
   "terminal.integrated.enableMultiLinePasteWarning": false,
-  "workbench.iconTheme": "catppuccin-frappe",
   "jupyter.widgetScriptSources": [
     "jsdelivr.com",
     "unpkg.com"
@@ -308,6 +297,12 @@
   "workbench.editorAssociations": {
     "*.py": "default"
   },
-  "workbench.colorTheme": "Catppuccin Frappé",
-  "todohighlight.isEnable": true
+  "todohighlight.isEnable": true,
+  "editor.fontVariations": true,
+  "vim.neovimConfigPath": "/Users/baoyihui/.config/nvim/init.lua",
+  "vim.neovimPath": "/opt/homebrew/bin/nvim",
+  "vim.neovimUseConfigFile": true,
+  "autoDocstring.docstringFormat": "numpy",
+  "workbench.iconTheme": "catppuccin-frappe",
+  "workbench.colorTheme": "Catppuccin Frappé"
 }
