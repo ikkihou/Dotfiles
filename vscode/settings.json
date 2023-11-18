@@ -10,10 +10,14 @@
   },
   "vim.leader": " ",
   "vim.camelCaseMotion.enable": true,
+  "vim.highlightedyank.enable": true,
   "vim.easymotion": true,
   "vim.foldfix": true,
   "vim.sneak": true,
   "vim.surround": true,
+  "vim.neovimConfigPath": "/Users/baoyihui/.config/nvim/init.lua",
+  "vim.neovimPath": "/opt/homebrew/bin/nvim",
+  "vim.neovimUseConfigFile": true,
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
   "vim.handleKeys": {
@@ -34,6 +38,16 @@
       ],
       "commands": [
         "editor.action.formatDocument"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "m"
+      ],
+      "commands": [
+        "notebook.format"
       ]
     },
     {
@@ -299,10 +313,10 @@
   },
   "todohighlight.isEnable": true,
   "editor.fontVariations": true,
-  "vim.neovimConfigPath": "/Users/baoyihui/.config/nvim/init.lua",
-  "vim.neovimPath": "/opt/homebrew/bin/nvim",
-  "vim.neovimUseConfigFile": true,
   "autoDocstring.docstringFormat": "numpy",
   "workbench.iconTheme": "catppuccin-frappe",
-  "workbench.colorTheme": "Catppuccin Frappé"
+  "workbench.colorTheme": "Catppuccin Frappé",
+  "vim.enableNeovim": true,
+  "vsicons.presets.hideExplorerArrows": true,
+  "editor.multiCursorModifier": "ctrlCmd"
 }
