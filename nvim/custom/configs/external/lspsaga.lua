@@ -69,7 +69,6 @@ lspsaga.setup {
     },
     theme = {},
   },
-  outline = {},
   symbol_in_winbar = {
     enable = true,
     separator = " ",

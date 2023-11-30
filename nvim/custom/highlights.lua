@@ -22,6 +22,24 @@ M.override = {
     bg = "NONE",
     fg = "teal",
   },
+  -- CursorLine = {
+  --   bg = "lightbg",
+  -- },
+  ["@function"] = { italic = true },
+  ["@function.call"] = { italic = true },
+  ["@keyword"] = { italic = true },
+  ["@keyword.return"] = { italic = true },
+  ["@keyword.Define"] = { italic = true },
+  ["@string"] = { italic = true },
+  ["@storageclass"] = { italic = true },
+  ["@type"] = { italic = true },
+  ["@type.qualifier"] = { italic = true },
+  ["@type.builtin"] = { italic = true },
+  ["@type.identifier"] = { italic = true },
+  ["@repeat"] = { italic = true },
+  ["@parameter"] = { italic = true },
+  ["@property"] = { italic = true },
+  ["@variable.builtin"] = { italic = true },
 }
 
 ---@type HLTable
@@ -29,7 +47,7 @@ M.add = {
   NvimTreeOpenedFolderName = { fg = "purple", bold = false },
 }
 
----Alpha highlight
+-- -Alpha highlight
 function M.get_alpha_hl()
   local set_hl = vim.api.nvim_set_hl
   if vim.g.nvchad_theme == "catppuccin" then

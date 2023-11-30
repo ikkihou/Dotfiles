@@ -89,6 +89,13 @@ M.neogen = {
   },
 }
 
+M.boole = {
+  plugin = true,
+  n = {
+    ["<leader>i"] = { "<cmd> Boole {increment | decrement} <CR>", "Toggle or cycle up or down" },
+  },
+}
+
 M.toggleterm = {
   plugin = true,
   n = {

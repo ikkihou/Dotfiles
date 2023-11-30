@@ -54,7 +54,7 @@ local plugins = {
       },
     },
     config = function()
-      -- require "plugins.configs.lspconfig"
+      require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
@@ -191,6 +191,26 @@ local plugins = {
   --   end,
   -- },
   {
+    "folke/todo-comments.nvim",
+    event = "LspAttach",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
+  {
+    "nat-418/boole.nvim",
+    event = "BufReadPost",
+    init = function()
+      require("core.utils").load_mappings "boole"
+    end,
+    config = function()
+      require "custom.configs.external.boole"
+    end,
+  },
+  {
     "danymat/neogen",
     dependencies = "nvim-treesitter/nvim-treesitter",
     event = "LspAttach",
@@ -219,7 +239,7 @@ local plugins = {
   {
     "iurimateus/luasnip-latex-snippets.nvim",
     -- vimtex isn't required if using treesitter
-    requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
+    dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
     config = function()
       require("luasnip-latex-snippets").setup()
       -- or setup({ use_treesitter = true })
@@ -275,7 +295,7 @@ local plugins = {
   },
   {
     "ethanholz/nvim-lastplace",
-    event = "VeryLazy",
+    event = "BufReadPre",
     config = function()
       require("nvim-lastplace").setup()
     end,
