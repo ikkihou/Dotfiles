@@ -1,6 +1,45 @@
 // Place your key bindings in this file to override the defaults
 [
     {
+        "command": "projectManager.listGitProjects#sideBarGit",
+        "key": "cmd+o"
+    },
+    {
+        "key": "ctrl+=",
+        "command": "expand_region",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "undo_expand_region",
+        "when": "editorTextFocus && editorHasSelection"
+    },
+    {
+        "command": "explorer.newFile",
+        "key": "a",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "command": "renameFile",
+        "key": "r",
+        "when": "filesExplorerFocus && !inputFocu"
+    },
+    {
+        "command": "filesExplorer.copy",
+        "key": "c",
+        "when": "filesExplorerFocus && !inputFocu"
+    },
+    {
+        "command": "filesExplorer.paste",
+        "key": "p",
+        "when": "filesExplorerFocus && !inputFocu"
+    },
+    {
+        "command": "deleteFile",
+        "key": "d",
+        "when": "filesExplorerFocus && !inputFocu"
+    },
+    {
         "key": ";",
         "command": "vim.showQuickpickCmdLine",
         "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
@@ -92,5 +131,10 @@
     {
         "key": "ctrl+cmd+r",
         "command": "jupyter.runallcells"
+    },
+    {
+        "key": "enter",
+        "command": "-renameFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
     }
 ]
