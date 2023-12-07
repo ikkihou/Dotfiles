@@ -61,7 +61,7 @@ M.general = {
     ["<leader>fn"] = { "<cmd> enew <CR>", "Create new file" },
     ["<leader>se"] = {
       function()
-        require("swenv.api").pick_venv()
+        require("swenv.api").pick_venv_2()
         vim.cmd "LspRestart"
       end,
       "pick conda venv",
@@ -125,6 +125,18 @@ M.telescope = {
     ["<leader>ft"] = { "<cmd> Telescope themes <CR>", "NcChad themes " },
   },
 }
+
+-- M.gitsigns = {
+--   plugin = true,
+--   n = {
+--     ["<leader>gl"] = {
+--       function()
+--         require("gitsigns").toggle_current_line_blame()
+--       end,
+--     },
+--     "toggle_current_line_blame",
+--   },
+-- }
 
 -- more keybinds!
 M.accelerated_jk = {

@@ -334,6 +334,9 @@
 	"everforest.darkWorkbench": "high-contrast",
 	"window.zoomLevel": -1,
 	"gitProjectManager.displayProjectPath": true,
+	"projectManager.git.baseFolders": [
+		"/Users/baoyihui/Documents/GitHub/dotfiles"
+	],
 	"notebook.lineNumbers": "on",
 	"[lua]": {
 		"editor.defaultFormatter": "yinfei.luahelper"

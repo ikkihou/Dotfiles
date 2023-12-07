@@ -3,6 +3,15 @@ local overrides = require "custom.configs.overrides"
 local plugins = {
   ------------ ui -----------------
   {
+    "swenv.nvim",
+    ft = { "python" },
+    dir = "~/Documents/coding/vscode/lua_space/swenv.nvim/",
+  },
+  {
+    "kosayoda/nvim-lightbulb",
+    event = "LspAttach",
+  },
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
@@ -14,7 +23,7 @@ local plugins = {
       -- OPTIONAL:
       --   `nvim-notify` is only needed, if you want to use the notification view.
       --   If not available, we use `mini` as the fallback
-      -- "rcarriga/nvim-notify",
+      "rcarriga/nvim-notify",
     },
     config = function()
       require "custom.configs.external.noice"
@@ -182,6 +191,7 @@ local plugins = {
   -- {
   --   "kdheepak/lazygit.nvim",
   --   -- optional for floating window border decoration
+  --   cmd = { "LazyGit" },
   --   dependencies = {
   --     "nvim-telescope/telescope.nvim",
   --     "nvim-lua/plenary.nvim",
@@ -347,13 +357,13 @@ local plugins = {
       require "custom.configs.external.notify"
     end,
   },
-  {
-    "AckslD/swenv.nvim",
-    ft = "python",
-    config = function()
-      require "custom.configs.external.swenv"
-    end,
-  },
+  -- {
+  --   "AckslD/swenv.nvim",
+  --   ft = "python",
+  --   config = function()
+  --     require "custom.configs.external.swenv"
+  --   end,
+  -- },
   -------------- lsp ---------------
   {
     "nvimdev/lspsaga.nvim",

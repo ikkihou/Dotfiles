@@ -1,13 +1,13 @@
 local status_ok, fidget = pcall(require, "fidget")
 
 if not status_ok then
-    return
+  return
 end
 
 fidget.setup {
-    tag = "legacy",
-    window = { blend = 1000 },
-    fmt = {
-        max_messages = 3,
-    },
+  tag = "legacy",
+  window = { blend = 1000 },
+  fmt = {
+    max_messages = 3,
+  },
 }
