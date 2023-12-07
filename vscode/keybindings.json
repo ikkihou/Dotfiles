@@ -1,7 +1,7 @@
 // Place your key bindings in this file to override the defaults
 [
     {
-        "command": "projectManager.listGitProjects#sideBarGit",
+        "command": "projectManager.listFavoriteProjects#sideBarFavorites",
         "key": "cmd+o"
     },
     {
@@ -20,24 +20,29 @@
         "when": "filesExplorerFocus && !inputFocus"
     },
     {
+        "command": "explorer.newFolder",
+        "key": "f",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
         "command": "renameFile",
         "key": "r",
-        "when": "filesExplorerFocus && !inputFocu"
+        "when": "filesExplorerFocus && !inputFocus"
     },
     {
         "command": "filesExplorer.copy",
         "key": "c",
-        "when": "filesExplorerFocus && !inputFocu"
+        "when": "filesExplorerFocus && !inputFocus"
     },
     {
         "command": "filesExplorer.paste",
         "key": "p",
-        "when": "filesExplorerFocus && !inputFocu"
+        "when": "filesExplorerFocus && !inputFocus"
     },
     {
         "command": "deleteFile",
         "key": "d",
-        "when": "filesExplorerFocus && !inputFocu"
+        "when": "filesExplorerFocus && !inputFocus"
     },
     {
         "key": ";",
@@ -50,9 +55,19 @@
         "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
     },
     {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft",
+        "when": "vim.active && !inDebugRepl && vim.mode != 'Insert'  && notebookEditorFocused && !inputFocus && !notebookOutputInputFocused "
+    },
+    {
         "key": "ctrl+l",
         "command": "workbench.action.navigateRight",
         "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight",
+        "when": "filesExplorerFocus"
     },
     {
         "key": "ctrl+k",

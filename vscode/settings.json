@@ -100,15 +100,6 @@
 			]
 		},
 		{
-			"before": [
-				"leader",
-				"x"
-			],
-			"commands": [
-				":x!"
-			]
-		},
-		{
 			"after": [
 				"g",
 				"g",
@@ -328,7 +319,7 @@
 	"vsicons.presets.hideExplorerArrows": true,
 	"editor.multiCursorModifier": "ctrlCmd",
 	"material-icon-theme.hidesExplorerArrows": false,
-	"workbench.colorTheme": "Catppuccin Macchiato",
+	"workbench.colorTheme": "Catppuccin Frappé",
 	"gruvboxMaterial.darkCursor": "red",
 	"gruvboxMaterial.darkSelection": "yellow",
 	"gruvboxMaterial.italicKeywords": true,
@@ -342,4 +333,10 @@
 	"everforest.italicKeywords": true,
 	"everforest.darkWorkbench": "high-contrast",
 	"window.zoomLevel": -1,
+	"gitProjectManager.displayProjectPath": true,
+	"notebook.lineNumbers": "on",
+	"[lua]": {
+		"editor.defaultFormatter": "yinfei.luahelper"
+	},
+	"rust-analyzer.debug.engine": "vadimcn.vscode-lldb"
 }
