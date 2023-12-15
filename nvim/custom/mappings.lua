@@ -59,13 +59,12 @@ M.general = {
     ["<C-'>"] = { "<cmd> resize +2 <CR>", "window: Resize +2 horizontally" },
     ["<leader>w"] = { ":w<CR>", "save buffer" },
     ["<leader>fn"] = { "<cmd> enew <CR>", "Create new file" },
-    ["<leader>se"] = {
-      function()
-        require("swenv.api").pick_venv_2()
-        vim.cmd "LspRestart"
-      end,
-      "pick conda venv",
-    },
+    -- ["<leader>se"] = {
+    --   function()
+    --     require("swenv.api").pick_venv_2()
+    --   end,
+    --   "pick conda venv",
+    -- },
   },
 
   t = {

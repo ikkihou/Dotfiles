@@ -146,9 +146,6 @@ fi
 unset __conda_setup 
 # <<< conda initialize <<< 
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 
 # HELP CMAKE TO FIND PACKAGE
 export PKG_CONFIG_PATH=$(brew --prefix)/lib/pkgconfig:$PKG_CONFIG_PATH
@@ -161,4 +158,5 @@ PERL5LIB="/Users/baoyihui/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL
 PERL_LOCAL_LIB_ROOT="/Users/baoyihui/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/Users/baoyihui/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/baoyihui/perl5"; export PERL_MM_OPT;
+
 export PATH=$PATH:/Users/baoyihui/.spicetify

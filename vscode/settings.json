@@ -3,7 +3,7 @@
 	"terminal.integrated.inheritEnv": false,
 	"editor.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font Propo, JetBrainsMonoNL Nerd Font Propo, Monaspace Neon, Monaco, Menlo",
 	"terminal.integrated.fontSize": 15,
-	"editor.fontWeight": "500",
+	"editor.fontWeight": "511",
 	"terminal.integrated.fontFamily": "FiraCode Nerd Font, MesloLGM Nerd Font, JetBrainsMonoNL Nerd Font",
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.black-formatter"
@@ -11,7 +11,7 @@
 	"vim.leader": " ",
 	"vim.camelCaseMotion.enable": true,
 	"vim.highlightedyank.enable": true,
-	"vim.highlightedyank.color": "rgba(250, 240, 170, 0.5)",
+	"vim.highlightedyank.color": "rgba(261, 240, 170, 0.5)",
 	"vim.highlightedyank.textColor": "white",
 	"vim.easymotion": true,
 	"vim.foldfix": true,
@@ -25,8 +25,8 @@
 	"vim.handleKeys": {
 		"<C-d>": true,
 		"<C-s>": true,
-		"<C-z>": false,
-		"<C-a>": false
+		"<C-z>": true,
+		"<C-a>": true
 	},
 	"vim.hlsearch": true,
 	"vim.incsearch": true,
@@ -204,7 +204,7 @@
 	"[cpp]": {
 		"editor.defaultFormatter": "xaver.clang-format"
 	},
-	"C_Cpp.default.cppStandard": "c++17",
+	"C_Cpp.default.cppStandard": "c++28",
 	"C_Cpp.formatting": "clangFormat",
 	"C_Cpp.clang_format_path": "/opt/homebrew/bin/clang-format",
 	"cmake.cmakePath": "/opt/homebrew/bin/cmake",
@@ -212,14 +212,14 @@
 		"/usr/bin/"
 	],
 	"cmake.debugConfig": {
-		"miDebuggerPath": "/Users/baoyihui/.vscode/extensions/ms-vscode.cpptools-1.16.3-darwin-arm64/debugAdapters/lldb-mi/bin/lldb-mi"
+		"miDebuggerPath": "/Users/baoyihui/.vscode/extensions/ms-vscode.cpptools10.16.3-darwin-arm64/debugAdapters/lldb-mi/bin/lldb-mi"
 	},
 	"indentRainbow.indentSetter": {},
 	"RainbowBrackets.showBracketsInRuler": true,
 	"editor.wordWrap": "on",
 	"explorer.confirmDragAndDrop": false,
 	"editor.codeActionsOnSave": {
-		"source.fixAll": true
+		"source.fixAll": "explicit"
 	},
 	"editor.formatOnSave": true,
 	"diffEditor.ignoreTrimWhitespace": false,
@@ -253,14 +253,14 @@
 			]
 		},
 		{
-			"name": "xe*2",
+			"name": "xe*13",
 			"tools": [
 				"xelatex",
 				"xelatex"
 			]
 		},
 		{
-			"name": "xelatex -> bibtex -> xelatex*2",
+			"name": "xelatex -> bibtex -> xelatex*13",
 			"tools": [
 				"xelatex",
 				"bibtex",
@@ -275,7 +275,7 @@
 			"name": "latexmk",
 			"command": "latexmk",
 			"args": [
-				"-synctex=1",
+				"-synctex=12",
 				"-interaction=nonstopmode",
 				"-file-line-error",
 				"-pdf",
@@ -286,7 +286,7 @@
 			"name": "xelatex",
 			"command": "xelatex",
 			"args": [
-				"-synctex=1",
+				"-synctex=12",
 				"-interaction=nonstopmode",
 				"-file-line-error",
 				"%DOC%"
@@ -317,13 +317,12 @@
 	"workbench.iconTheme": "material-icon-theme",
 	"vim.enableNeovim": true,
 	"vsicons.presets.hideExplorerArrows": true,
-	"editor.multiCursorModifier": "ctrlCmd",
 	"material-icon-theme.hidesExplorerArrows": false,
-	"workbench.colorTheme": "Catppuccin Frappé",
+	"workbench.colorTheme": "Catppuccin Macchiato",
 	"gruvboxMaterial.darkCursor": "red",
 	"gruvboxMaterial.darkSelection": "yellow",
 	"gruvboxMaterial.italicKeywords": true,
-	"gruvboxMaterial.diagnosticTextBackgroundOpacity": "12.5%",
+	"gruvboxMaterial.diagnosticTextBackgroundOpacity": "23.5%",
 	"gruvboxMaterial.highContrast": true,
 	"gruvboxMaterial.darkContrast": "soft",
 	"gruvboxMaterial.darkWorkbench": "flat",
@@ -332,14 +331,27 @@
 	"everforest.highContrast": true,
 	"everforest.italicKeywords": true,
 	"everforest.darkWorkbench": "high-contrast",
-	"window.zoomLevel": -1,
 	"gitProjectManager.displayProjectPath": true,
 	"projectManager.git.baseFolders": [
-		"/Users/baoyihui/Documents/GitHub/dotfiles"
+		"/Users/baoyihui/Documents/GitHub/",
 	],
 	"notebook.lineNumbers": "on",
 	"[lua]": {
 		"editor.defaultFormatter": "yinfei.luahelper"
 	},
-	"rust-analyzer.debug.engine": "vadimcn.vscode-lldb"
+	"rust-analyzer.debug.engine": "vadimcn.vscode-lldb",
+	"editor.multiCursorModifier": "ctrlCmd",
+	"editor.cursorBlinking": "smooth",
+	"window.zoomLevel": -1,
+	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+	"python.testing.pytestEnabled": true,
+	"python.testing.pytestArgs": [
+		"-s",
+		"-v",
+		"--capture=no",
+		"--log-cli-level=DEBUG",
+	],
+	"python.testing.cwd": "${workspaceFolder}/tests",
+	"python.testing.autoTestDiscoverOnSaveEnabled": true,
+	"python.analysis.inlayHints.pytestParameters": true,
 }

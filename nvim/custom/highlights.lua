@@ -30,6 +30,7 @@ M.override = {
   ["@keyword"] = { italic = true },
   ["@keyword.return"] = { italic = true },
   ["@keyword.Define"] = { italic = true },
+  ["@function_definition"] = { italic = true },
   ["@string"] = { italic = true },
   ["@storageclass"] = { italic = true },
   ["@type"] = { italic = true },
