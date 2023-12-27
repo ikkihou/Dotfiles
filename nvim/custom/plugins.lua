@@ -15,7 +15,7 @@ local plugins = {
       -- Your options go here
       -- name = "venv",
       -- auto_refresh = false
-      anaconda_base_path = "/Users/baoyihui/anaconda3",
+      -- anaconda_base_path = "/Users/baoyihui/anaconda3",
       anaconda_envs_path = "/Users/baoyihui/anaconda3/envs",
     },
     -- event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
@@ -208,6 +208,24 @@ local plugins = {
   },
 
   ------------------tools------------------------
+  {
+    "gbprod/yanky.nvim",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
   -- {
   --   "kdheepak/lazygit.nvim",
   --   -- optional for floating window border decoration

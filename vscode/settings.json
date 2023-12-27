@@ -2,13 +2,14 @@
 	"RainbowBrackets.depreciation-notice": false,
 	"terminal.integrated.inheritEnv": false,
 	"editor.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font Propo, JetBrainsMonoNL Nerd Font Propo, Monaspace Neon, Monaco, Menlo",
-	"terminal.integrated.fontSize": 15,
+	"terminal.integrated.fontSize": 16,
 	"editor.fontWeight": "511",
-	"terminal.integrated.fontFamily": "FiraCode Nerd Font, MesloLGM Nerd Font, JetBrainsMonoNL Nerd Font",
+	"terminal.integrated.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font, JetBrainsMonoNL Nerd Font",
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.black-formatter"
 	},
 	"vim.leader": " ",
+	"vim.smartRelativeLine": true,
 	"vim.camelCaseMotion.enable": true,
 	"vim.highlightedyank.enable": true,
 	"vim.highlightedyank.color": "rgba(261, 240, 170, 0.5)",
@@ -342,7 +343,6 @@
 	"rust-analyzer.debug.engine": "vadimcn.vscode-lldb",
 	"editor.multiCursorModifier": "ctrlCmd",
 	"editor.cursorBlinking": "smooth",
-	"window.zoomLevel": -1,
 	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 	"python.testing.pytestEnabled": true,
 	"python.testing.pytestArgs": [
@@ -354,4 +354,20 @@
 	"python.testing.cwd": "${workspaceFolder}/tests",
 	"python.testing.autoTestDiscoverOnSaveEnabled": true,
 	"python.analysis.inlayHints.pytestParameters": true,
+	"todohighlight.keywords": [
+		{
+			"text": "NOTE:",
+			"color": "white",
+			"backgroundColor": "green",
+			"overviewRulerColor": "grey",
+			"border": "1px solid green",
+			"borderRadius": "2px",
+		},
+	],
+	"python.terminal.focusAfterLaunch": true,
+	"editor.suggest.localityBonus": true,
+	"python.analysis.completeFunctionParens": true,
+	"python.languageServer": "Pylance",
+	"git.suggestSmartCommit": false,
+	"window.zoomLevel": -1
 }
