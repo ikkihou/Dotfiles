@@ -160,3 +160,6 @@ PERL_MB_OPT="--install_base \"/Users/baoyihui/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/baoyihui/perl5"; export PERL_MM_OPT;
 
 export PATH=$PATH:/Users/baoyihui/.spicetify
+
+# Following line was automatically added by arttime installer
+export PATH=/Users/baoyihui/.local/bin:$PATH

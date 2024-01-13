@@ -6,67 +6,56 @@ local M = {}
 
 ---@type Base46HLGroupsList
 M.override = {
-  Comment = {
-    italic = true,
-    fg = "light_grey",
-  },
-  TelescopeResultsTitle = {
-    fg = "sun",
-    bg = "NONE",
-  },
-  TelescopePromptTitle = {
-    fg = "red",
-    bg = "NONE",
-  },
-  TelescopePreviewTitle = {
-    bg = "NONE",
-    fg = "teal",
-  },
-  -- CursorLine = {
-  --   bg = "lightbg",
-  -- },
-  ["@function"] = { italic = true },
-  ["@function.call"] = { italic = true },
-  ["@keyword"] = { italic = true },
-  ["@keyword.return"] = { italic = true },
-  ["@keyword.Define"] = { italic = true },
-  ["@function_definition"] = { italic = true },
-  ["@string"] = { italic = true },
-  ["@storageclass"] = { italic = true },
-  ["@type"] = { italic = true },
-  ["@type.qualifier"] = { italic = true },
-  ["@type.builtin"] = { italic = true },
-  ["@type.identifier"] = { italic = true },
-  ["@repeat"] = { italic = true },
-  ["@parameter"] = { italic = true },
-  ["@property"] = { italic = true },
-  ["@variable.builtin"] = { italic = true },
-}
-
----@type HLTable
-M.add = {
-  NvimTreeOpenedFolderName = { fg = "purple", bold = false },
+    Comment = {
+        italic = true,
+        fg = "light_grey",
+    },
+    TelescopeResultsTitle = {
+        fg = "sun",
+        bg = "NONE",
+    },
+    TelescopePromptTitle = {
+        fg = "red",
+        bg = "NONE",
+    },
+    TelescopePreviewTitle = {
+        bg = "NONE",
+        fg = "teal",
+    },
+    -- CursorLine = {
+    --   bg = "lightbg",
+    -- },
+    ["@function"] = { italic = true },
+    ["@function.call"] = { italic = true },
+    ["@keyword"] = { italic = true },
+    ["@keyword.return"] = { italic = true },
+    ["@keyword.Define"] = { italic = true },
+    ["@function_definition"] = { italic = true },
+    ["@string"] = { italic = true },
+    ["@storageclass"] = { italic = true },
+    ["@type"] = { italic = true },
+    ["@type.qualifier"] = { italic = true },
+    ["@type.builtin"] = { italic = true },
+    ["@type.identifier"] = { italic = true },
+    ["@repeat"] = { italic = true },
+    ["@parameter"] = { italic = true },
+    ["@property"] = { italic = true },
+    ["@variable.builtin"] = { italic = true },
+    -- AlphaButtons = { fg = "#cba6f7", italic = true, default = true },
+    -- AlphaHeader = { fg = "#89b4fa", default = true },
 }
 
 -- -Alpha highlight
 function M.get_alpha_hl()
-  local set_hl = vim.api.nvim_set_hl
-  if vim.g.nvchad_theme == "catppuccin" then
-    set_hl(0, "AlphaShortcut", { fg = "#5c8984", italic = true, default = true })
-    set_hl(0, "AlphaButtons", { fg = "#cba6f7", italic = true, default = true })
-    set_hl(0, "AlphaHeader", { fg = "#89b4fa", default = true })
-    set_hl(0, "AlphaFooter", { fg = "pink", default = true })
-  elseif vim.g.nvchad_theme == "gruvbox" then
-    set_hl(0, "AlphaShortcut", { fg = "#5c8984", italic = true, default = true })
-    set_hl(0, "AlphaButtons", { fg = "#d3869b", italic = true, default = true })
-    set_hl(0, "AlphaHeader", { fg = "orange", default = true })
-    set_hl(0, "AlphaFooter", { fg = "#fe8019", default = true })
-  else
-    set_hl(0, "AlphaShortcut", { italic = true, default = true })
-    set_hl(0, "AlphaButtons", { italic = true, default = true })
-    set_hl(0, "AlphaHeader", { default = true })
-    set_hl(0, "AlphaFooter", { default = true })
-  end
+    if vim.g.nvchad_theme == "catppuccin" then
+        M.override.AlphaButtons = { fg = "#cba6f7", italic = true, default = true }
+        M.override.AlphaHeader = { fg = "#89b4fa", default = true }
+    elseif vim.g.nvchad_theme == "gruvbox" then
+        M.override.AlphaButtons = { fg = "#83a589", italic = true, default = true }
+        M.override.AlphaHeader = { fg = "#fabd2f", default = true }
+    else
+        return
+    end
 end
 
 return M

@@ -9,6 +9,7 @@
 		"editor.defaultFormatter": "ms-python.black-formatter"
 	},
 	"vim.leader": " ",
+	"vim.enableNeovim": true,
 	"vim.smartRelativeLine": true,
 	"vim.camelCaseMotion.enable": true,
 	"vim.highlightedyank.enable": true,
@@ -246,65 +247,6 @@
 	"[cmake]": {
 		"editor.defaultFormatter": "cheshirekow.cmake-format"
 	},
-	"latex-workshop.latex.recipes": [
-		{
-			"name": "xelatex",
-			"tools": [
-				"xelatex"
-			]
-		},
-		{
-			"name": "xe*13",
-			"tools": [
-				"xelatex",
-				"xelatex"
-			]
-		},
-		{
-			"name": "xelatex -> bibtex -> xelatex*13",
-			"tools": [
-				"xelatex",
-				"bibtex",
-				"xelatex",
-				"xelatex"
-			]
-		}
-	],
-	"latex-workshop.latex.recipe.default": "lastUsed",
-	"latex-workshop.latex.tools": [
-		{
-			"name": "latexmk",
-			"command": "latexmk",
-			"args": [
-				"-synctex=12",
-				"-interaction=nonstopmode",
-				"-file-line-error",
-				"-pdf",
-				"%DOC%"
-			]
-		},
-		{
-			"name": "xelatex",
-			"command": "xelatex",
-			"args": [
-				"-synctex=12",
-				"-interaction=nonstopmode",
-				"-file-line-error",
-				"%DOC%"
-			]
-		},
-		{
-			"name": "bibtex",
-			"command": "bibtex",
-			"args": [
-				"%DOCFILE%"
-			]
-		}
-	],
-	"latex-workshop.view.pdf.viewer": "tab",
-	"[latex]": {
-		"editor.defaultFormatter": "James-Yu.latex-workshop"
-	},
 	"terminal.integrated.enableMultiLinePasteWarning": false,
 	"jupyter.widgetScriptSources": [
 		"jsdelivr.com",
@@ -315,8 +257,7 @@
 	},
 	"todohighlight.isEnable": true,
 	"editor.fontVariations": true,
-	"workbench.iconTheme": "material-icon-theme",
-	"vim.enableNeovim": true,
+	"workbench.iconTheme": "catppuccin-macchiato",
 	"vsicons.presets.hideExplorerArrows": true,
 	"material-icon-theme.hidesExplorerArrows": false,
 	"workbench.colorTheme": "Catppuccin Macchiato",
@@ -369,5 +310,124 @@
 	"python.analysis.completeFunctionParens": true,
 	"python.languageServer": "Pylance",
 	"git.suggestSmartCommit": false,
-	"window.zoomLevel": -1
+	"window.zoomLevel": -1,
+	"latex-workshop.linting.chktex.enabled": false,
+	"latex-workshop.linting.chktex.exec.path": "/Library/TeX/texbin/chktex",
+	"latex-workshop.latex.autoBuild.run": "never",
+	"latex-workshop.showContextMenu": true,
+	"latex-workshop.intellisense.package.enabled": true,
+	"latex-workshop.message.error.show": false,
+	"latex-workshop.message.warning.show": false,
+	"latex-workshop.latex.tools": [
+		{
+			"name": "xelatex",
+			"command": "xelatex",
+			"args": [
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"%DOCFILE%"
+			]
+		},
+		{
+			"name": "pdflatex",
+			"command": "pdflatex",
+			"args": [
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"%DOCFILE%"
+			]
+		},
+		{
+			"name": "latexmk",
+			"command": "latexmk",
+			"args": [
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"-pdf",
+				"-outdir=%OUTDIR%",
+				"%DOCFILE%"
+			]
+		},
+		{
+			"name": "bibtex",
+			"command": "bibtex",
+			"args": [
+				"%DOCFILE%"
+			]
+		}
+	],
+	"latex-workshop.latex.recipes": [
+		{
+			"name": "XeLaTeX",
+			"tools": [
+				"xelatex"
+			]
+		},
+		{
+			"name": "PDFLaTeX",
+			"tools": [
+				"pdflatex"
+			]
+		},
+		{
+			"name": "BibTeX",
+			"tools": [
+				"bibtex"
+			]
+		},
+		{
+			"name": "LaTeXmk",
+			"tools": [
+				"latexmk"
+			]
+		},
+		{
+			"name": "xelatex -> bibtex -> xelatex*2",
+			"tools": [
+				"xelatex",
+				"bibtex",
+				"xelatex",
+				"xelatex"
+			]
+		},
+		{
+			"name": "pdflatex -> bibtex -> pdflatex*2",
+			"tools": [
+				"pdflatex",
+				"bibtex",
+				"pdflatex",
+				"pdflatex"
+			]
+		},
+	],
+	"latex-workshop.latex.clean.fileTypes": [
+		"*.aux",
+		"*.bbl",
+		"*.blg",
+		"*.idx",
+		"*.ind",
+		"*.lof",
+		"*.lot",
+		"*.out",
+		"*.toc",
+		"*.acn",
+		"*.acr",
+		"*.alg",
+		"*.glg",
+		"*.glo",
+		"*.gls",
+		"*.ist",
+		"*.fls",
+		"*.log",
+		"*.fdb_latexmk"
+	],
+	"latex-workshop.latex.autoClean.run": "onFailed",
+	"latex-workshop.latex.recipe.default": "lastUsed",
+	"latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+	"[latex]": {
+		"editor.defaultFormatter": "James-Yu.latex-workshop"
+	}
 }
