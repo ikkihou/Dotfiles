@@ -310,7 +310,6 @@
 	"python.analysis.completeFunctionParens": true,
 	"python.languageServer": "Pylance",
 	"git.suggestSmartCommit": false,
-	"window.zoomLevel": -1,
 	"latex-workshop.linting.chktex.enabled": false,
 	"latex-workshop.linting.chktex.exec.path": "/Library/TeX/texbin/chktex",
 	"latex-workshop.latex.autoBuild.run": "never",
@@ -429,5 +428,6 @@
 	"latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
 	"[latex]": {
 		"editor.defaultFormatter": "James-Yu.latex-workshop"
-	}
+	},
+	"window.zoomLevel": -1
 }

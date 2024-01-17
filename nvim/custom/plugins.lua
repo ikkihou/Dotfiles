@@ -414,6 +414,18 @@ local plugins = {
             { "nvim-treesitter/nvim-treesitter" },
         },
     },
+    {
+        "rust-lang/rust.vim",
+        ft = "rust",
+        init = function(_)
+            vim.g.rustfmt_autosave = true
+        end,
+    },
+    {
+        "mrcjkb/rustaceanvim",
+        version = "^3", -- Recommended
+        ft = { "rust" },
+    },
 }
 
 return plugins

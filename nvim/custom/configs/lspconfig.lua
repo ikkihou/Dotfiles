@@ -15,6 +15,7 @@ for _, lsp in ipairs(servers) do
     }
 end
 
+---------------- cmake ----------------
 lsp_config.cmake.setup {
     on_attach = function(client, bufnr)
         require("lsp_signature").on_attach(bufnr, {
@@ -25,6 +26,27 @@ lsp_config.cmake.setup {
         })
     end,
 }
+
+---------------- rust ----------------
+-- lsp_config.rust_analyzer.setup {
+--     on_attach = function(client, bufnr)
+--         require("lsp_signature").on_attach(bufnr, {
+--             bind = true,
+--             handler_opts = {
+--                 border = "rounded",
+--             },
+--         })
+--     end,
+--     filetypes = { "rust" },
+--     root_dir = util.root_pattern "Cargo.toml",
+--     settings = {
+--         ["rust-analyzer"] = {
+--             cargo = {
+--                 allFeatures = true,
+--             },
+--         },
+--     },
+-- }
 
 ---------------- go ----------------
 lsp_config.gopls.setup {
