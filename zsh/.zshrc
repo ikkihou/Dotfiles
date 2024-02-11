@@ -113,13 +113,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # alias python='python3'
 # alias pip='pip3'
+# 
 alias setss='export https_proxy="http://127.0.0.1:7890";export http_proxy="http://127.0.0.1:7890";export all_proxy="socks5://127.0.0.1:7890";'
 alias unsetss='unset https_proxy && unset http_proxy && unset all_proxy'
 alias nv='nvim'
 alias nz='nvim ~/.zshrc'
 alias nk='nvim ~/.config/kitty/kitty.conf'
-alias cda='conda activate $env_name'
-alias cde='conda deactivate'
 alias prj_code='cd ~/Documents/coding/vscode/'
 alias git_repo='cd ~/Documents/GitHub/'
 alias sugon='ssh baoyihui@gseshell.hpccube.com'

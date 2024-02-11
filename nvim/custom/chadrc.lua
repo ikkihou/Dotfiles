@@ -6,8 +6,8 @@ local highlights = require "custom.highlights"
 highlights.get_alpha_hl()
 
 M.ui = {
-    theme = "catppuccin",
-    theme_toggle = { "catppuccin", "one_light" },
+    theme = "everforest",
+    theme_toggle = { "everforest", "one_light" },
 
     transparency = false,
 

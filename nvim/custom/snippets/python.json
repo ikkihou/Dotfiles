@@ -1,21 +1,21 @@
 {
-  "init": {
-    "prefix": "init",
-    "body": [
-      "#!/usr/bin/env python3",
-      "###############################################################################",
-      "##",
-      "##       filename: $TM_FILENAME",
-      "##    description: $1",
-      "##        created: $CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE",
-      "##         author: ticktechman",
-      "##",
-      "###############################################################################",
-      "",
-      "",
-      "",
-      "###############################################################################"
-    ],
-    "description": "init empty file"
-  }
+    "init": {
+        "prefix": "init",
+        "body": [
+            "#!/usr/bin/env python3",
+            "'''",
+            "##",
+            "##       filename: $TM_FILENAME",
+            "##        created: $CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE",
+            "##         author: Paul_Bao",
+            "##            IDE: Neovim",
+            "##       Version : 1.0",
+            "##       Contact : paulbao@mail.ecust.edu.cn",
+            "'''",
+            "",
+            "# here put the import lib",
+            "$0"
+        ],
+        "description": "init empty file"
+    }
 }

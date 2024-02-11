@@ -1,7 +1,7 @@
 {
 	"RainbowBrackets.depreciation-notice": false,
 	"terminal.integrated.inheritEnv": false,
-	"editor.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font Propo, JetBrainsMonoNL Nerd Font Propo, Monaspace Neon, Monaco, Menlo",
+	"editor.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font Propo, JetBrainsMonoNL Nerd Font Propo, Monaspace Neon, Monaco, Menlo, 'LXGW WenKai'",
 	"terminal.integrated.fontSize": 16,
 	"editor.fontWeight": "511",
 	"terminal.integrated.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font, JetBrainsMonoNL Nerd Font",
@@ -229,7 +229,7 @@
 	"C_Cpp.intelliSenseEngine": "disabled",
 	"window.commandCenter": false,
 	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "vscode.typescript-language-features"
 	},
 	"remote.SSH.defaultForwardedPorts": [],
 	"remote.SSH.showLoginTerminal": true,
@@ -307,7 +307,6 @@
 	],
 	"python.terminal.focusAfterLaunch": true,
 	"editor.suggest.localityBonus": true,
-	"python.analysis.completeFunctionParens": true,
 	"python.languageServer": "Pylance",
 	"git.suggestSmartCommit": false,
 	"latex-workshop.linting.chktex.enabled": false,
@@ -429,5 +428,7 @@
 	"[latex]": {
 		"editor.defaultFormatter": "James-Yu.latex-workshop"
 	},
-	"window.zoomLevel": -1
+	"window.zoomLevel": -1,
+	"editor.guides.bracketPairs": true,
+	"pyqt-integration.qtdesigner.path": "/Users/baoyihui/Documents/coding/vscode/vscode_python/self_STEM_dataset/ui_files/Atom_Seg_UI.py"
 }

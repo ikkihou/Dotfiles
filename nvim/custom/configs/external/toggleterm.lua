@@ -41,4 +41,19 @@ toggleterm.setup {
     direction = "float",
     close_on_exit = true, -- close the terminal window when the process exits
     shell = vim.o.shell, -- change the default shell
+    float_opts = {
+        -- The border key is *almost* the same as 'nvim_open_win'
+        -- see :h nvim_open_win for details on borders however
+        -- the 'curved' border is a custom border type
+        -- not natively supported but implemented in this plugin.
+        border = "curved",
+        -- like `size`, width, height, row, and col can be a number or function which is passed the current terminal
+        width = 180,
+        height = 50,
+        -- row = <value>,
+        -- col = <value>,
+        -- winblend = 3,
+        -- zindex = <value>,
+        title_pos = "center",
+    },
 }

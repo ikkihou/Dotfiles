@@ -1,0 +1,16 @@
+{
+    "name": "my-snippets",
+    "engines": {
+        "vscode": "v0.0.1"
+    },
+    "contributes": {
+        "snippets": [
+            {
+                "language": [
+                    "python"
+                ],
+                "path": "./python.json"
+            }
+        ]
+    }
+}
