@@ -1,5 +1,4 @@
-local overrides = require "custom.configs.overrides"
----@type NvPluginSpec[]
+local overrides = require("configs.overrides")
 local plugins = {
     ------------ ui -----------------
     {
@@ -46,7 +45,7 @@ local plugins = {
             "rcarriga/nvim-notify",
         },
         config = function()
-            require "custom.configs.external.noice"
+            require("configs.external.noice")
         end,
     },
     {
@@ -54,8 +53,8 @@ local plugins = {
         enabled = true,
         event = "VimEnter",
         config = function()
-            dofile(vim.g.base46_cache .. "alpha")
-            require "custom.configs.external.alpha"
+            -- dofile(vim.g.base46_cache .. "alpha")
+            require("configs.external.alpha")
         end,
     },
     -- Standalone UI for nvim-LSP progress
@@ -75,7 +74,7 @@ local plugins = {
             {
                 "nvimtools/none-ls.nvim",
                 config = function()
-                    require "custom.configs.none-ls"
+                    require("configs.none-ls")
                 end,
             },
             { "williamboman/mason-lspconfig.nvim" },
@@ -84,8 +83,8 @@ local plugins = {
             },
         },
         config = function()
-            require "plugins.configs.lspconfig"
-            require "custom.configs.lspconfig"
+            require("nvchad.configs.lspconfig").defaults()
+            require("configs.lspconfig")
         end, -- Override to setup mason-lspconfig
     },
     ------------------ Override plugin definition options----------------------
@@ -96,7 +95,7 @@ local plugins = {
             -- "HiPhish/nvim-ts-rainbow2",
             "HiPhish/rainbow-delimiters.nvim",
             config = function(_, opts)
-                require "custom.configs.external.rainbow"
+                require("configs.external.rainbow")
             end,
         },
     },
@@ -117,10 +116,10 @@ local plugins = {
         "nvim-tree/nvim-tree.lua",
         opts = overrides.nvimtree,
     },
-    {
-        "NvChad/nvterm",
-        enabled = false,
-    },
+    -- {
+    --     "NvChad/nvterm",
+    --     enabled = false,
+    -- },
 
     -----------------@telescope-------------------
     {
@@ -134,7 +133,7 @@ local plugins = {
                 "ahmedkhalf/project.nvim",
                 event = "VeryLazy",
                 config = function()
-                    require "custom.configs.external.project"
+                    require("configs.external.project")
                 end,
             },
             {
@@ -144,7 +143,7 @@ local plugins = {
             {
                 "nvim-telescope/telescope-frecency.nvim",
                 config = function()
-                    require("telescope").load_extension "frecency"
+                    require("telescope").load_extension("frecency")
                 end,
                 -- dependencies = { "kkharji/sqlite.lua" },
             },
@@ -156,7 +155,7 @@ local plugins = {
     {
         "mfussenegger/nvim-dap",
         config = function(_, opts)
-            require("core.utils").load_mappings "dap"
+            -- require("core.utils").load_mappings("dap")
         end,
     },
     {
@@ -180,8 +179,8 @@ local plugins = {
         "rcarriga/nvim-dap-ui",
         dependencies = "mfussenegger/nvim-dap",
         config = function()
-            local dap = require "dap"
-            local dapui = require "dapui"
+            local dap = require("dap")
+            local dapui = require("dapui")
             dapui.setup()
             dap.listeners.after.event_initialized["dapui_config"] = function()
                 dapui.open()
@@ -204,7 +203,7 @@ local plugins = {
         config = function(_, opts)
             local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
             require("dap-python").setup(path)
-            require("core.utils").load_mappings "dap_python"
+            -- require("core.utils").load_mappings("dap_python")
         end,
     },
 
@@ -222,9 +221,9 @@ local plugins = {
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
         event = "VeryLazy",
         config = function()
-            require("nvim-surround").setup {
+            require("nvim-surround").setup({
                 -- Configuration here, or leave empty to use defaults
-            }
+            })
         end,
     },
     -- {
@@ -253,10 +252,10 @@ local plugins = {
         "nat-418/boole.nvim",
         event = "BufReadPost",
         init = function()
-            require("core.utils").load_mappings "boole"
+            -- require("core.utils").load_mappings "boole"
         end,
         config = function()
-            require "custom.configs.external.boole"
+            require("configs.external.boole")
         end,
     },
     {
@@ -264,8 +263,8 @@ local plugins = {
         dependencies = "nvim-treesitter/nvim-treesitter",
         event = "LspAttach",
         config = function(_, opts)
-            require("neogen").setup { snippet_engine = "luasnip" }
-            require("core.utils").load_mappings "neogen"
+            require("neogen").setup({ snippet_engine = "luasnip" })
+            -- require("core.utils").load_mappings "neogen"
         end,
     },
     {
@@ -292,7 +291,7 @@ local plugins = {
         config = function()
             require("luasnip-latex-snippets").setup()
             -- or setup({ use_treesitter = true })
-            require("luasnip").config.setup { enable_autosnippets = true }
+            require("luasnip").config.setup({ enable_autosnippets = true })
         end,
     },
     {
@@ -361,9 +360,10 @@ local plugins = {
             "ToggleTermSendVisualSelection",
         },
         config = function()
-            require "custom.configs.external.toggleterm"
-            require("core.utils").load_mappings "toggleterm"
+            require("configs.external.toggleterm")
+            require("core.utils").load_mappings("toggleterm")
         end,
+        enabled = false,
     },
 
     {
@@ -379,7 +379,7 @@ local plugins = {
         event = "VeryLazy",
         dependencies = "nvim-treesitter",
         config = function()
-            require "custom.configs.external.accelerated-jk"
+            require("configs.external.accelerated-jk")
         end,
     },
 
@@ -393,14 +393,14 @@ local plugins = {
     {
         "rcarriga/nvim-notify",
         config = function()
-            require "custom.configs.external.notify"
+            require("configs.external.notify")
         end,
     },
     -- {
     --   "AckslD/swenv.nvim",
     --   ft = "python",
     --   config = function()
-    --     require "custom.configs.external.swenv"
+    --     require "configs.external.swenv"
     --   end,
     -- },
     -------------- lsp ---------------
@@ -408,7 +408,7 @@ local plugins = {
         "nvimdev/lspsaga.nvim",
         event = "LspAttach",
         config = function()
-            require "custom.configs.external.lspsaga"
+            require("configs.external.lspsaga")
         end,
         dependencies = {
             { "nvim-treesitter/nvim-treesitter" },

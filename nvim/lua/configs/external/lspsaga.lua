@@ -5,11 +5,11 @@ if not present then
 end
 
 local icons = {
-  cmp = require("custom.configs.utils.icons").get("cmp", true),
-  diagnostic = require("custom.configs.utils.icons").get("diagnostics", true),
-  kind = require("custom.configs.utils.icons").get("kind", true),
-  type = require("custom.configs.utils.icons").get("type", true),
-  ui = require("custom.configs.utils.icons").get("ui", true),
+  cmp = require("configs.utils.icons").get("cmp", true),
+  diagnostic = require("configs.utils.icons").get("diagnostics", true),
+  kind = require("configs.utils.icons").get("kind", true),
+  type = require("configs.utils.icons").get("type", true),
+  ui = require("configs.utils.icons").get("ui", true),
 }
 
 lspsaga.setup {

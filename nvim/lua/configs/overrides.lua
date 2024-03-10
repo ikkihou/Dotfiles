@@ -1,8 +1,8 @@
 local M = {}
 local icons = {
-    kind = require("custom.configs.utils.icons").get "kind",
-    type = require("custom.configs.utils.icons").get "type",
-    cmp = require("custom.configs.utils.icons").get "cmp",
+    kind = require("configs.utils.icons").get("kind"),
+    type = require("configs.utils.icons").get("type"),
+    cmp = require("configs.utils.icons").get("cmp"),
 }
 local t = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -21,8 +21,8 @@ M.cmp = {
         fields = { "abbr", "kind", "menu" },
         format = function(entry, vim_item)
             local lspkind_icons = vim.tbl_deep_extend("force", icons.kind, icons.type, icons.cmp)
-            vim_item.kind = string.format(" %s  %s", lspkind_icons[vim_item.kind] or icons.cmp.undefined,
-                vim_item.kind or "")
+            vim_item.kind =
+                string.format(" %s  %s", lspkind_icons[vim_item.kind] or icons.cmp.undefined, vim_item.kind or "")
             vim_item.menu = setmetatable({
                 cmp_tabnine = "[TN]",
                 copilot = "[CPLT]",
@@ -61,14 +61,14 @@ M.cmp = {
         -- },
         ["<C-e>"] = require("cmp").mapping.close(),
         ["<Tab>"] = require("cmp").mapping(function(fallback)
-            local cmp = require "cmp"
+            local cmp = require("cmp")
             if cmp.visible() then
-                cmp.confirm {
+                cmp.confirm({
                     select = true,
                     behavior = cmp.ConfirmBehavior.insert,
-                }
+                })
             elseif require("luasnip").expand_or_locally_jumpable() then
-                vim.fn.feedkeys(t "<Plug>luasnip-expand-or-jump")
+                vim.fn.feedkeys(t("<Plug>luasnip-expand-or-jump"))
             else
                 fallback()
             end
@@ -77,40 +77,40 @@ M.cmp = {
 }
 ------------------ indent-blankline ---------------------
 M.blankline = {
-    char = "│",
-    context_char = "┃",
-    space_char_blankline = " ",
-    show_first_indent_level = true,
-    show_current_context = true,
-    show_current_context_start = true,
-    show_trailing_blankline_indent = false,
-    filetype_exclude = {
-        "",
-        "qf",
-        "tmol",
-        "sagacodeaction",
-        "dashboard",
-        "dotooagenda",
-        "flutterToolsOutline",
-        "fugitive",
-        "git",
-        "gitcommit",
-        "help",
-        "json",
-        "log",
-        "markdown",
-        "NvimTree",
-        "peekaboo",
-        "startify",
-        "TelescopePrompt",
-        "todoist",
-        "txt",
-        "undotree",
-        "vimwiki",
-        "vista",
-    },
-    buftype_exclude = { "terminal", "nofile" },
-    use_treesitter = true,
+    -- char = "│",
+    -- context_char = "┃",
+    -- space_char_blankline = " ",
+    -- show_first_indent_level = true,
+    -- show_current_context = true,
+    -- show_current_context_start = true,
+    -- show_trailing_blankline_indent = false,
+    -- filetype_exclude = {
+    --     "",
+    --     "qf",
+    --     "tmol",
+    --     "sagacodeaction",
+    --     "dashboard",
+    --     "dotooagenda",
+    --     "flutterToolsOutline",
+    --     "fugitive",
+    --     "git",
+    --     "gitcommit",
+    --     "help",
+    --     "json",
+    --     "log",
+    --     "markdown",
+    --     "NvimTree",
+    --     "peekaboo",
+    --     "startify",
+    --     "TelescopePrompt",
+    --     "todoist",
+    --     "txt",
+    --     "undotree",
+    --     "vimwiki",
+    --     "vista",
+    -- },
+    -- buftype_exclude = { "terminal", "nofile" },
+    -- use_treesitter = true,
 }
 
 ------------------ treesitter ---------------------
@@ -175,7 +175,7 @@ M.mason = {
         -- lua stuff
         "lua-language-server",
         "stylua",
-        "luacheck",
+        "selene",
         -- python staff
         "debugpy",
         -- "pyright",
@@ -200,7 +200,7 @@ M.mason = {
 M.nvimtree = {
     filters = {
         dotfiles = false,
-        exclude = { vim.fn.stdpath "config" .. "/lua/custom" },
+        exclude = { vim.fn.stdpath("config") .. "/lua/custom" },
     },
     hijack_directories = {
         enable = true,

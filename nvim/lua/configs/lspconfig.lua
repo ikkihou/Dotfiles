@@ -1,22 +1,24 @@
 ---@diagnostic disable: different-requires
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local on_init = require("nvchad.configs.lspconfig").on_init
+local on_attach = require("nvchad.configs.lspconfig").on_attach
+local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local lsp_config = require "lspconfig"
-local util = require "lspconfig/util"
+local lsp_config = require("lspconfig")
+local util = require("lspconfig/util")
 
 -- if you just want default config for the servers then put them in a table
 local servers = { "pyright", "clangd", "bashls", "cmake", "jsonls", "tsserver", "texlab", "gopls" }
 
 for _, lsp in ipairs(servers) do
-    lsp_config[lsp].setup {
+    lsp_config[lsp].setup({
+        on_init = on_init,
         on_attach = on_attach,
         capabilities = capabilities,
-    }
+    })
 end
 
 ---------------- cmake ----------------
-lsp_config.cmake.setup {
+lsp_config.cmake.setup({
     on_attach = function(client, bufnr)
         require("lsp_signature").on_attach(bufnr, {
             bind = true,
@@ -25,7 +27,7 @@ lsp_config.cmake.setup {
             },
         })
     end,
-}
+})
 
 ---------------- rust ----------------
 -- lsp_config.rust_analyzer.setup {
@@ -49,7 +51,7 @@ lsp_config.cmake.setup {
 -- }
 
 ---------------- go ----------------
-lsp_config.gopls.setup {
+lsp_config.gopls.setup({
     on_attach = function(client, bufnr)
         require("lsp_signature").on_attach(bufnr, {
             bind = true,
@@ -70,10 +72,10 @@ lsp_config.gopls.setup {
             },
         },
     },
-}
+})
 
 ------------------ latex ----------------------
-lsp_config.texlab.setup {
+lsp_config.texlab.setup({
     on_attach = function(client, bufnr)
         require("lsp_signature").on_attach({
             bind = true,
@@ -83,10 +85,10 @@ lsp_config.texlab.setup {
         }, bufnr)
     end,
     filetypes = { "tex", "cls" },
-}
+})
 
 ------------ deno ----------------
-lsp_config.tsserver.setup {
+lsp_config.tsserver.setup({
     on_attach = function(client, bufnr)
         require("lsp_signature").on_attach({
             bind = true,
@@ -100,27 +102,11 @@ lsp_config.tsserver.setup {
         "typescript-language-server",
         "--stdio",
     },
-}
+})
 
 ------------ pyright ----------------
--- local pylance = "/Users/baoyihui/.vscode/extensions/ms-python.vscode-pylance-2023.8.50/dist/server.bundle.js"
--- if vim.fn.filereadable(pylance) ~= 0 then
--- vim.notify "pylance load successfully..."
--- lsp_config.pyright.setup {
---     capabilities = capabilities,
---     on_attach = function(client, bufnr)
---         require("lsp_signature").on_attach({
---             bind = true,
---             handler_opts = {
---                 border = "rounded",
---             },
---         }, bufnr)
---     end,
---     single_file_support = true,
---     cmd = { "node", pylance, "--stdio" },
--- }
--- else
-lsp_config.pyright.setup {
+
+lsp_config.pyright.setup({
     on_attach = function(client, bufnr)
         require("lsp_signature").on_attach({
             bind = true,
@@ -129,21 +115,48 @@ lsp_config.pyright.setup {
             },
         }, bufnr)
     end,
-    disableOrganiseImports = true,
+    -- disableOrganiseImports = true,
     filetype = { "python" },
-    settings = {
-        python = {
-            analysis = {
-                autoSearchPaths = true,
-                diagnosticMode = "off",
-                typeCheckingMode = "off",
-                -- useLibraryCodeForTypes = true,
-            },
-        },
+    -- settings = {
+    --     python = {
+    --         analysis = {
+    --             autoSearchPaths = true,
+    --             diagnosticMode = "off",
+    --             typeCheckingMode = "off",
+    --             -- useLibraryCodeForTypes = true,
+    --         },
+    --     },
+    -- },
+    -- single_file_support = true,
+    cmd = {
+        "delance-langserver",
+        "--stdio",
     },
-    single_file_support = true,
-}
--- end
+})
+
+-- lsp_config.pyright.setup({
+--     on_attach = function(client, bufnr)
+--         require("lsp_signature").on_attach({
+--             bind = true,
+--             handler_opts = {
+--                 border = "rounded",
+--             },
+--         }, bufnr)
+--     end,
+--     disableOrganiseImports = true,
+--     filetype = { "python" },
+--     settings = {
+--         python = {
+--             analysis = {
+--                 autoSearchPaths = true,
+--                 diagnosticMode = "off",
+--                 typeCheckingMode = "off",
+--                 -- useLibraryCodeForTypes = true,
+--             },
+--         },
+--     },
+--     single_file_support = true,
+-- })
 
 ---------- clangd ------------
 local function switch_source_header_splitcmd(bufnr, splitcmd)
@@ -156,14 +169,17 @@ local function switch_source_header_splitcmd(bufnr, splitcmd)
                 error(tostring(err))
             end
             if not result then
-                require "notify" ("Corresponding file can’t be determined", vim.log.levels.ERROR,
-                    { title = "LSP Error!" })
+                require("notify")(
+                    "Corresponding file can’t be determined",
+                    vim.log.levels.ERROR,
+                    { title = "LSP Error!" }
+                )
                 return
             end
             vim.api.nvim_command(splitcmd .. " " .. vim.uri_to_fname(result))
         end)
     else
-        require "notify" (
+        require("notify")(
             "Method textDocument/switchSourceHeader is not supported by any active server on this buffer",
             vim.log.levels.ERROR,
             { title = "LSP Error!" }
@@ -182,7 +198,7 @@ local function get_binary_path_list(binaries)
     return table.concat(path_list, ",")
 end
 
-lsp_config.clangd.setup {
+lsp_config.clangd.setup({
     on_attach = function(client, bufnr)
         client.server_capabilities.signatureHelpProvider = false
         require("lsp_signature").on_attach({
@@ -202,7 +218,7 @@ lsp_config.clangd.setup {
         "--background-index",
         "--pch-storage=memory",
         -- You MUST set this arg ↓ to your c/cpp compiler location (if not included)!
-        "--query-driver=" .. get_binary_path_list { "clang++", "clang", "gcc", "g++" },
+        "--query-driver=" .. get_binary_path_list({ "clang++", "clang", "gcc", "g++" }),
         "--clang-tidy",
         "--all-scopes-completion",
         "--completion-style=detailed",
@@ -231,9 +247,9 @@ lsp_config.clangd.setup {
             description = "Open source/header in a new split",
         },
     },
-}
+})
 
-lsp_config.bashls.setup {
+lsp_config.bashls.setup({
     on_attach = function(client, bufnr)
         require("lsp_signature").on_attach({
             bind = true,
@@ -243,4 +259,4 @@ lsp_config.bashls.setup {
         }, bufnr)
     end,
     filetype = { "sh", "zsh" },
-}
+})
