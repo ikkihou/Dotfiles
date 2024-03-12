@@ -8,7 +8,7 @@ readonly MY_PATH="$HOME/Documents/GitHub/dotfiles"
 cp "$HOME/Library/Application Support/Code/User/"*.json "$MY_PATH/vscode"
 
 ## neovim
-cp -r "$HOME/.config/nvim/lua/custom" "$MY_PATH/nvim"
+cp -r "$HOME/.config/nvim/"* "$MY_PATH/nvim/"
 
 ## posh theme
 cp "$HOME/Posh/"* "$MY_PATH/Posh"

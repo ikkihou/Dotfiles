@@ -4,7 +4,7 @@
 	"editor.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font Propo, JetBrainsMonoNL Nerd Font Propo, Monaspace Neon, Monaco, Menlo, 'LXGW WenKai'",
 	"terminal.integrated.fontSize": 16,
 	"editor.fontWeight": "511",
-	"terminal.integrated.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font, JetBrainsMonoNL Nerd Font",
+	"terminal.integrated.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font, JetBrainsMonoNL Nerd Font, 'LXGW WenKai'",
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.black-formatter"
 	},
@@ -201,21 +201,20 @@
 	"editor.indentSize": "tabSize",
 	"editor.minimap.enabled": false,
 	"catppuccin.extraBordersEnabled": true,
-	"cmake.configureOnOpen": true,
 	"explorer.confirmDelete": false,
 	"[cpp]": {
 		"editor.defaultFormatter": "xaver.clang-format"
 	},
-	"C_Cpp.default.cppStandard": "c++28",
+	"C_Cpp.default.cppStandard": "c++20",
 	"C_Cpp.formatting": "clangFormat",
-	"C_Cpp.clang_format_path": "/opt/homebrew/bin/clang-format",
-	"cmake.cmakePath": "/opt/homebrew/bin/cmake",
-	"cmake.additionalCompilerSearchDirs": [
-		"/usr/bin/"
+	"clang-format.style": "file",
+	"clang-format.fallbackStyle": "Google",
+	"clang-format.formatOnSave": true,
+	"clang-format.formatOnType": true,
+	"clang-format.arguments": [
+		"-assume-filename=${workspaceFolder}/.clang-format"
 	],
-	"cmake.debugConfig": {
-		"miDebuggerPath": "/Users/baoyihui/.vscode/extensions/ms-vscode.cpptools10.16.3-darwin-arm64/debugAdapters/lldb-mi/bin/lldb-mi"
-	},
+	"C_Cpp.clang_format_path": "/opt/homebrew/opt/llvm/bin/clang-format",
 	"indentRainbow.indentSetter": {},
 	"RainbowBrackets.showBracketsInRuler": true,
 	"editor.wordWrap": "on",
@@ -224,9 +223,6 @@
 		"source.fixAll": "explicit"
 	},
 	"editor.formatOnSave": true,
-	"diffEditor.ignoreTrimWhitespace": false,
-	"clang-format.fallbackStyle": "Google",
-	"C_Cpp.intelliSenseEngine": "disabled",
 	"window.commandCenter": false,
 	"[typescript]": {
 		"editor.defaultFormatter": "vscode.typescript-language-features"
@@ -240,13 +236,48 @@
 	"editor.smoothScrolling": true,
 	"terminal.integrated.smoothScrolling": true,
 	"workbench.list.smoothScrolling": true,
+	"editor.accessibilitySupport": "off",
+	"clangd.path": "/Users/baoyihui/Library/Application Support/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/17.0.3/clangd_17.0.3/bin/clangd",
 	"lldb.verboseLogging": true,
 	"lldb.dbgconfig": {},
-	"editor.accessibilitySupport": "off",
-	"clangd.path": "/usr/bin/clangd",
+	"cmake.configureOnOpen": true,
 	"[cmake]": {
 		"editor.defaultFormatter": "cheshirekow.cmake-format"
 	},
+	"cmake.additionalCompilerSearchDirs": [
+		"/usr/bin/"
+	],
+	"cmake.debugConfig": {},
+	"cmake.defaultVariants": {
+		"buildType": {
+			"default": "debug",
+			"description": "The build type.",
+			"choices": {
+				"debug": {
+					"short": "Debug",
+					"long": "Disable optimizations - include debug information.",
+					"buildType": "Debug"
+				},
+				"release": {
+					"short": "Release",
+					"long": "Optimize for speed - exclude debug information.",
+					"buildType": "Release"
+				},
+				"minsize": {
+					"short": "MinSizeRel",
+					"long": "Optimize for smallest binary size - exclude debug information.",
+					"buildType": "MinSizeRel"
+				},
+				"reldeb": {
+					"short": "RelWithDebInfo",
+					"long": "Optimize for speed - include debug information.",
+					"buildType": "RelWithDebInfo"
+				}
+			}
+		}
+	},
+	"c-cpp-compile-run.c-compiler": "/opt/homebrew/opt/llvm/bin/clang",
+	"c-cpp-compile-run.cpp-compiler": "/opt/homebrew/opt/llvm/bin/clang++",
 	"terminal.integrated.enableMultiLinePasteWarning": false,
 	"jupyter.widgetScriptSources": [
 		"jsdelivr.com",
@@ -257,10 +288,10 @@
 	},
 	"todohighlight.isEnable": true,
 	"editor.fontVariations": true,
-	"workbench.iconTheme": "catppuccin-macchiato",
+	"workbench.iconTheme": "catppuccin-mocha",
 	"vsicons.presets.hideExplorerArrows": true,
 	"material-icon-theme.hidesExplorerArrows": false,
-	"workbench.colorTheme": "Catppuccin Macchiato",
+	"workbench.colorTheme": "Nord",
 	"gruvboxMaterial.darkCursor": "red",
 	"gruvboxMaterial.darkSelection": "yellow",
 	"gruvboxMaterial.italicKeywords": true,
@@ -430,5 +461,22 @@
 	},
 	"window.zoomLevel": -1,
 	"editor.guides.bracketPairs": true,
-	"pyqt-integration.qtdesigner.path": "/Users/baoyihui/Documents/coding/vscode/vscode_python/self_STEM_dataset/ui_files/Atom_Seg_UI.py"
+	"pyqt-integration.qtdesigner.path": "/Users/baoyihui/Documents/coding/vscode/vscode_python/self_STEM_dataset/ui_files/Atom_Seg_UI.py",
+	"leetcode.defaultLanguage": "cpp",
+	"leetcode.endpoint": "leetcode",
+	"leetcode.workspaceFolder": "/Users/baoyihui/Documents/coding/vscode/cpp_space/leetcode",
+	"editor.inlayHints.enabled": "off",
+	"clangd.checkUpdates": true,
+	"files.associations": {
+		"*.cpp": "cpp"
+	},
+	"errorLens.fontStyleItalic": true,
+	"C_Cpp.default.intelliSenseMode": "macos-clang-arm64",
+	"doxdocgen.generic.authorEmail": "paulbao@mail.ecust.edu.cn",
+	"doxdocgen.generic.authorName": "baoyihui",
+	"http.proxyAuthorization": null,
+	"dev.containers.defaultFeatures": {},
+	"cmake.showOptionsMovedNotification": false,
+	"http.proxySupport": "off",
+	"vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf'",
 }

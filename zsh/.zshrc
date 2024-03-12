@@ -1,7 +1,9 @@
 # oh-my-posh
 eval "$(oh-my-posh init zsh)"
 # eval "$(oh-my-posh init zsh --config /Users/baoyihui/Posh/catppuccin_mocha.omp.json)"
-eval "$(oh-my-posh init zsh --config /Users/baoyihui/Posh/tokyonight_storm.omp.json)"
+# eval "$(oh-my-posh init zsh --config /Users/baoyihui/Posh/tokyonight_storm.omp.json)"
+eval "$(oh-my-posh init zsh --config /opt/homebrew/Cellar/oh-my-posh/19.13.0/themes/sim-web.omp.json)"
+
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -117,6 +119,7 @@ source $ZSH/oh-my-zsh.sh
 alias setss='export https_proxy="http://127.0.0.1:7890";export http_proxy="http://127.0.0.1:7890";export all_proxy="socks5://127.0.0.1:7890";'
 alias unsetss='unset https_proxy && unset http_proxy && unset all_proxy'
 alias nv='nvim'
+alias nleet="nvim leetcode.nvim"
 alias nz='nvim ~/.zshrc'
 alias nk='nvim ~/.config/kitty/kitty.conf'
 alias prj_code='cd ~/Documents/coding/vscode/'
@@ -145,6 +148,24 @@ fi
 unset __conda_setup 
 # <<< conda initialize <<< 
 
+## switch neovim distro config
+alias v='nvim' # default Neovim config
+# alias vz='NVIM_APPNAME=nvim-lazyvim nvim' # LazyVim
+# alias vc='NVIM_APPNAME=nvim-nvchad nvim' # NvChad
+# alias vk='NVIM_APPNAME=nvim-kickstart nvim' # Kickstart
+# alias va='NVIM_APPNAME=nvim-astrovim nvim' # AstroVim
+alias vl='NVIM_APPNAME=nvim-leetcode nvim' # leetcode
+vv() {
+  # Assumes all configs exist in directories named ~/.config/nvim-*
+  local config=$(fd --max-depth 1 --glob 'nvim-*' ~/.config | fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)
+ 
+  # If I exit fzf without selecting a config, don't open Neovim
+  [[ -z $config ]] && echo "No config selected" && return
+ 
+  # Open Neovim with the selected config
+  NVIM_APPNAME=$(basename $config) nvim
+}
+
 
 # HELP CMAKE TO FIND PACKAGE
 export PKG_CONFIG_PATH=$(brew --prefix)/lib/pkgconfig:$PKG_CONFIG_PATH
@@ -162,3 +183,7 @@ export PATH=$PATH:/Users/baoyihui/.spicetify
 
 # Following line was automatically added by arttime installer
 export PATH=/Users/baoyihui/.local/bin:$PATH
+
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-L/opt/homebrew/opt/llvm/lib -Wl,-rpath,/opt/homebrew/opt/llvm/lib"

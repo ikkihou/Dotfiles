@@ -159,6 +159,8 @@ M.treesitter = {
 -------------------- mason --------------------------
 M.mason = {
     ensure_installed = {
+        --bash
+        "bash-langage-server",
         --rust
         "rust-analyzer",
         -- go
@@ -166,9 +168,9 @@ M.mason = {
         "gofumpt",
         "golangci_lint",
         -- json
-        "jq",
+        -- "jq",
         "json-lsp",
-        "jsonlint",
+        -- "jsonlint",
         -- bash
         "shellcheck",
         "shfmt",
@@ -180,7 +182,7 @@ M.mason = {
         "debugpy",
         -- "pyright",
         "black",
-        "ruff",
+        -- "ruff",
         -- c/cpp stuff
         "clangd",
         "clang-format",
@@ -190,7 +192,7 @@ M.mason = {
         "codelldb",
         -- latex stuff
         "texlab",
-        "latexindent",
+        -- "latexindent",
         -- complementary
         "codespell",
     },
