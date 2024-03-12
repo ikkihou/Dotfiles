@@ -5,7 +5,7 @@ local highlights = require("highlights")
 highlights.get_alpha_hl()
 
 M.ui = {
-    theme = "jabuti",
+    theme = "catppuccin",
 
     transparency = false,
 

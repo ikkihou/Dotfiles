@@ -1,14 +1,5 @@
-# oh-my-posh
-eval "$(oh-my-posh init zsh)"
-# eval "$(oh-my-posh init zsh --config /Users/baoyihui/Posh/catppuccin_mocha.omp.json)"
-eval "$(oh-my-posh init zsh --config /Users/baoyihui/Posh/tokyonight_storm.omp.json)"
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+# oh-my-Posh
+eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/catppuccin_mocha.omp.json)"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -20,7 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="random"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -53,7 +44,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -91,7 +82,9 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+# export LANG=zh_CN.UTF-8
+# export LANGUAGE=zh_CN:en_US
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -111,54 +104,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# alias python='python3'
-# alias pip='pip3'
-# 
-alias setss='export https_proxy="http://127.0.0.1:7890";export http_proxy="http://127.0.0.1:7890";export all_proxy="socks5://127.0.0.1:7890";'
-alias unsetss='unset https_proxy && unset http_proxy && unset all_proxy'
+
 alias nv='nvim'
+alias setss='export https_proxy="https://127.0.0.1:7897";export http_proxy="http://127.0.0.1:7897";export all_proxy="socks5://127.0.0.1:7897";'
+alias unsetss='unset https_proxy && unset http_proxy && unset all_proxy'
 alias nz='nvim ~/.zshrc'
 alias nk='nvim ~/.config/kitty/kitty.conf'
-alias prj_code='cd ~/Documents/coding/vscode/'
-alias git_repo='cd ~/Documents/GitHub/'
-alias sugon='ssh baoyihui@gseshell.hpccube.com'
-alias fsugon="sftp baoyihui@gseshell.hpccube.com"
-alias ls="colorls --sort-dirs -1"
-alias sz="source ~/.zshrc"
-
-# setting proxy
-setss
-
-
-# >>> conda initialize >>> 
-# !! Contents within this block are managed by 'conda init' !! 
-__conda_setup="$('/Users/baoyihui/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)" 
-if [ $? -eq 0 ]; then 
-    eval "$__conda_setup" 
-else 
-    if [ -f "/Users/baoyihui/anaconda3/etc/profile.d/conda.sh" ]; then 
-        . "/Users/baoyihui/anaconda3/etc/profile.d/conda.sh" 
-    else 
-        export PATH="/Users/baoyihui/anaconda3/bin:$PATH" 
-    fi 
-fi 
-unset __conda_setup 
-# <<< conda initialize <<< 
-
-
-# HELP CMAKE TO FIND PACKAGE
-export PKG_CONFIG_PATH=$(brew --prefix)/lib/pkgconfig:$PKG_CONFIG_PATH
-
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-PATH="/Users/baoyihui/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/Users/baoyihui/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/baoyihui/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/baoyihui/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/baoyihui/perl5"; export PERL_MM_OPT;
-
-export PATH=$PATH:/Users/baoyihui/.spicetify
-
-# Following line was automatically added by arttime installer
-export PATH=/Users/baoyihui/.local/bin:$PATH
+alias nleet='nvim leetcode.nvim'

@@ -1,25 +1,21 @@
 # BEGIN_KITTY_THEME
-# IR Black
+# Catppuccin-Macchiato
 include current-theme.conf
 # END_KITTY_THEME
-#
-
-# Cursor
-# cursor                          #dc8a78
 
 # Fonts
-font_family                     JetBrainsMonoNL Nerd Font Propo
+font_family                     JetBrainsMonoNL Nerd Font
 # font_family                     FiraCode Nerd Font Propo
 # font_family                     MesloLGM Nerd Font Propo
-font_size                       13.0
+font_size                       11.0
 text_composition_strategy       platform
 
 # Window_layout
-draw_minimal_borders            yes
+draw_minimal_borders            no
 inactive_text_alpha             0.7
-hide_window_decorations         titlebar-only
+hide_window_decorations         yes
 enabled_layouts                 splits 
-window_border_width             0.2px
+window_border_width             0.5px
 window_margin_width             0.5
 window_padding_width            2 5 2
 enable_audio_bell               yes
@@ -27,22 +23,11 @@ remember_window_size            yes
 initial_window_width            170
 initial_window_height           50
 
+background_opacity              0.65
+background_blur                 15
+
 # Editor
 editor                          nvim
 
 
-background_opacity              0.60
-background_blur                 20
-background_image_layout         cscaled
-# macos_titlebar_color            dark
-# active_border_color             none
-
-
-# Tab bar styles
-tab_bar_edge                    top
-tab_title_template              "{fmt.fg.#a9b665}{title}"
-# active_tab_title_template       "{fmt.fg.white}{title}"
-tab_bar_style                   slant
-
-scrollback_lines 4000
 

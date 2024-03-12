@@ -166,10 +166,11 @@ M.mason = {
         "gofumpt",
         "golangci_lint",
         -- json
-        "jq",
+        -- "jq",
         "json-lsp",
-        "jsonlint",
+        -- "jsonlint",
         -- bash
+        "bash-language-server",
         "shellcheck",
         "shfmt",
         -- lua stuff
@@ -190,7 +191,7 @@ M.mason = {
         "codelldb",
         -- latex stuff
         "texlab",
-        "latexindent",
+        -- "latexindent",
         -- complementary
         "codespell",
     },
