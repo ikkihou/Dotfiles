@@ -288,10 +288,9 @@
 	},
 	"todohighlight.isEnable": true,
 	"editor.fontVariations": true,
-	"workbench.iconTheme": "catppuccin-mocha",
 	"vsicons.presets.hideExplorerArrows": true,
 	"material-icon-theme.hidesExplorerArrows": false,
-	"workbench.colorTheme": "Nord",
+	"workbench.colorTheme": "Catppuccin Macchiato",
 	"gruvboxMaterial.darkCursor": "red",
 	"gruvboxMaterial.darkSelection": "yellow",
 	"gruvboxMaterial.italicKeywords": true,
@@ -465,7 +464,7 @@
 	"leetcode.defaultLanguage": "cpp",
 	"leetcode.endpoint": "leetcode",
 	"leetcode.workspaceFolder": "/Users/baoyihui/Documents/coding/vscode/cpp_space/leetcode",
-	"editor.inlayHints.enabled": "off",
+	"editor.inlayHints.enabled": "on",
 	"clangd.checkUpdates": true,
 	"files.associations": {
 		"*.cpp": "cpp"
@@ -477,6 +476,6 @@
 	"http.proxyAuthorization": null,
 	"dev.containers.defaultFeatures": {},
 	"cmake.showOptionsMovedNotification": false,
-	"http.proxySupport": "off",
 	"vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf'",
+	"workbench.iconTheme": "catppuccin-macchiato",
 }

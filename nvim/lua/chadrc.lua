@@ -5,11 +5,11 @@ local highlights = require("highlights")
 highlights.get_alpha_hl()
 
 M.ui = {
-    theme = "jabuti",
+    theme = "catppuccin",
 
     transparency = false,
 
-    extended_integrations = { "alpha" },
+    -- extended_integrations = { "alpha" },
     hl_override = highlights.override,
 
     -- cmp themeing

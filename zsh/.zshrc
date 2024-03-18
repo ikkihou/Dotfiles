@@ -1,8 +1,8 @@
 # oh-my-posh
 eval "$(oh-my-posh init zsh)"
-# eval "$(oh-my-posh init zsh --config /Users/baoyihui/Posh/catppuccin_mocha.omp.json)"
+eval "$(oh-my-posh init zsh --config /Users/baoyihui/Posh/catppuccin_mocha.omp.json)"
 # eval "$(oh-my-posh init zsh --config /Users/baoyihui/Posh/tokyonight_storm.omp.json)"
-eval "$(oh-my-posh init zsh --config /opt/homebrew/Cellar/oh-my-posh/19.13.0/themes/sim-web.omp.json)"
+# eval "$(oh-my-posh init zsh --config /opt/homebrew/Cellar/oh-my-posh/19.16.1/themes/sim-web.omp.json)"
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
