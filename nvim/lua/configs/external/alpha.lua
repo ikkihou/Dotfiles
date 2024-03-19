@@ -4,7 +4,7 @@ if not status_ok then
     return
 end
 
-local dashboard = require "alpha.themes.dashboard"
+local dashboard = require("alpha.themes.dashboard")
 -- require("custom.highlights").get_alpha_hl()
 
 dashboard.section.header.val = {
@@ -29,7 +29,7 @@ dashboard.section.header.val = {
     [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⢿⣿⣿⠂⠀⠀⠀⠀⠀⢀⣽⣿⣿⣿⣿⣿⣿⣿⣍⠛⠿⣿⣿⣿⣿⣿⣿]],
 }
 
-dashboard.section.header.opts.hl = "AlphaHeader"
+-- dashboard.section.header.opts.hl = "AlphaHeader"
 
 local function button(sc, txt, leader_txt, keybind, keybind_opts)
     local sc_after = sc:gsub("%s", ""):gsub(leader_txt, "<leader>")
@@ -40,7 +40,7 @@ local function button(sc, txt, leader_txt, keybind, keybind_opts)
         cursor = 5,
         width = 50,
         align_shortcut = "right",
-        hl = "AlphaButtons",
+        -- hl = "AlphaButtons",
         -- hl_shortcut = "AlphaShortcut",
     }
 
@@ -88,7 +88,7 @@ dashboard.section.buttons.val = {
         nowait = true,
         callback = function()
             -- require("telescope").extensions.projects.projects {}
-            vim.api.nvim_command "Telescope projects theme=dropdown"
+            vim.api.nvim_command("Telescope projects theme=dropdown")
         end,
     }),
     button("space f f", "󰈞  File find", leader, nil, {
@@ -112,7 +112,7 @@ dashboard.section.buttons.val = {
         silent = true,
         nowait = true,
         callback = function()
-            vim.api.nvim_command "enew"
+            vim.api.nvim_command("enew")
         end,
     }),
     button("space f t", "  NvTheme", leader, nil, {
@@ -120,7 +120,7 @@ dashboard.section.buttons.val = {
         silent = true,
         nowait = true,
         callback = function()
-            vim.api.nvim_command "Telescope themes"
+            vim.api.nvim_command("Telescope themes")
         end,
     }),
 }
@@ -147,7 +147,7 @@ dashboard.section.footer.val = footer()
 
 local head_butt_padding = 2
 local occu_height = #dashboard.section.header.val + 2 * #dashboard.section.buttons.val + head_butt_padding
-local header_padding = math.max(0, math.ceil((vim.fn.winheight "$" - occu_height) * 0.25))
+local header_padding = math.max(0, math.ceil((vim.fn.winheight("$") - occu_height) * 0.25))
 local foot_butt_padding = 1
 
 dashboard.config.layout = {

@@ -71,12 +71,12 @@ local plugins = {
         "neovim/nvim-lspconfig",
         dependencies = {
             -- format & linting
-            {
-                "nvimtools/none-ls.nvim",
-                config = function()
-                    require("configs.none-ls")
-                end,
-            },
+            -- {
+            --     "nvimtools/none-ls.nvim",
+            --     config = function()
+            --         require("configs.none-ls")
+            --     end,
+            -- },
             { "williamboman/mason-lspconfig.nvim" },
             {
                 "ray-x/lsp_signature.nvim",
@@ -282,6 +282,7 @@ local plugins = {
             vim.g.tex_comment_nospell = 1
             vim.g.vimtex_compiler_progname = "nvr"
             vim.g.vimtex_view_general_options = [[--unique file:@pdf\#src:@line@tex]]
+            vim.g.vimtex_fold_enabled = 1
         end,
     },
     {

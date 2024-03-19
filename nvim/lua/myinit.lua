@@ -1,4 +1,3 @@
-
 local opt = vim.opt
 local g = vim.g
 
@@ -27,30 +26,30 @@ opt.numberwidth = 4
 
 -----------yank ---------------
 vim.api.nvim_exec(
-    [[
+	[[
   augroup highlight_on_yank
     autocmd!
     autocmd TextYankPost * lua vim.highlight.on_yank()
   augroup end
 ]],
-    false
+	false
 )
 g.highlightedyank_highlight_duration = 2000
 
 ------------ custom snippets --------------
-g.vscode_snippets_path = vim.fn.stdpath "config" .. "/lua/snippets"
+g.vscode_snippets_path = vim.fn.stdpath("config") .. "/lua/snippets"
 
 -------------- custom python provider ---------------
 local function isempty(s)
-    return s == nil or s == ""
+	return s == nil or s == ""
 end
 
 g.loaded_python3_provider = 1
-local conda_prefix = os.getenv "CONDA_PREFIX"
+local conda_prefix = os.getenv("CONDA_PREFIX")
 if not isempty(conda_prefix) then
-    g.python_host_prog = conda_prefix .. "/bin/python"
-    g.python3_host_prog = conda_prefix .. "/bin/python"
+	g.python_host_prog = conda_prefix .. "/bin/python"
+	g.python3_host_prog = conda_prefix .. "/bin/python"
 else
-    g.python_host_prog = "python"
-    g.python3_host_prog = "python3"
+	g.python_host_prog = "python"
+	g.python3_host_prog = "python3"
 end

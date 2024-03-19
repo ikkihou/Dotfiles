@@ -9,7 +9,7 @@ M.ui = {
 
     transparency = false,
 
-    extended_integrations = { "alpha" },
+    -- extended_integrations = { "alpha" },
     hl_override = highlights.override,
 
     -- cmp themeing
