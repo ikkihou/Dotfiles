@@ -126,7 +126,7 @@ alias prj_code='cd ~/Documents/coding/vscode/'
 alias git_repo='cd ~/Documents/GitHub/'
 alias sugon='ssh baoyihui@gseshell.hpccube.com'
 alias fsugon="sftp baoyihui@gseshell.hpccube.com"
-alias ls="colorls --sort-dirs -1"
+# alias ls="colorls --sort-dirs -1"
 alias sz="source ~/.zshrc"
 
 # setting proxy

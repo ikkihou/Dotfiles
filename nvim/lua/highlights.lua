@@ -49,24 +49,22 @@ M.override = {
 
 	["@property"] = { italic = true },
 	["@variable.builtin"] = { italic = true },
-	-- AlphaButtons = { fg = "#cba6f7", italic = true, default = true },
-	-- AlphaHeader = { fg = "#89b4fa", default = true },
 }
 
 -- -Alpha highlight
-function M.get_alpha_hl()
-	if vim.g.nvchad_theme == "catppuccin" then
-		M.override.AlphaButtons = { fg = "#cba6f7", italic = true, default = true }
-		M.override.AlphaHeader = { fg = "#89b4fa", default = true }
-	elseif vim.g.nvchad_theme == "gruvbox" then
-		M.override.AlphaButtons = { fg = "#83a589", italic = true, default = true }
-		M.override.AlphaHeader = { fg = "#fabd2f", default = true }
-	elseif vim.g.nvchad_theme == "everforest" then
-		M.override.AlphaButtons = { fg = "#83a589", italic = true, default = true }
-		M.override.AlphaHeader = { fg = "#89b4fa", default = true }
-	else
-		return
-	end
-end
+-- function M.get_alpha_hl()
+-- 	if vim.g.nvchad_theme == "catppuccin" then
+-- 		M.override.AlphaButtons = { fg = "#cba6f7", italic = true, default = true }
+-- 		M.override.AlphaHeader = { fg = "#89b4fa", default = true }
+-- 	elseif vim.g.nvchad_theme == "gruvbox" then
+-- 		M.override.AlphaButtons = { fg = "#83a589", italic = true, default = true }
+-- 		M.override.AlphaHeader = { fg = "#fabd2f", default = true }
+-- 	elseif vim.g.nvchad_theme == "everforest" then
+-- 		M.override.AlphaButtons = { fg = "#83a589", italic = true, default = true }
+-- 		M.override.AlphaHeader = { fg = "#89b4fa", default = true }
+-- 	else
+-- 		return
+-- 	end
+-- end
 
 return M

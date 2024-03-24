@@ -1,9 +1,9 @@
 {
 	"RainbowBrackets.depreciation-notice": false,
 	"terminal.integrated.inheritEnv": false,
-	"editor.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font Propo, JetBrainsMonoNL Nerd Font Propo, Monaspace Neon, Monaco, Menlo, 'LXGW WenKai'",
+	"editor.fontFamily": "Menlo, 'LXGW WenKai', Monaspace Neon, JetBrainsMonoNL Nerd Font Propo, MesloLGM Nerd Font, FiraCode Nerd Font Propo, Monaco",
 	"terminal.integrated.fontSize": 16,
-	"editor.fontWeight": "511",
+	"editor.fontWeight": "normal",
 	"terminal.integrated.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font, JetBrainsMonoNL Nerd Font, 'LXGW WenKai'",
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.black-formatter"
@@ -196,7 +196,7 @@
 		}
 	],
 	"files.autoSave": "afterDelay",
-	"editor.fontSize": 15,
+	"editor.fontSize": 14,
 	"jupyter.askForKernelRestart": false,
 	"editor.indentSize": "tabSize",
 	"editor.minimap.enabled": false,
@@ -452,7 +452,7 @@
 		"*.log",
 		"*.fdb_latexmk"
 	],
-	"latex-workshop.latex.autoClean.run": "onFailed",
+	"latex-workshop.latex.autoClean.run": "onBuilt",
 	"latex-workshop.latex.recipe.default": "lastUsed",
 	"latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
 	"[latex]": {
@@ -478,4 +478,5 @@
 	"cmake.showOptionsMovedNotification": false,
 	"vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf'",
 	"workbench.iconTheme": "catppuccin-macchiato",
+	"C_Cpp.intelliSenseEngine": "disabled",
 }
