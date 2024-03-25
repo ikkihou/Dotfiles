@@ -18,3 +18,15 @@ cp "$HOME/.zshrc" "$MY_PATH/zsh"
 
 ## kitty
 cp "$HOME/.config/kitty/"* "$MY_PATH/kitty"
+
+## btop
+cp -rf "$HOME/.config/btop/"* "$MY_PATH/btop"
+
+## yabai
+cp -rf "$HOME/.config/yabai" "$MY_PATH/"
+
+## yazi
+cp -rf "$HOME/.config/yazi" "$MY_PATH/"
+
+## skhd
+cp -rf "$HOME/.config/skhd" "$MY_PATH/"

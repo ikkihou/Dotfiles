@@ -1,7 +1,7 @@
 {
 	"RainbowBrackets.depreciation-notice": false,
 	"terminal.integrated.inheritEnv": false,
-	"editor.fontFamily": "Menlo, 'LXGW WenKai', Monaspace Neon, JetBrainsMonoNL Nerd Font Propo, MesloLGM Nerd Font, FiraCode Nerd Font Propo, Monaco",
+	"editor.fontFamily": "JetBrainsMonoNL Nerd Font Propo, Menlo, 'LXGW WenKai', Monaspace Neon, MesloLGM Nerd Font, FiraCode Nerd Font Propo, Monaco",
 	"terminal.integrated.fontSize": 16,
 	"editor.fontWeight": "normal",
 	"terminal.integrated.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font, JetBrainsMonoNL Nerd Font, 'LXGW WenKai'",
@@ -196,11 +196,10 @@
 		}
 	],
 	"files.autoSave": "afterDelay",
-	"editor.fontSize": 14,
+	"editor.fontSize": 16,
 	"jupyter.askForKernelRestart": false,
 	"editor.indentSize": "tabSize",
 	"editor.minimap.enabled": false,
-	"catppuccin.extraBordersEnabled": true,
 	"explorer.confirmDelete": false,
 	"[cpp]": {
 		"editor.defaultFormatter": "xaver.clang-format"
@@ -290,7 +289,7 @@
 	"editor.fontVariations": true,
 	"vsicons.presets.hideExplorerArrows": true,
 	"material-icon-theme.hidesExplorerArrows": false,
-	"workbench.colorTheme": "Catppuccin Macchiato",
+	"workbench.colorTheme": "Nord",
 	"gruvboxMaterial.darkCursor": "red",
 	"gruvboxMaterial.darkSelection": "yellow",
 	"gruvboxMaterial.italicKeywords": true,
@@ -477,6 +476,13 @@
 	"dev.containers.defaultFeatures": {},
 	"cmake.showOptionsMovedNotification": false,
 	"vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf'",
-	"workbench.iconTheme": "catppuccin-macchiato",
+	"workbench.iconTheme": "catppuccin-frappe",
 	"C_Cpp.intelliSenseEngine": "disabled",
+	"animations.Install-Method": "Apc Customize UI++",
+	"update.mode": "manual",
+	"apc.imports": [
+		"file:///Users/baoyihui/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.1/dist/updateHandler.js"
+	],
+	"catppuccin.customUIColors": {},
+	"catppuccin.extraBordersEnabled": true,
 }
