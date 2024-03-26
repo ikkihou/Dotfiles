@@ -3,8 +3,16 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-# New window spawns to the right if vertical split, or bottom if horizontal split
+# window related
 yabai -m config window_placement second_child
+yabai -m config external_bar main:32:0 \
+	window_shadow float \
+	window_opacity on \
+	window_opacity_duration 0.2 \
+	active_window_opacity 1.0 \
+	normal_window_opacity 0.8 \
+	window_animation_duration 0.5 \
+	window_animation_easing ease_out_quint
 
 # mouse related
 yabai -m config mouse_follows_focus on
@@ -25,10 +33,14 @@ yabai -m config window_gap 10
 
 # disable specific apps from being managed with yabai
 yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add app="^Finder|Activity Monitor|Archive Utility|Photo Booth$" manage=off
 yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Notion$" manage=off
 yabai -m rule --add app="^Steam$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^WeChat$" manage=off
+
+echo "yabai configuration loaded.."

@@ -289,7 +289,7 @@
 	"editor.fontVariations": true,
 	"vsicons.presets.hideExplorerArrows": true,
 	"material-icon-theme.hidesExplorerArrows": false,
-	"workbench.colorTheme": "Nord",
+	"workbench.colorTheme": "Catppuccin Frappé",
 	"gruvboxMaterial.darkCursor": "red",
 	"gruvboxMaterial.darkSelection": "yellow",
 	"gruvboxMaterial.italicKeywords": true,
