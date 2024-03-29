@@ -128,6 +128,11 @@ space_window_observer:subscribe("space_windows_change", function(env)
 		no_app = false
 		local lookup = app_icons[app]
 		local icon = ((lookup == nil) and app_icons["default"] or lookup)
+
+		if app == "WeChat" then
+			icon = settings.icons["wechat"]
+		end
+
 		icon_line = icon_line .. " " .. icon
 	end
 

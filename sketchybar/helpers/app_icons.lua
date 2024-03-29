@@ -33,6 +33,7 @@ return {
   ["neovide"] = ":neovide:",
   ["Spotlight"] = ":spotlight:",
   ["微信"] = ":wechat:",
+  ["wechat"] = ":wechat:",
   ["Dropbox"] = ":dropbox:",
   ["Transmit"] = ":transmit:",
   ["TickTick"] = ":tick_tick:",

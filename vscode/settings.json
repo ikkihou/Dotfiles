@@ -222,7 +222,6 @@
 		"source.fixAll": "explicit"
 	},
 	"editor.formatOnSave": true,
-	"window.commandCenter": false,
 	"[typescript]": {
 		"editor.defaultFormatter": "vscode.typescript-language-features"
 	},

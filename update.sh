@@ -30,3 +30,6 @@ cp -rf "$HOME/.config/yazi" "$MY_PATH/"
 
 ## skhd
 cp -rf "$HOME/.config/skhd" "$MY_PATH/"
+
+## sketchybar
+cp -rf "$HOME/.config/sketchybar" "$MY_PATH/"
