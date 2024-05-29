@@ -1,13 +1,13 @@
 # BEGIN_KITTY_THEME
-# Catppuccin-Macchiato
+# Espresso
 include current-theme.conf
 # END_KITTY_THEME
 
 # Fonts
-font_family                     JetBrainsMonoNL Nerd Font
-# font_family                     FiraCode Nerd Font Propo
-# font_family                     MesloLGM Nerd Font Propo
-font_size                       11.0
+font_family                     JetBrainsMonoNL Nerd Font Propo
+# font_family                     FiraCode Nerd Font
+# font_family                     MesloLGM Nerd Font
+font_size                       10.0
 text_composition_strategy       platform
 
 # Window_layout
@@ -23,8 +23,8 @@ remember_window_size            yes
 initial_window_width            170
 initial_window_height           50
 
-background_opacity              0.65
-background_blur                 15
+background_opacity              0.85
+background_blur                 25
 
 # Editor
 editor                          nvim

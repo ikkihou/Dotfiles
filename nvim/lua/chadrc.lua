@@ -2,12 +2,12 @@ local M = {}
 
 -- Path to overriding theme and highlights files
 local highlights = require("highlights")
-highlights.get_alpha_hl()
+-- highlights.get_alpha_hl()
 
 M.ui = {
-    theme = "catppuccin",
+    theme = "everforest",
 
-    transparency = false,
+    transparency = true,
 
     -- extended_integrations = { "alpha" },
     hl_override = highlights.override,

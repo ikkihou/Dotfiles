@@ -1,6 +1,6 @@
 # oh-my-Posh
-eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/catppuccin_mocha.omp.json)"
-
+eval "$(oh-my-posh init zsh --config ~/posh/clean-detailed.omp.json)"
+eval "$(starship init zsh)"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -111,3 +111,28 @@ alias unsetss='unset https_proxy && unset http_proxy && unset all_proxy'
 alias nz='nvim ~/.zshrc'
 alias nk='nvim ~/.config/kitty/kitty.conf'
 alias nleet='nvim leetcode.nvim'
+alias lzd='lazydocker'
+alias hp='Hyprland'
+
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# export QT_IM_MODULE=ibus
+#
+#
+# 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
