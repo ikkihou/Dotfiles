@@ -12,7 +12,7 @@ local wechat = sbar.add("item", "WeChat", {
 	},
 	icon = {
 		font = "sketchybar-app-font:Regular:18.0",
-		string = settings.icons["wechat"],
+		string = settings.icons["微信"],
 	},
 	label = {
 		drawing = false,
@@ -20,7 +20,7 @@ local wechat = sbar.add("item", "WeChat", {
 })
 
 sbar.add("bracket", "widget.wechat.bracket", { wechat.name }, {
-	background = { color = colors.bg1 },
+	background = { color = colors.with_alpha(colors.black, 0.7), border_color = colors.transparent },
 })
 
 wechat:subscribe("mouse.clicked", function(env)

@@ -1,12 +1,5 @@
-vim.g.rustaceanvim = {
-    server = {
-        on_attach = function(client, bufnr)
-            require("lsp_signature").on_attach({
-                bind = true,
-                handler_opts = {
-                    border = "rounded",
-                },
-            }, bufnr)
-        end,
-    },
-}
+local bufnr = vim.api.nvim_get_current_buf()
+
+vim.keymap.set("n", "<leader>a", function()
+	vim.cmd.RustLsp("codeAction")
+end, { silent = true, buffer = bufnr })

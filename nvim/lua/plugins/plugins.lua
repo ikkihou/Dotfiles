@@ -1,23 +1,27 @@
 local overrides = require("configs.overrides")
+local lazy = require("lazy")
+local leet_arg = "leetcode.nvim"
 local plugins = {
 	------------ ui -----------------
 	{
-		"swenv.nvim",
-		ft = { "python" },
-		dir = "~/Documents/coding/vscode/lua_space/swenv.nvim/",
-		enabled = false,
+		"stevearc/conform.nvim",
+		config = function()
+			require("configs.conform")
+		end,
 	},
 	{
 		"linux-cultist/venv-selector.nvim",
-		dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
-		opts = {
-			-- Your options go here
-			-- name = "venv",
-			-- auto_refresh = false
-			-- anaconda_base_path = "/Users/baoyihui/anaconda3",
-			anaconda_envs_path = "/Users/baoyihui/miniconda3/envs",
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"mfussenegger/nvim-dap",
+			"mfussenegger/nvim-dap-python", --optional
+			{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
 		},
-		-- event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+		lazy = true,
+		branch = "regexp", -- This is the regexp branch, use this for the new version
+		config = function()
+			require("configs.external.venv-selector")
+		end,
 		ft = { "python" },
 		keys = {
 			-- Keymap to open VenvSelector to pick a venv.
@@ -53,30 +57,21 @@ local plugins = {
 		enabled = true,
 		event = "VimEnter",
 		config = function()
-			-- dofile(vim.g.base46_cache .. "alpha")
 			require("configs.external.alpha")
 		end,
 	},
 	-- Standalone UI for nvim-LSP progress
 	{
 		"j-hui/fidget.nvim",
-		tag = "legacy",
 		event = "LspAttach",
 		config = function()
-			require("fidget").setup()
+			require("configs.external.fidget")
 		end,
 	},
 	------------------ override plugin configs---------------------
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			-- format & linting
-			-- {
-			--     "nvimtools/none-ls.nvim",
-			--     config = function()
-			--         require("configs.none-ls")
-			--     end,
-			-- },
 			{ "williamboman/mason-lspconfig.nvim" },
 			{
 				"ray-x/lsp_signature.nvim",
@@ -92,7 +87,6 @@ local plugins = {
 		"lukas-reineke/indent-blankline.nvim",
 		opts = overrides.blankline,
 		dependencies = {
-			-- "HiPhish/nvim-ts-rainbow2",
 			"HiPhish/rainbow-delimiters.nvim",
 			config = function(_, opts)
 				require("configs.external.rainbow")
@@ -116,10 +110,6 @@ local plugins = {
 		"nvim-tree/nvim-tree.lua",
 		opts = overrides.nvimtree,
 	},
-	-- {
-	--     "NvChad/nvterm",
-	--     enabled = false,
-	-- },
 
 	-----------------@telescope-------------------
 	{
@@ -142,10 +132,6 @@ local plugins = {
 			},
 			{
 				"nvim-telescope/telescope-frecency.nvim",
-				config = function()
-					require("telescope").load_extension("frecency")
-				end,
-				-- dependencies = { "kkharji/sqlite.lua" },
 			},
 			{ "nvim-telescope/telescope-live-grep-args.nvim" },
 		},
@@ -209,6 +195,43 @@ local plugins = {
 
 	------------------tools------------------------
 	{
+		"folke/trouble.nvim",
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		cmd = "Trouble",
+		keys = {
+			{
+				"<leader>xx",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"<leader>xX",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Buffer Diagnostics (Trouble)",
+			},
+			{
+				"<leader>cs",
+				"<cmd>Trouble symbols toggle focus=false<cr>",
+				desc = "Symbols (Trouble)",
+			},
+			{
+				"<leader>cl",
+				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+				desc = "LSP Definitions / references / ... (Trouble)",
+			},
+			{
+				"<leader>xL",
+				"<cmd>Trouble loclist toggle<cr>",
+				desc = "Location List (Trouble)",
+			},
+			{
+				"<leader>xQ",
+				"<cmd>Trouble qflist toggle<cr>",
+				desc = "Quickfix List (Trouble)",
+			},
+		},
+	},
+	{
 		"gbprod/yanky.nvim",
 		opts = {
 			-- your configuration comes here
@@ -219,41 +242,22 @@ local plugins = {
 	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
-		event = "VeryLazy",
+		event = "BufReadPost",
 		config = function()
 			require("nvim-surround").setup({
 				-- Configuration here, or leave empty to use defaults
 			})
 		end,
 	},
-	-- {
-	--   "kdheepak/lazygit.nvim",
-	--   -- optional for floating window border decoration
-	--   cmd = { "LazyGit" },
-	--   dependencies = {
-	--     "nvim-telescope/telescope.nvim",
-	--     "nvim-lua/plenary.nvim",
-	--   },
-	--   config = function()
-	--     require("telescope").load_extension "lazygit"
-	--   end,
-	-- },
 	{
 		"folke/todo-comments.nvim",
 		event = "LspAttach",
 		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
+		opts = {},
 	},
 	{
 		"nat-418/boole.nvim",
 		event = "BufReadPost",
-		init = function()
-			-- require("core.utils").load_mappings "boole"
-		end,
 		config = function()
 			require("configs.external.boole")
 		end,
@@ -264,7 +268,6 @@ local plugins = {
 		event = "LspAttach",
 		config = function(_, opts)
 			require("neogen").setup({ snippet_engine = "luasnip" })
-			-- require("core.utils").load_mappings "neogen"
 		end,
 	},
 	{
@@ -350,24 +353,6 @@ local plugins = {
 		end,
 	},
 	{
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		cmd = {
-			"ToggleTerm",
-			"ToggleTermSetName",
-			"ToggleTermToggleAll",
-			"ToggleTermSendVisualLines",
-			"ToggleTermSendCurrentLine",
-			"ToggleTermSendVisualSelection",
-		},
-		config = function()
-			require("configs.external.toggleterm")
-			require("core.utils").load_mappings("toggleterm")
-		end,
-		enabled = false,
-	},
-
-	{
 		"max397574/better-escape.nvim",
 		event = "InsertEnter",
 		config = function()
@@ -394,16 +379,9 @@ local plugins = {
 	{
 		"rcarriga/nvim-notify",
 		config = function()
-			require("configs.external.notify")
+			require("notify").setup()
 		end,
 	},
-	-- {
-	--   "AckslD/swenv.nvim",
-	--   ft = "python",
-	--   config = function()
-	--     require "configs.external.swenv"
-	--   end,
-	-- },
 	-------------- lsp ---------------
 	{
 		"nvimdev/lspsaga.nvim",
@@ -424,8 +402,26 @@ local plugins = {
 	},
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^3", -- Recommended
+		version = "^4", -- Recommended
 		ft = { "rust" },
+	},
+	{
+		"kawre/leetcode.nvim",
+		build = ":TSUpdate html",
+		lazy = leet_arg ~= vim.fn.argv()[1],
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			"nvim-lua/plenary.nvim", -- required by telescope
+			"MunifTanjim/nui.nvim",
+
+			-- optional
+			"nvim-treesitter/nvim-treesitter",
+			"rcarriga/nvim-notify",
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("configs.external.leetcode")
+		end,
 	},
 }
 

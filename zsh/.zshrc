@@ -3,7 +3,11 @@ eval "$(oh-my-posh init zsh)"
 eval "$(oh-my-posh init zsh --config /Users/baoyihui/Posh/catppuccin_mocha.omp.json)"
 # eval "$(oh-my-posh init zsh --config /Users/baoyihui/Posh/tokyonight_storm.omp.json)"
 # eval "$(oh-my-posh init zsh --config /opt/homebrew/Cellar/oh-my-posh/19.16.1/themes/sim-web.omp.json)"
+#
+#
 
+# starship
+eval "$(starship init zsh)"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -163,21 +167,18 @@ PERL_LOCAL_LIB_ROOT="/Users/baoyihui/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_L
 PERL_MB_OPT="--install_base \"/Users/baoyihui/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/baoyihui/perl5"; export PERL_MM_OPT;
 
-export PATH=$PATH:/Users/baoyihui/.spicetify
+# export PATH=$PATH:/Users/baoyihui/.spicetify
 
 # Following line was automatically added by arttime installer
 export PATH=/Users/baoyihui/.local/bin:$PATH
 
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-export CPPFLAGS="-L/opt/homebrew/opt/llvm/lib -Wl,-rpath,/opt/homebrew/opt/llvm/lib"
-
-## miniconda environment
-export PATH="/Users/baoyihui/miniconda3/bin:$PATH"
+# export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+# export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+# export CPPFLAGS="-L/opt/homebrew/opt/llvm/lib -Wl,-rpath,/opt/homebrew/opt/llvm/lib"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/baoyihui/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/baoyihui/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -189,3 +190,12 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+eval "$(atuin init zsh)"
+
+# bun completions
+[ -s "/Users/baoyihui/.bun/_bun" ] && source "/Users/baoyihui/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

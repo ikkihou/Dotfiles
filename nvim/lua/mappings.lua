@@ -105,52 +105,11 @@ M.boole = {
 	},
 }
 
--- M.toggleterm = {
--- 	plugin = true,
--- 	n = {
--- 		["<C-\\>"] = { "<cmd> ToggleTerm direction=horizontal <CR>", "Toggle terminal horizontally" },
--- 		["<C-/>"] = { "<cmd> ToggleTerm direction=vertical <CR>", "Toggle terminal vertically" },
--- 		["<C-f>"] = { "<cmd> ToggleTerm direction=float <CR>", "Toggle terminal float" },
--- 	},
--- 	i = {
--- 		["<C-\\>"] = { "<cmd> ToggleTerm direction=horizontal <CR>", "Toggle terminal horizontally" },
--- 		["<C-/>"] = { "<cmd> ToggleTerm direction=vertical <CR>", "Toggle terminal vertically" },
--- 		["<C-f>"] = { "<cmd> ToggleTerm direction=float <CR>", "Toggle terminal float" },
--- 	},
--- 	t = {
--- 		["qq"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
--- 		["jk"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
--- 		["<C-\\>"] = { "<cmd> ToggleTerm direction=horizontal <CR>", "Toggle terminal horizontally" },
--- 		["<C-/>"] = { "<cmd> ToggleTerm direction=vertical <CR>", "Toggle terminal vertically" },
--- 		["<C-f>"] = { "<cmd> ToggleTerm direction=float <CR>", "Toggle terminal float" },
--- 	},
--- }
-
 M.telescope = {
 	n = {
 		["<leader>fr"] = { "<cmd> Telescope frecency <CR> ", "Find files given frecency" },
 		["<leader>fp"] = { "<cmd> Telescope projects theme=dropdown <CR>", "Find projects" },
 		-- ["<leader>ft"] = { "<cmd> Telescope themes <CR>", "NcChad themes " },
-	},
-}
-
--- M.gitsigns = {
---   plugin = true,
---   n = {
---     ["<leader>gl"] = {
---       function()
---         require("gitsigns").toggle_current_line_blame()
---       end,
---     },
---     "toggle_current_line_blame",
---   },
--- }
-
--- more keybinds!
-M.accelerated_jk = {
-	n = {
-		k = { "<Plug>(accelerated_jk_gk)", "accelerated up movement" },
-		j = { "<Plug>(accelerated_jk_gj)", "accelerated down movement" },
 	},
 }
 
@@ -195,3 +154,14 @@ for _, maps in pairs(M) do
 		end
 	end
 end
+
+-- more keybinds!
+-- M.accelerated_jk = {
+-- 	n = {
+-- 		k = { "<Plug>(accelerated_jk_gk)", "accelerated up movement" },
+-- 		j = { "<Plug>(accelerated_jk_gj)", "accelerated down movement" },
+-- 	},
+-- }
+--
+map("n", "j", "<Plug>(accelerated_jk_gj)", { desc = "accelerated up movement" })
+map("n", "k", "<Plug>(accelerated_jk_gk)", { desc = "accelerated down movement" })

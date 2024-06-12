@@ -29,7 +29,8 @@ sbar.default({
 		height = 28,
 		corner_radius = 9,
 		border_width = 2,
-		border_color = colors.bg2,
+		-- border_color = colors.with_alpha(colors.bg2, 0.8),
+		border_color = colors.transparent,
 		image = {
 			corner_radius = 9,
 			border_color = colors.grey,

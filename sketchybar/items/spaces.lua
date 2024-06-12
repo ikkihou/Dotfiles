@@ -26,10 +26,11 @@ for i = 1, 10, 1 do
 		padding_right = 1,
 		padding_left = 1,
 		background = {
-			color = colors.bg1,
+			-- color = colors.bg1,
+			color = colors.with_alpha(colors.black, 0.8),
 			border_width = 1,
 			height = 26,
-			border_color = colors.black,
+			border_color = colors.transparent,
 		},
 		popup = { background = { border_width = 5, border_color = colors.black } },
 	})
@@ -40,9 +41,9 @@ for i = 1, 10, 1 do
 	local space_bracket = sbar.add("bracket", { space.name }, {
 		background = {
 			color = colors.transparent,
-			border_color = colors.bg2,
+			border_color = colors.transparent,
 			height = 28,
-			border_width = 2,
+			border_width = 5,
 		},
 	})
 
@@ -68,14 +69,13 @@ for i = 1, 10, 1 do
 
 	space:subscribe("space_change", function(env)
 		local selected = env.SELECTED == "true"
-		local color = selected and colors.grey or colors.bg2
 		space:set({
 			icon = { highlight = selected },
 			label = { highlight = selected },
-			background = { border_color = selected and colors.black or colors.bg2 },
+			background = { border_color = selected and colors.transparent or colors.transparent },
 		})
 		space_bracket:set({
-			background = { border_color = selected and colors.grey or colors.bg2 },
+			background = { border_color = selected and colors.transparent or colors.transparent },
 		})
 	end)
 
@@ -100,12 +100,12 @@ local space_window_observer = sbar.add("item", {
 })
 
 local spaces_indicator = sbar.add("item", {
-	padding_left = -3,
+	padding_left = 0,
 	padding_right = 0,
 	icon = {
 		padding_left = 8,
 		padding_right = 9,
-		color = colors.grey,
+		color = colors.white,
 		string = icons.switch.on,
 	},
 	label = {
@@ -127,10 +127,10 @@ space_window_observer:subscribe("space_windows_change", function(env)
 	for app, count in pairs(env.INFO.apps) do
 		no_app = false
 		local lookup = app_icons[app]
-		local icon = ((lookup == nil) and app_icons["default"] or lookup)
+		local icon = ((lookup == nil) and app_icons["Default"] or lookup)
 
 		if app == "WeChat" then
-			icon = settings.icons["wechat"]
+			icon = settings.icons["WeChat"]
 		end
 
 		icon_line = icon_line .. " " .. icon
@@ -171,7 +171,7 @@ spaces_indicator:subscribe("mouse.exited", function(env)
 				color = { alpha = 0.0 },
 				border_color = { alpha = 0.0 },
 			},
-			icon = { color = colors.grey },
+			icon = { color = colors.white },
 			label = { width = 0 },
 		})
 	end)

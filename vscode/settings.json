@@ -1,10 +1,10 @@
 {
 	"RainbowBrackets.depreciation-notice": false,
 	"terminal.integrated.inheritEnv": false,
-	"editor.fontFamily": "JetBrainsMonoNL Nerd Font Propo, Menlo, 'LXGW WenKai', Monaspace Neon, MesloLGM Nerd Font, FiraCode Nerd Font Propo, Monaco",
+	"editor.fontFamily": "monospace, JetBrainsMonoNL Nerd Font, Menlo, Monaco, 'Courier New', 'LXGW WenKai'",
 	"terminal.integrated.fontSize": 16,
 	"editor.fontWeight": "normal",
-	"terminal.integrated.fontFamily": "MesloLGM Nerd Font, FiraCode Nerd Font, JetBrainsMonoNL Nerd Font, 'LXGW WenKai'",
+	"terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font, FiraCode Nerd Font, MesloLGM Nerd Font, 'LXGW WenKai'",
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.black-formatter"
 	},
@@ -213,7 +213,6 @@
 	"clang-format.arguments": [
 		"-assume-filename=${workspaceFolder}/.clang-format"
 	],
-	"C_Cpp.clang_format_path": "/opt/homebrew/opt/llvm/bin/clang-format",
 	"indentRainbow.indentSetter": {},
 	"RainbowBrackets.showBracketsInRuler": true,
 	"editor.wordWrap": "on",
@@ -235,7 +234,7 @@
 	"terminal.integrated.smoothScrolling": true,
 	"workbench.list.smoothScrolling": true,
 	"editor.accessibilitySupport": "off",
-	"clangd.path": "/Users/baoyihui/Library/Application Support/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/17.0.3/clangd_17.0.3/bin/clangd",
+	"clangd.path": "/Users/baoyihui/Library/Application Support/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/18.1.3/clangd_18.1.3/bin/clangd",
 	"lldb.verboseLogging": true,
 	"lldb.dbgconfig": {},
 	"cmake.configureOnOpen": true,
@@ -274,8 +273,8 @@
 			}
 		}
 	},
-	"c-cpp-compile-run.c-compiler": "/opt/homebrew/opt/llvm/bin/clang",
-	"c-cpp-compile-run.cpp-compiler": "/opt/homebrew/opt/llvm/bin/clang++",
+	"c-cpp-compile-run.c-compiler": "",
+	"c-cpp-compile-run.cpp-compiler": "",
 	"terminal.integrated.enableMultiLinePasteWarning": false,
 	"jupyter.widgetScriptSources": [
 		"jsdelivr.com",
@@ -288,7 +287,7 @@
 	"editor.fontVariations": true,
 	"vsicons.presets.hideExplorerArrows": true,
 	"material-icon-theme.hidesExplorerArrows": false,
-	"workbench.colorTheme": "Catppuccin Frappé",
+	"workbench.colorTheme": "Catppuccin Macchiato",
 	"gruvboxMaterial.darkCursor": "red",
 	"gruvboxMaterial.darkSelection": "yellow",
 	"gruvboxMaterial.italicKeywords": true,
@@ -460,7 +459,7 @@
 	"editor.guides.bracketPairs": true,
 	"pyqt-integration.qtdesigner.path": "/Users/baoyihui/Documents/coding/vscode/vscode_python/self_STEM_dataset/ui_files/Atom_Seg_UI.py",
 	"leetcode.defaultLanguage": "cpp",
-	"leetcode.endpoint": "leetcode",
+	"leetcode.endpoint": "leetcode-cn",
 	"leetcode.workspaceFolder": "/Users/baoyihui/Documents/coding/vscode/cpp_space/leetcode",
 	"editor.inlayHints.enabled": "on",
 	"clangd.checkUpdates": true,
@@ -471,11 +470,10 @@
 	"C_Cpp.default.intelliSenseMode": "macos-clang-arm64",
 	"doxdocgen.generic.authorEmail": "paulbao@mail.ecust.edu.cn",
 	"doxdocgen.generic.authorName": "baoyihui",
-	"http.proxyAuthorization": null,
 	"dev.containers.defaultFeatures": {},
 	"cmake.showOptionsMovedNotification": false,
 	"vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf'",
-	"workbench.iconTheme": "catppuccin-frappe",
+	"workbench.iconTheme": "catppuccin-macchiato",
 	"C_Cpp.intelliSenseEngine": "disabled",
 	"animations.Install-Method": "Apc Customize UI++",
 	"update.mode": "manual",
@@ -484,4 +482,59 @@
 	],
 	"catppuccin.customUIColors": {},
 	"catppuccin.extraBordersEnabled": true,
+	"http.proxyAuthorization": null,
+	"http.proxy": "http://127.0.0.1:7890",
+	"https.proxy": "https://127.0.0.1:7890",
+	"http.proxyStrictSSL": false,
+	"terminal.integrated.defaultProfile.osx": "fish (2)",
+	"vsicons.dontShowNewVersionMessage": true,
+	"scm.inputFontFamily": "",
+	"chat.editor.fontFamily": "",
+	"terminal.integrated.profiles.osx": {
+		"bash": {
+			"path": "bash",
+			"args": [
+				"-l"
+			],
+			"icon": "terminal-bash"
+		},
+		"zsh": {
+			"path": "zsh",
+			"args": [
+				"-l"
+			]
+		},
+		"fish": {
+			"path": "fish",
+			"args": [
+				"-l"
+			]
+		},
+		"tmux": {
+			"path": "tmux",
+			"icon": "terminal-tmux"
+		},
+		"pwsh": {
+			"path": "pwsh",
+			"icon": "terminal-powershell"
+		},
+		"fish (2)": {
+			"path": "/opt/homebrew/bin/fish"
+		}
+	},
+	"everforest.darkContrast": "soft",
+	"everforest.darkCursor": "orange",
+	"everforest.diagnosticTextBackgroundOpacity": "12.5%",
+	"gitlens.currentLine.fontFamily": "'LXGW Wenkai'",
+	"gitlens.currentLine.fontStyle": "",
+	"gitlens.blame.fontFamily": "'LXGW Wenkai'",
+	"cmake.pinnedCommands": [
+		"workbench.action.tasks.configureTaskRunner",
+		"workbench.action.tasks.runTask"
+	],
+	"leetcode.hint.configWebviewMarkdown": false,
+	"leetcode.hint.commentDescription": false,
+	"workbench.productIconTheme": "adwaita",
+	"leetcode.nodePath": "/opt/homebrew/bin/node",
+	"leetcode.hint.commandShortcut": false,
 }

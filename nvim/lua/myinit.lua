@@ -5,7 +5,7 @@ local g = vim.g
 
 ------------------- options -------------------
 opt.encoding = "utf-8"
-opt.fileencoding = "utf-8"
+-- opt.fileencoding = "utf-8"
 opt.backup = false
 opt.swapfile = false
 opt.scrolloff = 10
@@ -25,31 +25,32 @@ opt.list = true
 opt.numberwidth = 4
 
 -----------yank ---------------
-vim.api.nvim_exec(
-	[[
-  augroup highlight_on_yank
-    autocmd!
-    autocmd TextYankPost * lua vim.highlight.on_yank()
-  augroup end
-]],
-	false
-)
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+	group = vim.api.nvim_create_augroup("highlight_on_yank", {}),
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 200 })
+	end,
+})
+
 g.highlightedyank_highlight_duration = 2000
+
+-------- inlay_hint -----------
+vim.lsp.inlay_hint.enable(true)
 
 ------------ custom snippets --------------
 g.vscode_snippets_path = vim.fn.stdpath("config") .. "/lua/snippets"
 
 -------------- custom python provider ---------------
-local function isempty(s)
-	return s == nil or s == ""
-end
+-- local function isempty(s)
+-- 	return s == nil or s == ""
+-- end
 
-g.loaded_python3_provider = 1
-local conda_prefix = os.getenv("CONDA_PREFIX")
-if not isempty(conda_prefix) then
-	g.python_host_prog = conda_prefix .. "/bin/python"
-	g.python3_host_prog = conda_prefix .. "/bin/python"
-else
-	g.python_host_prog = "python"
-	g.python3_host_prog = "python3"
-end
+g.loaded_python3_provider = 0
+-- local conda_prefix = os.getenv "CONDA_PREFIX"
+-- if not isempty(conda_prefix) then
+--     g.python_host_prog = conda_prefix .. "/bin/python"
+--     g.python3_host_prog = conda_prefix .. "/bin/python"
+-- else
+--     g.python_host_prog = "python"
+--     g.python3_host_prog = "python3"
+-- end
