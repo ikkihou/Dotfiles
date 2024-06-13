@@ -7,6 +7,7 @@ local icons = {
 local t = function(str)
 	return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
+local cmp = require("cmp")
 
 ------------------ cmp -------------------
 M.cmp = {
@@ -51,17 +52,23 @@ M.cmp = {
 		end,
 	},
 	mapping = {
-		["<C-d>"] = require("cmp").mapping.scroll_docs(-4),
-		["<C-f>"] = require("cmp").mapping.scroll_docs(4),
-		["<C-j>"] = require("cmp").mapping.select_next_item(),
-		["<C-k>"] = require("cmp").mapping.select_prev_item(),
-		-- ["<Tab>"] = require("cmp").mapping.confirm {
-		--     behavior = require("cmp").ConfirmBehavior.insert,
-		--     select = true,
-		-- },
-		["<C-e>"] = require("cmp").mapping.close(),
-		["<Tab>"] = require("cmp").mapping(function(fallback)
-			local cmp = require("cmp")
+		["<C-j>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
+		["<C-k>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
+		-- ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+		["<C-e>"] = cmp.mapping.close(),
+		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.confirm({
 					select = true,

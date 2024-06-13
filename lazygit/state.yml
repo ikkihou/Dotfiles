@@ -1,0 +1,21 @@
+lastupdatecheck: 0
+recentrepos:
+    - /home/paul/Documents/coding/py_vscode/DeepSTEM
+    - /home/paul/Documents/Github/Dotfiles
+    - /home/paul/Documents/Github/DeHazePatent
+    - /home/paul/Documents/coding/py_vscode/rVAE-Paper
+    - /home/paul/Documents/coding/tex_vscode/STEM_paper
+    - /home/paul/Documents/Github/frequency-compensated-diffusion-model-pytorch
+    - /home/paul/Documents/coding/py_vscode/ddpm_from_scratch
+    - /home/paul/Documents/coding/cpp_vscode/xv6-labs-2021
+    - /home/paul/Documents/Github/minnow
+startuppopupversion: 5
+lastversion: 0.42.0
+customcommandshistory: []
+hidecommandlog: false
+ignorewhitespaceindiffview: false
+diffcontextsize: 3
+localbranchsortorder: recency
+remotebranchsortorder: alphabetical
+gitlogorder: topo-order
+gitlogshowgraph: always

@@ -1,0 +1,36 @@
+{
+  "label": "lock",
+  "text": "Lock",
+  "action": "~/.config/wleave/actions lock",
+  "keybind": "l"
+}
+{
+  "label": "hibernate",
+  "text": "Hibernate",
+  "action": "~/.config/wleave/actions hibernate",
+  "keybind": "h"
+}
+{
+  "label": "suspend",
+  "text": "Suspend",
+  "action": "~/.config/wleave/actions suspend",
+  "keybind": "u"
+}
+{
+  "label": "reboot",
+  "text": "Reboot",
+  "action": "~/.config/wleave/actions reboot",
+  "keybind": "r"
+}
+{
+  "label": "logout",
+  "text": "Logout",
+  "action": "~/.config/wleave/actions logout",
+  "keybind": "e"
+}
+{
+  "label": "shutdown",
+  "text": "Shutdown",
+  "action": "~/.config/wleave/actions shutdown",
+  "keybind": "s"
+}

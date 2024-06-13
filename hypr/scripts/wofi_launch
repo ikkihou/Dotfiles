@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+CONFIG="$HOME/.config/wofi/config"
+STYLE="$HOME/.config/wofi/src/macchiato/style.css"
+
+if [[ ! $(pidof wofi) ]]; then
+	wofi --conf "${CONFIG}" --style "${STYLE}" "$1"
+else
+	pkill wofi
+fi

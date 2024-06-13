@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+# MONITORS=$(hyprctl monitors -j | jq -r '.[] | .name')
+# echo "$MONITORS"
+
+export MONITOR1="eDP-1"
+export MONITOR2="HDMI-A-1"
+# export MONITOR3="HDMI-A-1"

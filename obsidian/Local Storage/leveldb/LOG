@@ -1,0 +1,5 @@
+2024/06/12-11:22:44.375 14d6 Reusing MANIFEST /home/paul/.config/obsidian/Local Storage/leveldb/MANIFEST-000001
+2024/06/12-11:22:44.391 14d6 Recovering log #60
+2024/06/12-11:22:44.392 14d6 Level-0 table #63: started
+2024/06/12-11:22:44.396 14d6 Level-0 table #63: 15744 bytes OK
+2024/06/12-11:22:44.400 14d6 Delete type=0 #60

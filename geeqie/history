@@ -1,0 +1,25 @@
+#History lists
+
+[shortcuts]
+"Home[path]/home/paul"
+"Desktop[path]/home/paul/Desktop"
+"Collections[path]/home/paul/.local/share/geeqie/collections"
+
+[path_list]
+"/home/paul"
+"/home/paul/Imagenes"
+"/home/paul/Imagenes/Capturas"
+"/home/paul/Downloads/v4-test-result/framework_val_Dense-Haze_125w_sota/results"
+"/home/paul/.local/share/WeChat_Data/Documents/xwechat_files/byh450980506_3e0d/msg/file/2024-05"
+"/home/paul/Downloads/RESIDE-test-result/framework_val_240518_132355_RESIDE_150w_Dense_Haze/results"
+"/home/paul/Imagenes/Capturas/PC"
+"/home/paul/Pictures/walls"
+
+[image_list]
+"/home/paul/Downloads/v4-test-result/framework_val_Dense-Haze_125w_sota/results/0_38_sr_process.png"
+"/home/paul/.local/share/WeChat_Data/Documents/xwechat_files/byh450980506_3e0d/msg/file/2024-05/IMG_9661.PNG"
+"/home/paul/Downloads/RESIDE-test-result/framework_val_240518_132355_RESIDE_150w_Dense_Haze/results/0_38_hr.png"
+"/home/paul/Imagenes/Capturas/PC/captura-2024-05-20-1716200641.png"
+"/home/paul/Pictures/walls/bridge.png"
+
+#end

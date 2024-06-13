@@ -1,0 +1,678 @@
+{
+	"file_history":
+	[
+		"/home/paul/Downloads/v6-result/framework_val_240602_160538_IHAZY/logs/val.log",
+		"/home/paul/Downloads/v4-test-result/framework_val_100w-syn-v4-O-Haze/logs/val.log",
+		"/home/paul/Downloads/v4-test-result/framework_val_Dense-Haze_125w_sota/logs/val.log",
+		"/home/paul/Downloads/v6-result/framework_val_240602_155318_Dense/logs/val.log",
+		"/home/paul/Documents/Github/AtomSegNet/model_structure/unet_sigmoid.py",
+		"/home/paul/Downloads/RESIDE-test-result/framework_val_240518_132729_RESIDE_150w_NH_HAZE/logs/val.log",
+		"/home/paul/Downloads/RESIDE-test-result/framework_val_240518_132355_RESIDE_150w_Dense_Haze/logs/val.log",
+		"/home/paul/Downloads/framework_val_240509_100958/logs/train.log",
+		"/home/paul/Downloads/framework_val_240508_101053/logs/train.log",
+		"/home/paul/Downloads/v4-test-result/framework_val_O-Haze_125w_sota/logs/val.log",
+		"/home/paul/Downloads/RESIDE-test-result/framework_val_240518_131736_RESIDE_150w_O_Haze/logs/val.log",
+		"/home/paul/Downloads/RESIDE-test-result/framework_val_240518_132206_RESIDE_150w_I_Hazy/logs/val.log",
+		"/home/paul/Downloads/framework_val_240508_101053/logs/val.log",
+		"/home/paul/Downloads/framework_val_100w-syn-v4-I-Haze/logs/val.log",
+		"/home/paul/Downloads/framework_val_240512_205554/logs/val.log",
+		"/home/paul/.config/sublime-text/Packages/Theme - Default/Default Dark.sublime-theme",
+		"/home/paul/.config/sublime-text/Packages/User/Default Dark.sublime-theme",
+		"/home/paul/Downloads/Telegram Desktop/fft_demo.ipynb",
+		"/home/paul/.cache/go-build/README",
+		"/home/paul/.gtkrc-2.0",
+		"/home/paul/.zcompdump-baoyihui-5.9",
+		"/home/paul/Downloads/framework_val_240512_204358/logs/val.log",
+		"/home/paul/Downloads/framework_val_240512_204136/logs/val.log",
+		"/home/paul/Downloads/framework_val_240512_201202/logs/val.log",
+		"/home/paul/Downloads/hyprlandCrashReport628700.txt",
+		"/home/paul/.config/Typora/themes/pixyll.css",
+		"/home/paul/.config/Typora/themes/base.user.css",
+		"/usr/lib/qt6/qml/org/kde/kirigami/Dialog.qml",
+		"/home/paul/Desktop/Exported Items.bib",
+		"/home/paul/Desktop/Exported Items.txt"
+	],
+	"folder_history":
+	[
+	],
+	"last_version": 4169,
+	"last_window_id": 2,
+	"log_indexing": false,
+	"next_update_check": 1717639736,
+	"settings":
+	{
+		"new_window_full_screen": false,
+		"new_window_height": 0.0,
+		"new_window_maximized": true,
+		"new_window_position":
+		[
+			1932.0,
+			59.0
+		],
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/paul/Documents/Obsidian/PaperReading/arxivPapers/Explicitly disentangling image content from translation and rotation with spatial-VAE.md",
+				"/home/paul/Downloads/v6-result/framework_val_240602_160219_NH/logs/val.log",
+				"/home/paul/Downloads/v6-result/framework_val_240602_155855_OHAZE/logs/val.log",
+				"/home/paul/Downloads/v6-result/framework_val_240602_155318_Dense/logs/val.log",
+				"/home/paul/Downloads/v6-result/framework_val_240602_160538_IHAZY/logs/val.log",
+				"/home/paul/Downloads/v4-test-result/framework_val_100w-syn-v4-O-Haze/logs/val.log",
+				"/home/paul/Downloads/v4-test-result/framework_val_Dense-Haze_125w_sota/logs/val.log",
+				"/home/paul/Documents/Github/AtomSegNet/model_structure/unet_sigmoid.py",
+				"/home/paul/Downloads/RESIDE-test-result/framework_val_240518_132729_RESIDE_150w_NH_HAZE/logs/val.log",
+				"/home/paul/Downloads/RESIDE-test-result/framework_val_240518_132355_RESIDE_150w_Dense_Haze/logs/val.log",
+				"/home/paul/Downloads/framework_val_240509_100958/logs/train.log",
+				"/home/paul/Downloads/framework_val_240508_101053/logs/train.log",
+				"/home/paul/Downloads/v4-test-result/framework_val_O-Haze_125w_sota/logs/val.log",
+				"/home/paul/Downloads/RESIDE-test-result/framework_val_240518_131736_RESIDE_150w_O_Haze/logs/val.log",
+				"/home/paul/Downloads/RESIDE-test-result/framework_val_240518_132206_RESIDE_150w_I_Hazy/logs/val.log",
+				"/home/paul/Downloads/framework_val_240508_101053/logs/val.log",
+				"/home/paul/Downloads/framework_val_100w-syn-v4-I-Haze/logs/val.log",
+				"/home/paul/Downloads/framework_val_240512_205554/logs/val.log",
+				"/home/paul/Downloads/Telegram Desktop/fft_demo.ipynb",
+				"/home/paul/.cache/go-build/README",
+				"/home/paul/.gtkrc-2.0",
+				"/home/paul/.zcompdump-baoyihui-5.9",
+				"/home/paul/Downloads/framework_val_240512_204358/logs/val.log",
+				"/home/paul/Downloads/framework_val_240512_204136/logs/val.log",
+				"/home/paul/Downloads/framework_val_240512_201202/logs/val.log",
+				"/home/paul/Downloads/hyprlandCrashReport628700.txt",
+				"/home/paul/.config/Typora/themes/pixyll.css",
+				"/home/paul/.config/Typora/themes/base.user.css",
+				"/usr/lib/qt6/qml/org/kde/kirigami/Dialog.qml",
+				"/home/paul/Desktop/Exported Items.bib",
+				"/home/paul/Desktop/Exported Items.txt"
+			],
+			"find":
+			{
+				"height": 0.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"scrollbar_highlights": true,
+				"show_context": true,
+				"use_buffer2": true,
+				"use_gitignore": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"menu_visible": false,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"replace":
+			{
+				"height": 0.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 0.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"buffers":
+			[
+				{
+					"contents": "24-06-02 15:53:18.906 - INFO:   name: framework_val\n  phase: val\n  gpu_ids: [0]\n  change_sizes:[\n    0.0: 128\n    0.3: 128\n    0.9: 128\n    1.01: 128\n  ]\n  path:[\n    log: ./results/framework_val_240602_155318/logs\n    tb_logger: ./results/framework_val_240602_155318/tb_logger\n    results: ./results/framework_val_240602_155318/results\n    checkpoint: ./results/framework_val_240602_155318/checkpoint\n    resume_state: I1250000_E1876\n    metric: ./results/framework_val_240602_155318/metrics\n    experiments_root: ./results/framework_val_240602_155318\n  ]\n  datasets:[\n    train:[\n      name: RESIDE_train_syntheic\n      mode: HR\n      dataroot: dataset/nyu-2/HR_hazy_src\n      hr_path: dataset/nyu-2/HR\n      datatype: RESIDE_img_syntheic\n      l_resolution: 128\n      r_resolution: 128\n      batch_size: 3\n      num_workers: 12\n      use_shuffle: True\n      HazeAug: True\n      rt_da_ref: ['dataset/nyu-2/HR_hazy_src']\n      depth_img_path: dataset/nyu-2/HR_depth/\n      data_len: -1\n    ]\n    val:[\n      name: dehaze_val\n      mode: LRHR\n      dataroot: dataset/test/Dense_Haze\n      datatype: haze_img\n      l_resolution: 512\n      r_resolution: 512\n      data_len: 5000\n    ]\n  ]\n  model:[\n    which_model_G: dehaze_with_z_v2\n    finetune_norm: False\n    FCB: True\n    unet:[\n      in_channel: 6\n      out_channel: 3\n      inner_channel: 64\n      norm_groups: 16\n      channel_multiplier: [1, 2, 4, 8, 16]\n      attn_res: []\n      res_blocks: 1\n      dropout: 0.2\n    ]\n    beta_schedule:[\n      train:[\n        schedule: linear\n        n_timestep: 2000\n        linear_start: 1e-06\n        linear_end: 0.01\n      ]\n      val:[\n        schedule: linear\n        n_timestep: 2000\n        linear_start: 1e-06\n        linear_end: 0.01\n      ]\n    ]\n    diffusion:[\n      image_size: 128\n      channels: 3\n      conditional: True\n      start_step: 1000\n    ]\n  ]\n  train:[\n    n_iter: 300000\n    save_checkpoint_freq: 20000.0\n    print_freq: 50\n    optimizer:[\n      type: adam\n      lr: 0.0001\n    ]\n    ema_scheduler:[\n      step_start_ema: 5000\n      update_ema_every: 1\n      ema_decay: 0.9999\n    ]\n  ]\n  wandb:[\n    project: dehaze_with_synthetic-v4\n  ]\n  distributed: False\n  log_infer: False\n  enable_wandb: False\n\n24-06-02 15:53:18.949 - INFO: Dataset [LRHRDataset - dehaze_val] is created.\n24-06-02 15:53:18.949 - INFO: Initial Dataset Finished 24-06-02\n15:53:20.805 - INFO: Loading pretrained model for G\n[I1250000_E1876] ... 24-06-02 15:53:21.304 - INFO: Network G structure:\nGaussianDiffusion, with parameters: 155,334,395 24-06-02 15:53:21.304 - INFO:\nModel [DDPM] is created. 24-06-02 15:53:21.304 - INFO: Initial Model Finished\n24-06-02 15:53:21.305 - INFO: Begin Model Inference. 24-06-02 15:53:25.389 -\nINFO: psnr: 9.91511424522644, ssim:0.37316883449017385, save\nto ./results/framework_val_240602_155318/results/0_1_sr_process.png 24-06-02\n15:53:27.831 - INFO: psnr: 12.22259035022259, ssim:0.4251189990944176, save\nto ./results/framework_val_240602_155318/results/0_2_sr_process.png 24-06-02\n15:53:30.245 - INFO: psnr: 7.6431670867874555, ssim:0.2834674329131206, save\nto ./results/framework_val_240602_155318/results/0_3_sr_process.png 24-06-02\n15:53:32.645 - INFO: psnr: 11.494572550942335, ssim:0.48234714850658306, save\nto ./results/framework_val_240602_155318/results/0_4_sr_process.png 24-06-02\n15:53:35.020 - INFO: psnr: 9.60823120072182, ssim:0.47913297824912277, save\nto ./results/framework_val_240602_155318/results/0_5_sr_process.png 24-06-02\n15:53:37.416 - INFO: psnr: 11.473546673852583, ssim:0.4546932856016663, save\nto ./results/framework_val_240602_155318/results/0_6_sr_process.png 24-06-02\n15:53:39.784 - INFO: psnr: 15.116585028514855, ssim:0.5908240999072211, save\nto ./results/framework_val_240602_155318/results/0_7_sr_process.png 24-06-02\n15:53:42.151 - INFO: psnr: 7.832332211973768, ssim:0.26710491896555405, save\nto ./results/framework_val_240602_155318/results/0_8_sr_process.png 24-06-02\n15:53:44.544 - INFO: psnr: 8.605121747105809, ssim:0.3750541756353027, save\nto ./results/framework_val_240602_155318/results/0_9_sr_process.png 24-06-02\n15:53:46.908 - INFO: psnr: 10.492151716523463, ssim:0.3968437544632835, save\nto ./results/framework_val_240602_155318/results/0_10_sr_process.png 24-06-02\n15:53:49.279 - INFO: psnr: 8.932892295169125, ssim:0.32943999974316646, save\nto ./results/framework_val_240602_155318/results/0_11_sr_process.png 24-06-02\n15:53:51.732 - INFO: psnr: 12.395241265176038, ssim:0.48946695635560533, save\nto ./results/framework_val_240602_155318/results/0_12_sr_process.png 24-06-02\n15:53:54.108 - INFO: psnr: 10.633914137381794, ssim:0.4676226968650011, save\nto ./results/framework_val_240602_155318/results/0_13_sr_process.png 24-06-02\n15:53:56.474 - INFO: psnr: 9.56799523971764, ssim:0.4459235659433099, save\nto ./results/framework_val_240602_155318/results/0_14_sr_process.png 24-06-02\n15:53:58.827 - INFO: psnr: 8.789227293128906, ssim:0.43476788094441016, save\nto ./results/framework_val_240602_155318/results/0_15_sr_process.png 24-06-02\n15:54:01.192 - INFO: psnr: 9.962125982653818, ssim:0.3046385803174898, save\nto ./results/framework_val_240602_155318/results/0_16_sr_process.png 24-06-02\n15:54:03.593 - INFO: psnr: 8.720118537896628, ssim:0.26220804974318623, save\nto ./results/framework_val_240602_155318/results/0_17_sr_process.png 24-06-02\n15:54:05.975 - INFO: psnr: 10.466560494724394, ssim:0.474775285541517, save\nto ./results/framework_val_240602_155318/results/0_18_sr_process.png 24-06-02\n15:54:08.355 - INFO: psnr: 10.962247602883428, ssim:0.4002873576666131, save\nto ./results/framework_val_240602_155318/results/0_19_sr_process.png 24-06-02\n15:54:10.761 - INFO: psnr: 12.496475945617053, ssim:0.5244013238067262, save\nto ./results/framework_val_240602_155318/results/0_20_sr_process.png 24-06-02\n15:54:13.160 - INFO: psnr: 9.6735642592372, ssim:0.3447026081973532, save\nto ./results/framework_val_240602_155318/results/0_21_sr_process.png 24-06-02\n15:54:15.533 - INFO: psnr: 8.90549373745776, ssim:0.31295834035152936, save\nto ./results/framework_val_240602_155318/results/0_22_sr_process.png 24-06-02\n15:54:17.905 - INFO: psnr: 8.767030717234439, ssim:0.20198754694869533, save\nto ./results/framework_val_240602_155318/results/0_23_sr_process.png 24-06-02\n15:54:20.317 - INFO: psnr: 8.828431188430667, ssim:0.3456290942563049, save\nto ./results/framework_val_240602_155318/results/0_24_sr_process.png 24-06-02\n15:54:22.695 - INFO: psnr: 10.716682066950636, ssim:0.38783027236009354, save\nto ./results/framework_val_240602_155318/results/0_25_sr_process.png 24-06-02\n15:54:25.063 - INFO: psnr: 10.84651248896603, ssim:0.4175019109406612, save\nto ./results/framework_val_240602_155318/results/0_26_sr_process.png 24-06-02\n15:54:27.447 - INFO: psnr: 10.140989306165283, ssim:0.42618457566666484, save\nto ./results/framework_val_240602_155318/results/0_27_sr_process.png 24-06-02\n15:54:29.851 - INFO: psnr: 8.273892718987005, ssim:0.43913531106388787, save\nto ./results/framework_val_240602_155318/results/0_28_sr_process.png 24-06-02\n15:54:32.311 - INFO: psnr: 8.809896767888771, ssim:0.3819412410364433, save\nto ./results/framework_val_240602_155318/results/0_29_sr_process.png 24-06-02\n15:54:34.713 - INFO: psnr: 7.3956472397068085, ssim:0.4293042533466626, save\nto ./results/framework_val_240602_155318/results/0_30_sr_process.png 24-06-02\n15:54:37.128 - INFO: psnr: 8.67639193892201, ssim:0.4329985804670647, save\nto ./results/framework_val_240602_155318/results/0_31_sr_process.png 24-06-02\n15:54:39.534 - INFO: psnr: 11.733131828785645, ssim:0.6035138953359175, save\nto ./results/framework_val_240602_155318/results/0_32_sr_process.png 24-06-02\n15:54:41.952 - INFO: psnr: 11.746635253466597, ssim:0.5902848581511504, save\nto ./results/framework_val_240602_155318/results/0_33_sr_process.png 24-06-02\n15:54:44.349 - INFO: psnr: 8.418727690717281, ssim:0.39827364278286076, save\nto ./results/framework_val_240602_155318/results/0_34_sr_process.png 24-06-02\n15:54:46.763 - INFO: psnr: 9.040341879770041, ssim:0.44820761957376004, save\nto ./results/framework_val_240602_155318/results/0_35_sr_process.png 24-06-02\n15:54:49.183 - INFO: psnr: 10.390268367047614, ssim:0.5718156948213592, save\nto ./results/framework_val_240602_155318/results/0_36_sr_process.png 24-06-02\n15:54:51.629 - INFO: psnr: 12.177402830971705, ssim:0.5976073741835628, save\nto ./results/framework_val_240602_155318/results/0_37_sr_process.png 24-06-02\n15:54:54.029 - INFO: psnr: 10.418181139409366, ssim:0.42020781282765834, save\nto ./results/framework_val_240602_155318/results/0_38_sr_process.png 24-06-02\n15:54:56.397 - INFO: psnr: 9.774785485742822, ssim:0.4314597630800466, save\nto ./results/framework_val_240602_155318/results/0_39_sr_process.png 24-06-02\n15:54:58.770 - INFO: psnr: 8.459003392666082, ssim:0.46297532593623963, save\nto ./results/framework_val_240602_155318/results/0_40_sr_process.png 24-06-02\n15:55:01.136 - INFO: psnr: 9.318064414921768, ssim:0.4924518716498602, save\nto ./results/framework_val_240602_155318/results/0_41_sr_process.png 24-06-02\n15:55:03.529 - INFO: psnr: 8.828250606624382, ssim:0.3802077846105132, save\nto ./results/framework_val_240602_155318/results/0_42_sr_process.png 24-06-02\n15:55:05.903 - INFO: psnr: 7.591730007330772, ssim:0.39697566682928437, save\nto ./results/framework_val_240602_155318/results/0_43_sr_process.png 24-06-02\n15:55:08.262 - INFO: psnr: 7.323847031576576, ssim:0.4349747320133021, save\nto ./results/framework_val_240602_155318/results/0_44_sr_process.png 24-06-02\n15:55:10.639 - INFO: psnr: 11.346374954502057, ssim:0.5449472173735627, save\nto ./results/framework_val_240602_155318/results/0_45_sr_process.png 24-06-02\n15:55:13.234 - INFO: psnr: 8.517407751941203, ssim:0.22615036941857658, save\nto ./results/framework_val_240602_155318/results/0_46_sr_process.png 24-06-02\n15:55:15.618 - INFO: psnr: 12.28970776648476, ssim:0.5826874058070757, save\nto ./results/framework_val_240602_155318/results/0_47_sr_process.png 24-06-02\n15:55:17.981 - INFO: psnr: 10.425256840052379, ssim:0.4428608585449709, save\nto ./results/framework_val_240602_155318/results/0_48_sr_process.png 24-06-02\n15:55:20.349 - INFO: psnr: 7.795229452881822, ssim:0.275443633656244, save\nto ./results/framework_val_240602_155318/results/0_49_sr_process.png 24-06-02\n15:55:22.707 - INFO: psnr: 9.768124356261055, ssim:0.3892897061290718, save\nto ./results/framework_val_240602_155318/results/0_50_sr_process.png 24-06-02\n15:55:25.077 - INFO: psnr: 11.972781672838632, ssim:0.3550945322716041, save\nto ./results/framework_val_240602_155318/results/0_51_sr_process.png 24-06-02\n15:55:27.439 - INFO: psnr: 8.848348026926196, ssim:0.29099794982191207, save\nto ./results/framework_val_240602_155318/results/0_52_sr_process.png 24-06-02\n15:55:29.819 - INFO: psnr: 11.89361509235951, ssim:0.625177129645841, save\nto ./results/framework_val_240602_155318/results/0_53_sr_process.png 24-06-02\n15:55:32.203 - INFO: psnr: 10.727827412601524, ssim:0.41174204160977435, save\nto ./results/framework_val_240602_155318/results/0_54_sr_process.png 24-06-02\n15:55:34.618 - INFO: psnr: 10.643689005483111, ssim:0.3996799237788872, save\nto ./results/framework_val_240602_155318/results/0_55_sr_process.png 24-06-02\n15:55:34.646 - INFO: avg_psnr: 9.960245023591444, avg_ssim:\n0.42099068853167015, avg_psnr2: 9.651148454236345, avg_ssim:\n0.3784654060753051, avg_infer_time: 1.3246665347706188\n",
+					"file": "/home/paul/Downloads/v6-result/framework_val_240602_155318_Dense/logs/val.log",
+					"file_size": 11378,
+					"file_write_time": 133618041529839836,
+					"settings":
+					{
+						"buffer_size": 11378,
+						"line_ending": "Unix"
+					},
+					"undo_stack":
+					[
+						[
+							12,
+							1,
+							"wrap_lines",
+							null,
+							"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"
+						],
+						[
+							13,
+							1,
+							"wrap_lines",
+							null,
+							"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"
+						]
+					]
+				},
+				{
+					"file": "/home/paul/Downloads/v6-result/framework_val_240602_155855_OHAZE/logs/val.log",
+					"settings":
+					{
+						"buffer_size": 9828,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/paul/Downloads/v6-result/framework_val_240602_160219_NH/logs/val.log",
+					"settings":
+					{
+						"buffer_size": 11377,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"contents": "---\nannotation-target: \"./arxivPapers/SourcePapers/Explicitly disentangling image content from translation and rotation with spatial-VAE.pdf]]\"\n---\n",
+					"file": "/home/paul/Documents/Obsidian/PaperReading/arxivPapers/Explicitly disentangling image content from translation and rotation with spatial-VAE.md",
+					"file_size": 119,
+					"file_write_time": 133620447803737731,
+					"settings":
+					{
+						"buffer_size": 148,
+						"line_ending": "Unix"
+					},
+					"undo_stack":
+					[
+						[
+							3,
+							1,
+							"insert",
+							{
+								"characters": ".pdf"
+							},
+							"BAAAAG8AAAAAAAAAcAAAAAAAAAAAAAAAcAAAAAAAAABxAAAAAAAAAAAAAABxAAAAAAAAAHIAAAAAAAAAAAAAAHIAAAAAAAAAcwAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAbwAAAAAAAABvAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							6,
+							1,
+							"left_delete",
+							null,
+							"AQAAABgAAAAAAAAAGAAAAAAAAAACAAAAW1s",
+							"AQAAAAAAAAABAAAAGAAAAAAAAAAaAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							7,
+							1,
+							"insert",
+							{
+								"characters": "./arxiv"
+							},
+							"BwAAABgAAAAAAAAAGQAAAAAAAAAAAAAAGQAAAAAAAAAaAAAAAAAAAAAAAAAaAAAAAAAAABsAAAAAAAAAAAAAABsAAAAAAAAAHAAAAAAAAAAAAAAAHAAAAAAAAAAdAAAAAAAAAAAAAAAdAAAAAAAAAB4AAAAAAAAAAAAAAB4AAAAAAAAAHwAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAGAAAAAAAAAAYAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							8,
+							1,
+							"insert",
+							{
+								"characters": "Papers"
+							},
+							"BgAAAB8AAAAAAAAAIAAAAAAAAAAAAAAAIAAAAAAAAAAhAAAAAAAAAAAAAAAhAAAAAAAAACIAAAAAAAAAAAAAACIAAAAAAAAAIwAAAAAAAAAAAAAAIwAAAAAAAAAkAAAAAAAAAAAAAAAkAAAAAAAAACUAAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAHwAAAAAAAAAfAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							9,
+							1,
+							"insert",
+							{
+								"characters": "/Soue"
+							},
+							"BQAAACUAAAAAAAAAJgAAAAAAAAAAAAAAJgAAAAAAAAAnAAAAAAAAAAAAAAAnAAAAAAAAACgAAAAAAAAAAAAAACgAAAAAAAAAKQAAAAAAAAAAAAAAKQAAAAAAAAAqAAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAJQAAAAAAAAAlAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							10,
+							1,
+							"left_delete",
+							null,
+							"AQAAACkAAAAAAAAAKQAAAAAAAAABAAAAZQ",
+							"AQAAAAAAAAABAAAAKgAAAAAAAAAqAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							11,
+							1,
+							"insert",
+							{
+								"characters": "rcePaper"
+							},
+							"CAAAACkAAAAAAAAAKgAAAAAAAAAAAAAAKgAAAAAAAAArAAAAAAAAAAAAAAArAAAAAAAAACwAAAAAAAAAAAAAACwAAAAAAAAALQAAAAAAAAAAAAAALQAAAAAAAAAuAAAAAAAAAAAAAAAuAAAAAAAAAC8AAAAAAAAAAAAAAC8AAAAAAAAAMAAAAAAAAAAAAAAAMAAAAAAAAAAxAAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAKQAAAAAAAAApAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							12,
+							1,
+							"insert",
+							{
+								"characters": "s/"
+							},
+							"AgAAADEAAAAAAAAAMgAAAAAAAAAAAAAAMgAAAAAAAAAzAAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAMQAAAAAAAAAxAAAAAAAAAAAAAAAAAPC/"
+						]
+					]
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/paul/Downloads/v6-result/framework_val_240602_160538_IHAZY/logs/val.log",
+				"/home/paul/Downloads/v4-test-result/framework_val_100w-syn-v4-O-Haze/logs/val.log",
+				"/home/paul/Downloads/v4-test-result/framework_val_Dense-Haze_125w_sota/logs/val.log",
+				"/home/paul/Downloads/v6-result/framework_val_240602_155318_Dense/logs/val.log",
+				"/home/paul/Documents/Github/AtomSegNet/model_structure/unet_sigmoid.py",
+				"/home/paul/Downloads/RESIDE-test-result/framework_val_240518_132729_RESIDE_150w_NH_HAZE/logs/val.log",
+				"/home/paul/Downloads/RESIDE-test-result/framework_val_240518_132355_RESIDE_150w_Dense_Haze/logs/val.log",
+				"/home/paul/Downloads/framework_val_240509_100958/logs/train.log",
+				"/home/paul/Downloads/framework_val_240508_101053/logs/train.log",
+				"/home/paul/Downloads/v4-test-result/framework_val_O-Haze_125w_sota/logs/val.log",
+				"/home/paul/Downloads/RESIDE-test-result/framework_val_240518_131736_RESIDE_150w_O_Haze/logs/val.log",
+				"/home/paul/Downloads/RESIDE-test-result/framework_val_240518_132206_RESIDE_150w_I_Hazy/logs/val.log",
+				"/home/paul/Downloads/framework_val_240508_101053/logs/val.log",
+				"/home/paul/Downloads/framework_val_100w-syn-v4-I-Haze/logs/val.log",
+				"/home/paul/Downloads/framework_val_240512_205554/logs/val.log",
+				"/home/paul/Downloads/Telegram Desktop/fft_demo.ipynb",
+				"/home/paul/.cache/go-build/README",
+				"/home/paul/.gtkrc-2.0",
+				"/home/paul/.zcompdump-baoyihui-5.9",
+				"/home/paul/Downloads/framework_val_240512_204358/logs/val.log",
+				"/home/paul/Downloads/framework_val_240512_204136/logs/val.log",
+				"/home/paul/Downloads/framework_val_240512_201202/logs/val.log",
+				"/home/paul/Downloads/hyprlandCrashReport628700.txt",
+				"/home/paul/.config/Typora/themes/pixyll.css",
+				"/home/paul/.config/Typora/themes/base.user.css",
+				"/usr/lib/qt6/qml/org/kde/kirigami/Dialog.qml",
+				"/home/paul/Desktop/Exported Items.bib",
+				"/home/paul/Desktop/Exported Items.txt"
+			],
+			"find":
+			{
+				"height": 0.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"scrollbar_highlights": true,
+				"show_context": true,
+				"use_buffer2": true,
+				"use_gitignore": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"groups":
+			[
+				{
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/home/paul/Downloads/v6-result/framework_val_240602_155318_Dense/logs/val.log",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 11378,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										11150,
+										11150
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 4140.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 3,
+							"stack_multiselect": false,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/paul/Downloads/v6-result/framework_val_240602_155855_OHAZE/logs/val.log",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 9828,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										9718,
+										9712
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 3861.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 2,
+							"stack_multiselect": false,
+							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"file": "/home/paul/Downloads/v6-result/framework_val_240602_160219_NH/logs/val.log",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 11377,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										11266,
+										11260
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 4261.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"stack_multiselect": false,
+							"type": "text"
+						},
+						{
+							"buffer": 3,
+							"file": "/home/paul/Documents/Obsidian/PaperReading/arxivPapers/Explicitly disentangling image content from translation and rotation with spatial-VAE.md",
+							"selected": true,
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 148,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										148,
+										148
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"stack_multiselect": false,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": false,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"position": "0,1,0,0,0,1932,59,2875,1068,3840,1080,0",
+			"project": "",
+			"replace":
+			{
+				"height": 0.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 1,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}

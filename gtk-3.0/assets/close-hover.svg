@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 50 50"
+ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" baseProfile="tiny">
+<title>Qt SVG Document</title>
+<desc>Generated with Qt</desc>
+<defs>
+</defs>
+<g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel" >
+
+<g fill="#050505" fill-opacity="1" stroke="none" transform="matrix(2.27273,0,0,2.27273,50,0)"
+font-family="LXGW WenKai" font-size="10" font-weight="700" font-style="normal" 
+opacity="0.00100002" >
+<rect x="-22" y="0" width="22" height="22"/>
+</g>
+
+<g fill="#2b4254" fill-opacity="1" stroke="none" transform="matrix(2.27273,0,0,2.27273,50,0)"
+font-family="LXGW WenKai" font-size="10" font-weight="700" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M-11,2 C-15.9705,2 -20,6.02944 -20,11 C-20,15.9706 -15.9705,20 -11,20 C-6.02952,20 -2,15.9706 -2,11 C-2,6.02944 -6.02952,2 -11,2 M-11,3.125 C-6.65081,3.125 -3.125,6.65075 -3.125,11 C-3.125,15.3492 -6.65081,18.875 -11,18.875 C-15.3492,18.875 -18.875,15.3492 -18.875,11 C-18.875,6.65075 -15.3492,3.125 -11,3.125 M-11,3.125"/>
+</g>
+
+<g fill="#bf616a" fill-opacity="1" stroke="none" transform="matrix(2.27273,0,0,2.27273,50,0)"
+font-family="LXGW WenKai" font-size="10" font-weight="700" font-style="normal" 
+opacity="0.7" >
+<path vector-effect="none" fill-rule="evenodd" d="M-18.875,10.9212 C-18.875,6.6155 -15.3492,3.125 -11,3.125 C-6.65076,3.125 -3.12501,6.6155 -3.12501,10.9212 L-3.12501,11.0787 C-3.12501,15.3845 -6.65076,18.875 -11,18.875 C-15.3492,18.875 -18.875,15.3845 -18.875,11.0787 L-18.875,10.9212"/>
+</g>
+
+<g fill="#ffffff" fill-opacity="1" stroke="none" transform="matrix(2.27273,0,0,2.27273,50,0)"
+font-family="LXGW WenKai" font-size="10" font-weight="700" font-style="normal" 
+opacity="0.799873" >
+<path vector-effect="none" fill-rule="nonzero" d="M-6.80412,13.7273 L-9.53178,10.9997 L-6.80498,8.27283 C-6.39938,7.86711 -6.39938,7.20963 -6.80498,6.80408 C-7.21066,6.3987 -7.86821,6.3987 -8.27331,6.80408 L-11.0003,9.53121 L-13.7274,6.80408 C-14.1327,6.3987 -14.7902,6.39853 -15.1959,6.80424 C-15.6013,7.20971 -15.6013,7.86727 -15.1957,8.27282 L-12.4687,10.9997 L-15.1959,13.7273 C-15.6014,14.1328 -15.6014,14.7904 -15.1959,15.1958 C-14.993,15.3986 -14.7274,15.5 -14.4616,15.5 C-14.1957,15.5 -13.9301,15.3986 -13.7272,15.1958 L-11,12.4682 L-8.27257,15.1958 C-8.06976,15.3986 -7.80407,15.5 -7.53839,15.5 C-7.2727,15.5 -7.00675,15.3986 -6.8042,15.1958 C-6.39861,14.7904 -6.39861,14.1328 -6.8042,13.7273 L-6.80412,13.7273"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="LXGW WenKai" font-size="10" font-weight="700" font-style="normal" 
+>
+</g>
+</g>
+</svg>

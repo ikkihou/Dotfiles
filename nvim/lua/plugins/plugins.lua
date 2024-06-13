@@ -2,22 +2,18 @@ local overrides = require("configs.overrides")
 local plugins = {
 	------------ ui -----------------
 	{
-		"swenv.nvim",
-		ft = { "python" },
-		dir = "~/Documents/coding/vscode/lua_space/swenv.nvim/",
-		enabled = false,
-	},
-	{
 		"linux-cultist/venv-selector.nvim",
-		dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
-		opts = {
-			-- Your options go here
-			-- name = "venv",
-			-- auto_refresh = false
-			anaconda_base_path = "/opt/anaconda",
-			anaconda_envs_path = "/home/paul/.conda/envs",
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"mfussenegger/nvim-dap",
+			"mfussenegger/nvim-dap-python", --optional
+			{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
 		},
-		-- event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+		lazy = true,
+		branch = "regexp", -- This is the regexp branch, use this for the new version
+		config = function()
+            require("configs.external.venv-selector")
+		end,
 		ft = { "python" },
 		keys = {
 			-- Keymap to open VenvSelector to pick a venv.
@@ -53,30 +49,28 @@ local plugins = {
 		enabled = true,
 		event = "VimEnter",
 		config = function()
-			-- dofile(vim.g.base46_cache .. "alpha")
 			require("configs.external.alpha")
 		end,
 	},
-	-- Standalone UI for nvim-LSP progress
 	{
 		"j-hui/fidget.nvim",
-		tag = "legacy",
 		event = "LspAttach",
-		config = function()
-			require("fidget").setup()
-		end,
+		opts = {
+			notification = {
+				window = {
+					winblend = 10, -- Background color opacity in the notification window
+				},
+			},
+		},
+		-- config = function()
+		-- 	-- require("fidget").setup()
+		-- 	require("configs.external.fidget")
+		-- end,
 	},
 	------------------ override plugin configs---------------------
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			-- format & linting
-			-- {
-			--     "nvimtools/none-ls.nvim",
-			--     config = function()
-			--         require("configs.none-ls")
-			--     end,
-			-- },
 			{ "williamboman/mason-lspconfig.nvim" },
 			{
 				"ray-x/lsp_signature.nvim",
@@ -116,11 +110,6 @@ local plugins = {
 		"nvim-tree/nvim-tree.lua",
 		opts = overrides.nvimtree,
 	},
-	-- {
-	--     "NvChad/nvterm",
-	--     enabled = false,
-	-- },
-
 	-----------------@telescope-------------------
 	{
 		"nvim-telescope/telescope.nvim",
@@ -226,18 +215,6 @@ local plugins = {
 			})
 		end,
 	},
-	-- {
-	--   "kdheepak/lazygit.nvim",
-	--   -- optional for floating window border decoration
-	--   cmd = { "LazyGit" },
-	--   dependencies = {
-	--     "nvim-telescope/telescope.nvim",
-	--     "nvim-lua/plenary.nvim",
-	--   },
-	--   config = function()
-	--     require("telescope").load_extension "lazygit"
-	--   end,
-	-- },
 	{
 		"folke/todo-comments.nvim",
 		event = "LspAttach",
@@ -397,13 +374,6 @@ local plugins = {
 			require("configs.external.notify")
 		end,
 	},
-	-- {
-	--   "AckslD/swenv.nvim",
-	--   ft = "python",
-	--   config = function()
-	--     require "configs.external.swenv"
-	--   end,
-	-- },
 	-------------- lsp ---------------
 	{
 		"nvimdev/lspsaga.nvim",
@@ -424,7 +394,7 @@ local plugins = {
 	},
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^3", -- Recommended
+		version = "^4", -- Recommended
 		ft = { "rust" },
 	},
 }
