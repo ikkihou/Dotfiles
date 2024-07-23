@@ -1,3 +1,4 @@
+local sbar = require("sketchybar")
 local colors = require("colors")
 local icons = require("icons")
 local settings = require("settings")
@@ -27,7 +28,7 @@ for i = 1, 10, 1 do
 		padding_left = 1,
 		background = {
 			-- color = colors.bg1,
-			color = colors.with_alpha(colors.black, 0.8),
+			color = colors.with_alpha(colors.black, 0.7),
 			border_width = 1,
 			height = 26,
 			border_color = colors.transparent,

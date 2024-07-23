@@ -1,4 +1,5 @@
 local colors = require("colors")
+local sbar = require("sketchybar")
 
 -- Equivalent to the --bar domain
 sbar.bar({

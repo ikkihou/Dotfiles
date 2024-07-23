@@ -1,6 +1,7 @@
 local colors = require("colors")
 local icons = require("icons")
 local settings = require("settings")
+local sbar = require("sketchybar")
 
 local menu_watcher = sbar.add("item", {
 	drawing = false,

@@ -1,5 +1,6 @@
 local settings = require("settings")
 local colors = require("colors")
+local sbar = require("sketchybar")
 
 -- Equivalent to the --default domain
 sbar.default({

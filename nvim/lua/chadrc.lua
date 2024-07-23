@@ -5,9 +5,9 @@ local highlights = require("highlights")
 -- highlights.get_alpha_hl()
 
 M.ui = {
-	theme = "pastelDark",
+	theme = "rosepine",
 
-	transparency = true,
+	transparency = false,
 
 	-- extended_integrations = { "alpha" },
 	hl_override = highlights.override,
@@ -47,6 +47,10 @@ M.ui = {
 	--   load_on_startup = false,
 	--
 	-- },
+}
+
+M.term = {
+	sizes = { vsp = 0.4 },
 }
 
 return M

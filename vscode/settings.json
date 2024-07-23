@@ -1,10 +1,7 @@
 {
 	"RainbowBrackets.depreciation-notice": false,
-	"terminal.integrated.inheritEnv": false,
-	"editor.fontFamily": "monospace, JetBrainsMonoNL Nerd Font, Menlo, Monaco, 'Courier New', 'LXGW WenKai'",
-	"terminal.integrated.fontSize": 16,
+	"editor.fontFamily": "Menlo, monospace, JetBrainsMonoNL Nerd Font, Monaco, 'Courier New', 'LXGW WenKai'",
 	"editor.fontWeight": "normal",
-	"terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font, FiraCode Nerd Font, MesloLGM Nerd Font, 'LXGW WenKai'",
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.black-formatter"
 	},
@@ -231,7 +228,6 @@
 	"git.openRepositoryInParentFolders": "never",
 	"editor.cursorSmoothCaretAnimation": "on",
 	"editor.smoothScrolling": true,
-	"terminal.integrated.smoothScrolling": true,
 	"workbench.list.smoothScrolling": true,
 	"editor.accessibilitySupport": "off",
 	"clangd.path": "/Users/baoyihui/Library/Application Support/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/18.1.3/clangd_18.1.3/bin/clangd",
@@ -275,7 +271,6 @@
 	},
 	"c-cpp-compile-run.c-compiler": "",
 	"c-cpp-compile-run.cpp-compiler": "",
-	"terminal.integrated.enableMultiLinePasteWarning": false,
 	"jupyter.widgetScriptSources": [
 		"jsdelivr.com",
 		"unpkg.com"
@@ -287,7 +282,6 @@
 	"editor.fontVariations": true,
 	"vsicons.presets.hideExplorerArrows": true,
 	"material-icon-theme.hidesExplorerArrows": false,
-	"workbench.colorTheme": "Catppuccin Macchiato",
 	"gruvboxMaterial.darkCursor": "red",
 	"gruvboxMaterial.darkSelection": "yellow",
 	"gruvboxMaterial.italicKeywords": true,
@@ -299,7 +293,7 @@
 	"git.confirmSync": false,
 	"everforest.highContrast": true,
 	"everforest.italicKeywords": true,
-	"everforest.darkWorkbench": "high-contrast",
+	"everforest.darkWorkbench": "flat",
 	"gitProjectManager.displayProjectPath": true,
 	"projectManager.git.baseFolders": [
 		"/Users/baoyihui/Documents/GitHub/",
@@ -473,7 +467,6 @@
 	"dev.containers.defaultFeatures": {},
 	"cmake.showOptionsMovedNotification": false,
 	"vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf'",
-	"workbench.iconTheme": "catppuccin-macchiato",
 	"C_Cpp.intelliSenseEngine": "disabled",
 	"animations.Install-Method": "Apc Customize UI++",
 	"update.mode": "manual",
@@ -486,10 +479,29 @@
 	"http.proxy": "http://127.0.0.1:7890",
 	"https.proxy": "https://127.0.0.1:7890",
 	"http.proxyStrictSSL": false,
-	"terminal.integrated.defaultProfile.osx": "fish (2)",
 	"vsicons.dontShowNewVersionMessage": true,
 	"scm.inputFontFamily": "",
 	"chat.editor.fontFamily": "",
+	"everforest.darkCursor": "orange",
+	"everforest.diagnosticTextBackgroundOpacity": "12.5%",
+	"gitlens.currentLine.fontFamily": "'LXGW Wenkai'",
+	"gitlens.currentLine.fontStyle": "",
+	"gitlens.blame.fontFamily": "'LXGW Wenkai'",
+	"cmake.pinnedCommands": [
+		"workbench.action.tasks.configureTaskRunner",
+		"workbench.action.tasks.runTask"
+	],
+	"leetcode.hint.configWebviewMarkdown": false,
+	"leetcode.hint.commentDescription": false,
+	"workbench.productIconTheme": "adwaita",
+	"leetcode.nodePath": "/opt/homebrew/bin/node",
+	"leetcode.hint.commandShortcut": false,
+	"workbench.colorTheme": "Catppuccin Mocha",
+	"everforest.darkContrast": "hard",
+	"window.commandCenter": false,
+	"workbench.iconTheme": "catppuccin-mocha",
+	"python.condaPath": "/Users/baoyihui/miniconda3/condabin/conda",
+	"terminal.integrated.defaultProfile.osx": "fish (2)",
 	"terminal.integrated.profiles.osx": {
 		"bash": {
 			"path": "bash",
@@ -522,19 +534,12 @@
 			"path": "/opt/homebrew/bin/fish"
 		}
 	},
-	"everforest.darkContrast": "soft",
-	"everforest.darkCursor": "orange",
-	"everforest.diagnosticTextBackgroundOpacity": "12.5%",
-	"gitlens.currentLine.fontFamily": "'LXGW Wenkai'",
-	"gitlens.currentLine.fontStyle": "",
-	"gitlens.blame.fontFamily": "'LXGW Wenkai'",
-	"cmake.pinnedCommands": [
-		"workbench.action.tasks.configureTaskRunner",
-		"workbench.action.tasks.runTask"
-	],
-	"leetcode.hint.configWebviewMarkdown": false,
-	"leetcode.hint.commentDescription": false,
-	"workbench.productIconTheme": "adwaita",
-	"leetcode.nodePath": "/opt/homebrew/bin/node",
-	"leetcode.hint.commandShortcut": false,
+	"terminal.integrated.smoothScrolling": true,
+	"terminal.integrated.fontSize": 16,
+	"terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font, FiraCode Nerd Font, MesloLGM Nerd Font, 'LXGW WenKai'",
+	"window.titleBarStyle": "custom",
+	"terminal.integrated.automationProfile.osx": {},
+	"terminal.integrated.tabs.defaultColor": "terminal.ansiMagenta",
+	"terminal.sourceControlRepositoriesKind": "external",
+	"terminal.integrated.inheritEnv": false,
 }

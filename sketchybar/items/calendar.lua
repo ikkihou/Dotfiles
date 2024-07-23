@@ -1,5 +1,6 @@
 local settings = require("settings")
 local colors = require("colors")
+local sbar = require("sketchybar")
 
 -- Padding item required because of bracket
 sbar.add("item", { position = "right", width = settings.group_paddings })

@@ -1,5 +1,6 @@
 local colors = require("colors")
 local settings = require("settings")
+local sbar = require("sketchybar")
 
 local function turn_dark_mode_on()
 	sbar.exec("osascript -e 'tell app \"System Events\" to tell appearance preferences to set dark mode to true'")

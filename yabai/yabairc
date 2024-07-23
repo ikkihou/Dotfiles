@@ -10,7 +10,7 @@ yabai -m config external_bar main:36:0 \
 	window_opacity on \
 	window_opacity_duration 0.2 \
 	active_window_opacity 1.0 \
-	normal_window_opacity 0.8 \
+	normal_window_opacity 1.0 \
 	window_animation_duration 0.5 \
 	window_animation_easing ease_out_quint
 
@@ -46,7 +46,9 @@ yabai -m rule --add app="^kitty$" manage=off
 yabai -m rule --add app="^Arc$" title="^byh|General|Profiles|Max|Links|Shortcuts|Icon|Advanced$" manage=off
 yabai -m rule --add app="^Zotero$" title="^Add/Edit Citation|Add-ons Manager|Zotero Settings$" manage=off
 yabai -m rule --add app="^GIMP$" title=".*" manage=off
+yabai -m rule --add app="^Inkscape$" title=".*" manage=off
 yabai -m rule --add app="^Raycast$" title=".*" manage=off
+yabai -m rule --add app="^Clash Verge$" title=".*" manage=off
 
 # jankyborders
 # borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &

@@ -116,7 +116,7 @@ M.telescope = {
 M.lspsaga = {
 	n = {
 		["gn"] = { "<cmd> Lspsaga rename <CR>", "Rename" },
-		["<leader>."] = { "<cmd>Lspsaga code_action<CR>", "󰅱 Code Action" },
+		["<leader>."] = { "<cmd>Lspsaga code_action<CR>", "Code Action" },
 		["gh"] = {
 			"<cmd>Lspsaga finder ref+def<cr>",
 			"Lspsaga Lsp_Finder",
@@ -133,11 +133,11 @@ M.lspsaga = {
 			"<Cmd>Lspsaga hover_doc<cr>",
 			"Hover lsp",
 		},
-		["<leader>o"] = { "<cmd>Lspsaga outline<CR>", " Show Outline" },
+		["<leader>o"] = { "<cmd>Lspsaga outline<CR>", "Show Outline" },
 		--  LSP
-		["gr"] = { "<cmd>Telescope lsp_references<CR>", " Lsp references" },
-		["[d"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", " Prev Diagnostic" },
-		["]d"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", " Next Diagnostic" },
+		["gr"] = { "<cmd>Telescope lsp_references<CR>", "Lsp references" },
+		["[d"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostic" },
+		["]d"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
 		["<leader>lq"] = {
 			function()
 				vim.diagnostic.setloclist()
@@ -165,3 +165,6 @@ end
 --
 map("n", "j", "<Plug>(accelerated_jk_gj)", { desc = "accelerated up movement" })
 map("n", "k", "<Plug>(accelerated_jk_gk)", { desc = "accelerated down movement" })
+map({ "n", "t" }, "<leader>tf", function()
+	require("nvchad.term").toggle({ pos = "float", id = "floatTerm" })
+end, { desc = "Terminal Toggle Floating term" })

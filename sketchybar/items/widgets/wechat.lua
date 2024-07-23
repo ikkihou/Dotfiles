@@ -1,5 +1,6 @@
 local colors = require("colors")
 local settings = require("settings")
+local sbar = require("sketchybar")
 
 local wechat = sbar.add("item", "WeChat", {
 	position = "right",

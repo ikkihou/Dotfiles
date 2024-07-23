@@ -1,5 +1,6 @@
 local colors = require("colors")
 local settings = require("settings")
+local sbar = require("sketchybar")
 
 local front_app = sbar.add("item", "front_app", {
 	display = "active",
