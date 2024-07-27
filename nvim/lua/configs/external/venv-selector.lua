@@ -1,10 +1,20 @@
-local status_ok, venv_sel = pcall(require, "venv-selector")
+local present, venv = pcall(require, "venv-selector")
 
-if not status_ok then
+if not present then
 	return
 end
 
-venv_sel.setup({
-	anaconda_base_path = "/opt/miniconda3",
-	anaconda_envs_path = "/home/paul/.conda/envs",
+venv.setup({
+	settings = {
+		search = {
+			anaconda_base = {
+				command = "fd '/python$' /Users/baoyihui/miniconda3/bin --full-path --color never -E /proc",
+				type = "anaconda",
+			},
+			anaconda_envs = {
+				command = "fd '/bin/python$' /Users/baoyihui/miniconda3/envs/ --full-path --color never -E /proc",
+				type = "anaconda",
+			},
+		},
+	},
 })

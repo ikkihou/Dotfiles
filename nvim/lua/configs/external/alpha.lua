@@ -31,7 +31,7 @@ dashboard.section.header.val = {
 	[[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⢿⣿⣿⠂⠀⠀⠀⠀⠀⢀⣽⣿⣿⣿⣿⣿⣿⣿⣍⠛⠿⣿⣿⣿⣿⣿⣿]],
 }
 
-vim.api.nvim_set_hl(0, "AlphaHeader", { fg = colors.green  })
+vim.api.nvim_set_hl(0, "AlphaHeader", { fg = colors.green })
 dashboard.section.header.opts.hl = "AlphaHeader"
 
 local function button(sc, txt, leader_txt, keybind, keybind_opts)

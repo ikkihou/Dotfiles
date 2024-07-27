@@ -1,12 +1,22 @@
+local status_ok, conform = pcall(require, "conform")
+
+if not status_ok then
+	return
+end
+
 local options = {
 	lsp_fallback = true,
 
 	formatters_by_ft = {
 		lua = { "stylua" },
 
-		-- javascript = { "prettier" },
-		-- css = { "prettier" },
-		-- html = { "prettier" },
+		javascript = { "prettier" },
+
+		typescipt = { "prettier" },
+
+		css = { "prettier" },
+
+		html = { "prettier" },
 
 		sh = { "shfmt" },
 
@@ -29,4 +39,6 @@ local options = {
 	},
 }
 
-require("conform").setup(options)
+conform.setup(options)
+
+-- require("conform").setup(options)

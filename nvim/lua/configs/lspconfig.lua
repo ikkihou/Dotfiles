@@ -7,7 +7,7 @@ local lsp_config = require("lspconfig")
 local util = require("lspconfig/util")
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "pyright", "clangd", "bashls", "cmake", "jsonls", "tsserver", "texlab", "gopls"}
+local servers = { "pyright", "clangd", "bashls", "cmake", "jsonls", "tsserver", "texlab", "gopls" }
 
 for _, lsp in ipairs(servers) do
 	lsp_config[lsp].setup({
@@ -18,47 +18,37 @@ for _, lsp in ipairs(servers) do
 end
 
 ---------------- cmake ----------------
-lsp_config.cmake.setup({
-	on_attach = function(client, bufnr)
-		require("lsp_signature").on_attach(bufnr, {
-			bind = true,
-			handler_opts = {
-				border = "rounded",
-			},
-		})
-	end,
-})
+-- lsp_config.cmake.setup({
+-- 	on_attach = function(client, bufnr)
+-- 		require("lsp_signature").on_attach(bufnr, {
+-- 			bind = true,
+-- 			handler_opts = {
+-- 				border = "rounded",
+-- 			},
+-- 		})
+-- 	end,
+-- })
 
 ---------------- rust ----------------
--- lsp_config.rust_analyzer.setup({
--- 	-- on_attach = function(client, bufnr)
--- 	-- 	require("lsp_signature").on_attach(bufnr, {
--- 	-- 		bind = true,
--- 	-- 		handler_opts = {
--- 	-- 			border = "rounded",
--- 	-- 		},
--- 	-- 	})
--- 	-- end,
--- 	filetypes = { "rust" },
--- 	root_dir = util.root_pattern("Cargo.toml"),
--- 	settings = {
--- 		["rust-analyzer"] = {
--- 			checkOnSave = true,
--- 			diagnostics = {
--- 				enable = true,
--- 				enableExperimental = true,
--- 			},
--- 			cargo = {
--- 				allFeatures = true,
--- 			},
--- 			inlayHints = {
--- 				chainingHints = true,
--- 				parameterHints = true,
--- 				typeHints = true,
--- 			},
--- 		},
--- 	},
--- })
+-- lsp_config.rust_analyzer.setup {
+--     on_attach = function(client, bufnr)
+--         require("lsp_signature").on_attach(bufnr, {
+--             bind = true,
+--             handler_opts = {
+--                 border = "rounded",
+--             },
+--         })
+--     end,
+--     filetypes = { "rust" },
+--     root_dir = util.root_pattern "Cargo.toml",
+--     settings = {
+--         ["rust-analyzer"] = {
+--             cargo = {
+--                 allFeatures = true,
+--             },
+--         },
+--     },
+-- }
 
 ---------------- go ----------------
 lsp_config.gopls.setup({
@@ -127,17 +117,18 @@ lsp_config.pyright.setup({
 	end,
 	-- disableOrganiseImports = true,
 	filetype = { "python" },
-	settings = {
-	    python = {
-	        analysis = {
-	            autoSearchPaths = true,
-	            diagnosticMode = "off",
-	            typeCheckingMode = "off",
-	            -- useLibraryCodeForTypes = true,
-	        },
-	    },
-	},
 	single_file_support = true,
+	-- settings = {
+	--     python = {
+	--         analysis = {
+	--             autoSearchPaths = true,
+	--             diagnosticMode = "off",
+	--             typeCheckingMode = "off",
+	--             -- useLibraryCodeForTypes = true,
+	--         },
+	--     },
+	-- },
+	-- single_file_support = true,
 	cmd = {
 		"delance-langserver",
 		"--stdio",

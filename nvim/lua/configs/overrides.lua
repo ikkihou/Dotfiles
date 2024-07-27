@@ -4,10 +4,6 @@ local icons = {
 	type = require("configs.utils.icons").get("type"),
 	cmp = require("configs.utils.icons").get("cmp"),
 }
-local t = function(str)
-	return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-local cmp = require("cmp")
 
 ------------------ cmp -------------------
 M.cmp = {
@@ -50,36 +46,6 @@ M.cmp = {
 
 			return vim_item
 		end,
-	},
-	mapping = {
-		["<C-j>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			else
-				fallback()
-			end
-		end, { "i", "s" }),
-		["<C-k>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_prev_item()
-			else
-				fallback()
-			end
-		end, { "i", "s" }),
-		-- ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-		["<C-e>"] = cmp.mapping.close(),
-		["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.confirm({
-					select = true,
-					behavior = cmp.ConfirmBehavior.insert,
-				})
-			elseif require("luasnip").expand_or_locally_jumpable() then
-				vim.fn.feedkeys(t("<Plug>luasnip-expand-or-jump"))
-			else
-				fallback()
-			end
-		end, { "i", "s" }),
 	},
 }
 ------------------ indent-blankline ---------------------
@@ -381,16 +347,16 @@ M.telescope = {
 		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 		color_devicons = true,
 		set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
-		file_sorter = require("telescope.sorters").get_fuzzy_file,
-		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-		qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-		-- Developer configurations: Not meant for general override
-		buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
-		mappings = {
-			n = { ["q"] = require("telescope.actions").close },
-		},
+		-- file_sorter = require("telescope.sorters").get_fuzzy_file,
+		-- generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+		-- file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+		-- grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+		-- qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+		-- -- Developer configurations: Not meant for general override
+		-- buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+		-- mappings = {
+		-- 	n = { ["q"] = require("telescope.actions").close },
+		-- },
 	},
 	extensions_list = {
 		"themes",

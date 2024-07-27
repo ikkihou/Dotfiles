@@ -25,6 +25,23 @@ local M = {}
 --
 
 ---------------------------------------------------------------------------
+-- M.disabled = {
+-- 	n = {
+-- 		["<leader>lq"] = "",
+-- 		-- ["gd"] = "",
+-- 		["K"] = "",
+-- 		["<leader>ca"] = "",
+-- 		-- ["<tab>"] = "",
+-- 		-- ["<S-tab>"] = "",
+-- 		-- ["<leader>x"] = "",
+-- 		["<leader>b"] = "",
+-- 		["gr"] = "",
+-- 		["<leader>th"] = "",
+-- 		["<leader>/"] = "",
+-- 	},
+-- }
+
+---------------------------------------------------------------------------
 M.dap = {
 	n = {
 		["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>", "DapToggleBreakpoint" },
@@ -45,12 +62,21 @@ M.dap_python = {
 
 M.general = {
 	n = {
+		-- ["<leader>t"] = { "<cmd> ToggleTerm direction=horizontal <CR>", "Toggle terminal horizontally" },
+		-- ["<leader>/"] = { "<cmd> ToggleTerm direction=vertical <CR>", "Toggle terminal vertically" },
+		-- [";"] = { ":", "enter command mode", opts = { nowait = true } },
 		["<C-]>"] = { "<cmd> vertical resize -4 <CR>", "window: Resize -4 vertically" },
 		["<C-[>"] = { "<cmd> vertical resize +4 <CR>", "window: Resize +4 vertically" },
 		["<C-;>"] = { "<cmd> resize -2 <CR>", "window: Resize -2 horizontally" },
 		["<C-'>"] = { "<cmd> resize +2 <CR>", "window: Resize +2 horizontally" },
 		["<leader>w"] = { ":w<CR>", "save buffer" },
 		["<leader>fn"] = { "<cmd> enew <CR>", "Create new file" },
+		-- ["<leader>se"] = {
+		--   function()
+		--     require("swenv.api").pick_venv_2()
+		--   end,
+		--   "pick conda venv",
+		-- },
 	},
 
 	t = {
@@ -87,18 +113,10 @@ M.telescope = {
 	},
 }
 
--- more keybinds!
-M.accelerated_jk = {
-	n = {
-		k = { "<Plug>(accelerated_jk_gk)", "accelerated up movement" },
-		j = { "<Plug>(accelerated_jk_gj)", "accelerated down movement" },
-	},
-}
-
 M.lspsaga = {
 	n = {
 		["gn"] = { "<cmd> Lspsaga rename <CR>", "Rename" },
-		["<leader>."] = { "<cmd>Lspsaga code_action<CR>", "󰅱 Code Action" },
+		["<leader>."] = { "<cmd>Lspsaga code_action<CR>", "Code Action" },
 		["gh"] = {
 			"<cmd>Lspsaga finder ref+def<cr>",
 			"Lspsaga Lsp_Finder",
@@ -115,11 +133,11 @@ M.lspsaga = {
 			"<Cmd>Lspsaga hover_doc<cr>",
 			"Hover lsp",
 		},
-		["<leader>o"] = { "<cmd>Lspsaga outline<CR>", " Show Outline" },
+		["<leader>o"] = { "<cmd>Lspsaga outline<CR>", "Show Outline" },
 		--  LSP
-		["gr"] = { "<cmd>Telescope lsp_references<CR>", " Lsp references" },
-		["[d"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", " Prev Diagnostic" },
-		["]d"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", " Next Diagnostic" },
+		["gr"] = { "<cmd>Telescope lsp_references<CR>", "Lsp references" },
+		["[d"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostic" },
+		["]d"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
 		["<leader>lq"] = {
 			function()
 				vim.diagnostic.setloclist()
@@ -136,3 +154,17 @@ for _, maps in pairs(M) do
 		end
 	end
 end
+
+-- more keybinds!
+-- M.accelerated_jk = {
+-- 	n = {
+-- 		k = { "<Plug>(accelerated_jk_gk)", "accelerated up movement" },
+-- 		j = { "<Plug>(accelerated_jk_gj)", "accelerated down movement" },
+-- 	},
+-- }
+--
+map("n", "j", "<Plug>(accelerated_jk_gj)", { desc = "accelerated up movement" })
+map("n", "k", "<Plug>(accelerated_jk_gk)", { desc = "accelerated down movement" })
+map({ "n", "t" }, "<leader>tf", function()
+	require("nvchad.term").toggle({ pos = "float", id = "floatTerm" })
+end, { desc = "Terminal Toggle Floating term" })
