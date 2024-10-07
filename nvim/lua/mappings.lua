@@ -4,6 +4,8 @@ require("nvchad.mappings")
 
 local map = vim.keymap.set
 
+map({ "i", "n" }, "<S-l>", "$", { desc = "Move cursor to end of the line" })
+map({ "i", "n" }, "<S-h>", "^", { desc = "Move cursor to beginning of the line" })
 map("n", ";", ":", { desc = "CMD enter command mode" })
 
 map("n", "<leader>fm", function()
@@ -62,21 +64,12 @@ M.dap_python = {
 
 M.general = {
 	n = {
-		-- ["<leader>t"] = { "<cmd> ToggleTerm direction=horizontal <CR>", "Toggle terminal horizontally" },
-		-- ["<leader>/"] = { "<cmd> ToggleTerm direction=vertical <CR>", "Toggle terminal vertically" },
-		-- [";"] = { ":", "enter command mode", opts = { nowait = true } },
 		["<C-]>"] = { "<cmd> vertical resize -4 <CR>", "window: Resize -4 vertically" },
 		["<C-[>"] = { "<cmd> vertical resize +4 <CR>", "window: Resize +4 vertically" },
 		["<C-;>"] = { "<cmd> resize -2 <CR>", "window: Resize -2 horizontally" },
 		["<C-'>"] = { "<cmd> resize +2 <CR>", "window: Resize +2 horizontally" },
 		["<leader>w"] = { ":w<CR>", "save buffer" },
 		["<leader>fn"] = { "<cmd> enew <CR>", "Create new file" },
-		-- ["<leader>se"] = {
-		--   function()
-		--     require("swenv.api").pick_venv_2()
-		--   end,
-		--   "pick conda venv",
-		-- },
 	},
 
 	t = {
@@ -130,14 +123,14 @@ M.lspsaga = {
 			"Peek definition",
 		},
 		["<leader>k"] = {
-			"<Cmd>Lspsaga hover_doc<cr>",
+			"<Cmd>lua vim.lsp.buf.hover()<cr>",
 			"Hover lsp",
 		},
 		["<leader>o"] = { "<cmd>Lspsaga outline<CR>", "Show Outline" },
 		--  LSP
 		["gr"] = { "<cmd>Telescope lsp_references<CR>", "Lsp references" },
-		["[d"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostic" },
-		["]d"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
+		-- ["[d"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostic" },
+		-- ["]d"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
 		["<leader>lq"] = {
 			function()
 				vim.diagnostic.setloclist()
@@ -168,3 +161,17 @@ map("n", "k", "<Plug>(accelerated_jk_gk)", { desc = "accelerated down movement" 
 map({ "n", "t" }, "<leader>tf", function()
 	require("nvchad.term").toggle({ pos = "float", id = "floatTerm" })
 end, { desc = "Terminal Toggle Floating term" })
+
+---- menu ----
+-- Keyboard users
+vim.keymap.set("n", "<C-t>", function()
+	require("menu").open("default")
+end, {})
+
+-- mouse users + nvimtree users!
+vim.keymap.set("n", "<RightMouse>", function()
+	vim.cmd.exec('"normal! \\<RightMouse>"')
+
+	local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
+	require("menu").open(options, { mouse = true })
+end, {})

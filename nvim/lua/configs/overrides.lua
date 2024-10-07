@@ -48,43 +48,6 @@ M.cmp = {
 		end,
 	},
 }
------------------- indent-blankline ---------------------
-M.blankline = {
-	-- char = "│",
-	-- context_char = "┃",
-	-- space_char_blankline = " ",
-	-- show_first_indent_level = true,
-	-- show_current_context = true,
-	-- show_current_context_start = true,
-	-- show_trailing_blankline_indent = false,
-	-- filetype_exclude = {
-	--     "",
-	--     "qf",
-	--     "tmol",
-	--     "sagacodeaction",
-	--     "dashboard",
-	--     "dotooagenda",
-	--     "flutterToolsOutline",
-	--     "fugitive",
-	--     "git",
-	--     "gitcommit",
-	--     "help",
-	--     "json",
-	--     "log",
-	--     "markdown",
-	--     "NvimTree",
-	--     "peekaboo",
-	--     "startify",
-	--     "TelescopePrompt",
-	--     "todoist",
-	--     "txt",
-	--     "undotree",
-	--     "vimwiki",
-	--     "vista",
-	-- },
-	-- buftype_exclude = { "terminal", "nofile" },
-	-- use_treesitter = true,
-}
 
 ------------------ treesitter ---------------------
 M.treesitter = {
@@ -130,46 +93,6 @@ M.treesitter = {
 	},
 }
 -------------------- mason --------------------------
-M.mason = {
-	ensure_installed = {
-		--bash
-		"bash-langage-server",
-		--rust
-		"rust-analyzer",
-		-- go
-		"gopls",
-		"gofumpt",
-		"golangci_lint",
-		-- json
-		-- "jq",
-		"json-lsp",
-		-- "jsonlint",
-		-- bash
-		"shellcheck",
-		"shfmt",
-		-- lua stuff
-		"lua-language-server",
-		"stylua",
-		"selene",
-		-- python staff
-		"debugpy",
-		-- "pyright",
-		"black",
-		-- "ruff",
-		-- c/cpp stuff
-		"clangd",
-		"clang-format",
-		"cmake-language-server",
-		"cmakelang",
-		"cmakelint",
-		"codelldb",
-		-- latex stuff
-		"texlab",
-		-- "latexindent",
-		-- complementary
-		"codespell",
-	},
-}
 
 ------------------- nvimtree ----------------------
 M.nvimtree = {

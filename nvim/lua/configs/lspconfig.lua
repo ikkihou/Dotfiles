@@ -7,7 +7,7 @@ local lsp_config = require("lspconfig")
 local util = require("lspconfig/util")
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "pyright", "clangd", "bashls", "cmake", "jsonls", "tsserver", "texlab", "gopls" }
+local servers = { "pyright", "clangd", "bashls", "cmake", "jsonls", "ts_ls", "texlab", "gopls" }
 
 for _, lsp in ipairs(servers) do
 	lsp_config[lsp].setup({
@@ -88,7 +88,7 @@ lsp_config.texlab.setup({
 })
 
 ------------ deno ----------------
-lsp_config.tsserver.setup({
+lsp_config.ts_ls.setup({
 	on_attach = function(client, bufnr)
 		require("lsp_signature").on_attach({
 			bind = true,
@@ -201,7 +201,7 @@ end
 
 lsp_config.clangd.setup({
 	on_attach = function(client, bufnr)
-		client.server_capabilities.signatureHelpProvider = false
+		-- client.server_capabilities.signatureHelpProvider = false
 		require("lsp_signature").on_attach({
 			bind = true,
 			handler_opts = {
@@ -209,8 +209,7 @@ lsp_config.clangd.setup({
 			},
 		}, bufnr)
 	end,
-	capabilities = vim.tbl_deep_extend("keep", { offsetEncoding = "utf-8" }, capabilities),
-	filetype = { "c", "cpp" },
+	capabilities = vim.tbl_deep_extend("keep", { offsetEncoding = { "utf-8" } }, capabilities),
 	single_file_support = true,
 	cmd = {
 		"clangd",

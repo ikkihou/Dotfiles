@@ -40,5 +40,3 @@ local options = {
 }
 
 conform.setup(options)
-
--- require("conform").setup(options)

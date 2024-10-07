@@ -1,16 +1,16 @@
 local M = {}
 
--- Path to overriding theme and highlights files
-local highlights = require("highlights")
--- highlights.get_alpha_hl()
+M.base46 = {
+	theme = "onenord", -- default theme
+	hl_add = {},
+	hl_override = {},
+	integrations = {},
+	changed_themes = {},
+	transparency = false,
+	theme_toggle = { "onenord", "one_light" },
+}
 
 M.ui = {
-	theme = "rosepine",
-
-	transparency = false,
-
-	-- extended_integrations = { "alpha" },
-	hl_override = highlights.override,
 
 	-- cmp themeing
 	cmp = {
@@ -30,27 +30,62 @@ M.ui = {
 	},
 
 	-- tabufline
-	tabufline = {
-		-- overriden_modules = function()
-		--     local modules = require "nvchad_ui.tabufline.modules"
-		--     return {
-		--         buttons = function()
-		--             return modules.buttons() .. "close "
-		--         end,
-		--         -- or buttons = "" , this will hide the buttons
-		--     }
-		-- end,
-	},
+	-- tabufline = {
+	-- 	enabled = true,
+	-- 	lazyload = true,
+	-- 	order = { "treeOffset", "buffers", "tabs", "btns" },
+	-- 	modules = nil,
+	-- },
 
 	-- nvdash
-	-- nvdash = {
-	--   load_on_startup = false,
-	--
-	-- },
+	nvdash = {
+		load_on_startup = false,
+	},
 }
 
 M.term = {
 	sizes = { vsp = 0.4 },
+}
+
+M.mason = {
+	pkgs = {
+		--bash
+		"bash-language-server",
+		--rust
+		"rust-analyzer",
+		-- go
+		"gopls",
+		"gofumpt",
+		-- "golangci_lint",
+		-- json
+		-- "jq",
+		"json-lsp",
+		-- "jsonlint",
+		-- bash
+		"shellcheck",
+		"shfmt",
+		-- lua stuff
+		"lua-language-server",
+		"stylua",
+		"selene",
+		-- python staff
+		"debugpy",
+		-- "pyright",
+		"black",
+		-- "ruff",
+		-- c/cpp stuff
+		"clangd",
+		"clang-format",
+		"cmake-language-server",
+		"cmakelang",
+		"cmakelint",
+		"codelldb",
+		-- latex stuff
+		"texlab",
+		-- "latexindent",
+		-- complementary
+		"codespell",
+	},
 }
 
 return M

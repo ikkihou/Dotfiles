@@ -1,18 +1,26 @@
 local overrides = require("configs.overrides")
 local leet_arg = "leetcode.nvim"
-local icons = {
-	kind = require("configs.utils.icons").get("kind"),
-	type = require("configs.utils.icons").get("type"),
-	cmp = require("configs.utils.icons").get("cmp"),
-}
+-- local icons = {
+-- 	kind = require("configs.utils.icons").get("kind"),
+-- 	type = require("configs.utils.icons").get("type"),
+-- 	cmp = require("configs.utils.icons").get("cmp"),
+-- }
 
 return {
-	-- {
-	-- 	"nvim-tree/nvim-tree.lua",
-	-- 	opts = {
-	-- 		git = { enable = true },
-	-- 	},
-	-- },
+	"nvim-lua/plenary.nvim",
+	{
+		"nvchad/ui",
+		config = function()
+			require("nvchad")
+		end,
+	},
+	{
+		"nvchad/base46",
+		lazy = true,
+		build = function()
+			require("base46").load_all_highlights()
+		end,
+	},
 	{
 		"stevearc/conform.nvim",
 		config = function()
@@ -112,7 +120,7 @@ return {
 			opts.mapping["<C-f>"] = cmp.mapping.scroll_docs(4)
 			opts.mapping["<C-j>"] = cmp.mapping.select_next_item()
 			opts.mapping["<C-k>"] = cmp.mapping.select_prev_item()
-			opts.mapping["<C-e>"] = cmp.mapping.close()
+			opts.mapping["<C-e>"] = cmp.mapping.abort()
 			opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.confirm({
@@ -120,7 +128,7 @@ return {
 						behavior = cmp.ConfirmBehavior.insert,
 					})
 				elseif require("luasnip").expand_or_jumpable() then
-					require("luasnip").expand_or_jumpable()
+					require("luasnip").expand_or_jump()
 				else
 					fallback()
 				end
@@ -423,6 +431,7 @@ return {
 	-------------- lsp ---------------
 	{
 		"nvimdev/lspsaga.nvim",
+		-- enabled = false,
 		event = "LspAttach",
 		config = function()
 			require("configs.external.lspsaga")
@@ -446,7 +455,6 @@ return {
 	{
 		"kawre/leetcode.nvim",
 		build = ":TSUpdate html",
-		lazy = leet_arg ~= vim.fn.argv()[1],
 		dependencies = {
 			"nvim-telescope/telescope.nvim",
 			"nvim-lua/plenary.nvim", -- required by telescope
@@ -457,8 +465,17 @@ return {
 			"rcarriga/nvim-notify",
 			"nvim-tree/nvim-web-devicons",
 		},
-		config = function()
-			require("configs.external.leetcode")
-		end,
+		lazy = leet_arg ~= vim.fn.argv()[1],
+		opts = {
+			arg = leet_arg,
+			cn = { -- leetcode.cn
+				enabled = true, ---@type boolean
+				translator = true, ---@type boolean
+				translate_problems = true, ---@type boolean
+			},
+            storage={
+                home = "/Users/baoyihui/Documents/coding/vscode/cpp_space/leetcode"
+            }
+		},
 	},
 }
