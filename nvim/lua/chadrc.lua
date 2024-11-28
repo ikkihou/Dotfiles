@@ -32,13 +32,13 @@ M.ui = {
 M.mason = {
 	pkgs = {
 		--bash
-		"bash-langage-server",
+		"bash-language-server",
 		--rust
 		"rust-analyzer",
 		-- go
 		"gopls",
 		"gofumpt",
-		"golangci_lint",
+		-- "golangci_lint",
 		-- json
 		-- "jq",
 		"json-lsp",
