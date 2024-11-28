@@ -3,14 +3,18 @@ local M = {}
 -- Path to overriding theme and highlights files
 local highlights = require("highlights")
 -- highlights.get_alpha_hl()
+--
+M.base46 = {
+	theme = "rosepine", -- default theme
+	hl_add = {},
+	hl_override = {},
+	integrations = {},
+	changed_themes = {},
+	transparency = false,
+	theme_toggle = { "rosepine", "one_light" },
+}
 
 M.ui = {
-	theme = "rosepine",
-
-	transparency = false,
-
-	-- extended_integrations = { "alpha" },
-	hl_override = highlights.override,
 
 	-- cmp themeing
 	cmp = {
@@ -22,31 +26,48 @@ M.ui = {
 	},
 
 	telescope = { style = "bordered" },
+}
 
-	----------------- statusline -----------------
-	statusline = {
-		theme = "default",
-		separator_style = "default",
+-------------------- mason --------------------------
+M.mason = {
+	pkgs = {
+		--bash
+		"bash-langage-server",
+		--rust
+		"rust-analyzer",
+		-- go
+		"gopls",
+		"gofumpt",
+		"golangci_lint",
+		-- json
+		-- "jq",
+		"json-lsp",
+		-- "jsonlint",
+		-- bash
+		"shellcheck",
+		"shfmt",
+		-- lua stuff
+		"lua-language-server",
+		"stylua",
+		"selene",
+		-- python staff
+		"debugpy",
+		-- "pyright",
+		"black",
+		-- "ruff",
+		-- c/cpp stuff
+		"clangd",
+		"clang-format",
+		"cmake-language-server",
+		"cmakelang",
+		"cmakelint",
+		"codelldb",
+		-- latex stuff
+		"texlab",
+		-- "latexindent",
+		-- complementary
+		"codespell",
 	},
-
-	-- tabufline
-	tabufline = {
-		-- overriden_modules = function()
-		--     local modules = require "nvchad_ui.tabufline.modules"
-		--     return {
-		--         buttons = function()
-		--             return modules.buttons() .. "close "
-		--         end,
-		--         -- or buttons = "" , this will hide the buttons
-		--     }
-		-- end,
-	},
-
-	-- nvdash
-	-- nvdash = {
-	--   load_on_startup = false,
-	--
-	-- },
 }
 
 M.term = {

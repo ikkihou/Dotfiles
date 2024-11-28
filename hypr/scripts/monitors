@@ -5,4 +5,3 @@
 
 export MONITOR1="eDP-1"
 export MONITOR2="HDMI-A-1"
-# export MONITOR3="HDMI-A-1"

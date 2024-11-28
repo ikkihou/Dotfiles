@@ -27,6 +27,8 @@ local options = {
 		cmake = { "cmake_format" },
 
 		python = { "black" },
+
+		xml = { "xmlformatter" },
 	},
 
 	-- adding same formatter for multiple filetypes can look too much work for some

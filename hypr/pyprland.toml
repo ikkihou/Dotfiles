@@ -29,9 +29,9 @@ lazy = true
 command = "kitty --class scratchpad btop"
 lazy = true
 
-[scratchpads.bluetooth]
-command = "blueman-manager"
-animation = "fromRight"
-unfocus = "hide"
-margin = 20
-lazy = true
+# [scratchpads.bluetooth]
+# command = "blueman-manager"
+# animation = "fromRight"
+# unfocus = "hide"
+# margin = 20
+# lazy = true

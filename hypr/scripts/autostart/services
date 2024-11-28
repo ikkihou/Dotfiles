@@ -8,14 +8,14 @@ scripts=$config/scripts
 pypr &
 
 # Notification Daemon
-swaync &
+# swaync &
 
 # Wallpaper Backend
 swww init
 # "$scripts"/wallpaper random &
 
 # Bar
-waybar &
+# waybar &
 
 # OSD Window
 swayosd-server &

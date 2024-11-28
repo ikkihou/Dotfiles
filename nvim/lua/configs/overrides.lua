@@ -6,48 +6,48 @@ local icons = {
 }
 
 ------------------ cmp -------------------
-M.cmp = {
-	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "nvim_lua" },
-		{ name = "path" },
-	},
-	formatting = {
-		fields = { "abbr", "kind", "menu" },
-		format = function(entry, vim_item)
-			local lspkind_icons = vim.tbl_deep_extend("force", icons.kind, icons.type, icons.cmp)
-			vim_item.kind =
-				string.format(" %s  %s", lspkind_icons[vim_item.kind] or icons.cmp.undefined, vim_item.kind or "")
-			vim_item.menu = setmetatable({
-				cmp_tabnine = "[TN]",
-				copilot = "[CPLT]",
-				buffer = "[BUF]",
-				orgmode = "[ORG]",
-				nvim_lsp = "[LSP]",
-				nvim_lua = "[LUA]",
-				path = "[PATH]",
-				tmux = "[TMUX]",
-				treesitter = "[TS]",
-				luasnip = "[SNIP]",
-				spell = "[SPELL]",
-			}, {
-				__index = function()
-					return "[BTN]"
-				end,
-			})[entry.source.name]
-
-			local label = vim_item.abbr
-			local truncated_label = vim.fn.strcharpart(label, 0, 80)
-			if truncated_label ~= label then
-				vim_item.abbr = truncated_label .. "..."
-			end
-
-			return vim_item
-		end,
-	},
-}
+-- M.cmp = {
+-- 	sources = {
+-- 		{ name = "nvim_lsp" },
+-- 		{ name = "luasnip" },
+-- 		{ name = "buffer" },
+-- 		{ name = "nvim_lua" },
+-- 		{ name = "path" },
+-- 	},
+-- 	formatting = {
+-- 		fields = { "abbr", "kind", "menu" },
+-- 		format = function(entry, vim_item)
+-- 			local lspkind_icons = vim.tbl_deep_extend("force", icons.kind, icons.type, icons.cmp)
+-- 			vim_item.kind =
+-- 				string.format(" %s  %s", lspkind_icons[vim_item.kind] or icons.cmp.undefined, vim_item.kind or "")
+-- 			vim_item.menu = setmetatable({
+-- 				cmp_tabnine = "[TN]",
+-- 				copilot = "[CPLT]",
+-- 				buffer = "[BUF]",
+-- 				orgmode = "[ORG]",
+-- 				nvim_lsp = "[LSP]",
+-- 				nvim_lua = "[LUA]",
+-- 				path = "[PATH]",
+-- 				tmux = "[TMUX]",
+-- 				treesitter = "[TS]",
+-- 				luasnip = "[SNIP]",
+-- 				spell = "[SPELL]",
+-- 			}, {
+-- 				__index = function()
+-- 					return "[BTN]"
+-- 				end,
+-- 			})[entry.source.name]
+--
+-- 			local label = vim_item.abbr
+-- 			local truncated_label = vim.fn.strcharpart(label, 0, 80)
+-- 			if truncated_label ~= label then
+-- 				vim_item.abbr = truncated_label .. "..."
+-- 			end
+--
+-- 			return vim_item
+-- 		end,
+-- 	},
+-- }
 ------------------ indent-blankline ---------------------
 M.blankline = {
 	-- char = "│",
@@ -127,47 +127,6 @@ M.treesitter = {
 			node_incremental = "v",
 			node_decremental = "V",
 		},
-	},
-}
--------------------- mason --------------------------
-M.mason = {
-	ensure_installed = {
-		--bash
-		"bash-langage-server",
-		--rust
-		"rust-analyzer",
-		-- go
-		"gopls",
-		"gofumpt",
-		"golangci_lint",
-		-- json
-		-- "jq",
-		"json-lsp",
-		-- "jsonlint",
-		-- bash
-		"shellcheck",
-		"shfmt",
-		-- lua stuff
-		"lua-language-server",
-		"stylua",
-		"selene",
-		-- python staff
-		"debugpy",
-		-- "pyright",
-		"black",
-		-- "ruff",
-		-- c/cpp stuff
-		"clangd",
-		"clang-format",
-		"cmake-language-server",
-		"cmakelang",
-		"cmakelint",
-		"codelldb",
-		-- latex stuff
-		"texlab",
-		-- "latexindent",
-		-- complementary
-		"codespell",
 	},
 }
 

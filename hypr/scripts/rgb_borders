@@ -41,4 +41,3 @@ while 1:
     for col in colors[::-1]:
         set_color(int(col.red * 255), int(col.green * 255), int(col.blue * 255))
         time.sleep(0.05)
-

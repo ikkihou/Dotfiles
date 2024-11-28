@@ -41,16 +41,16 @@ vim.lsp.inlay_hint.enable(true)
 g.vscode_snippets_path = vim.fn.stdpath("config") .. "/lua/snippets"
 
 -------------- custom python provider ---------------
--- local function isempty(s)
--- 	return s == nil or s == ""
--- end
+local function isempty(s)
+	return s == nil or s == ""
+end
 
-g.loaded_python3_provider = 0
--- local conda_prefix = os.getenv "CONDA_PREFIX"
--- if not isempty(conda_prefix) then
---     g.python_host_prog = conda_prefix .. "/bin/python"
---     g.python3_host_prog = conda_prefix .. "/bin/python"
--- else
---     g.python_host_prog = "python"
---     g.python3_host_prog = "python3"
--- end
+-- g.loaded_python3_provider = 0
+local conda_prefix = os.getenv "CONDA_PREFIX"
+if not isempty(conda_prefix) then
+    g.python_host_prog = conda_prefix .. "/bin/python"
+    g.python3_host_prog = conda_prefix .. "/bin/python"
+else
+    g.python_host_prog = "python"
+    g.python3_host_prog = "python3"
+end
