@@ -14,41 +14,44 @@ set -xg RIPGREP_CONFIG_PATH $HOME/.config/rg/.ripgreprc
 set -xg CARGO_HOME $XDG_DATA_HOME/cargo
 set -xg STARSHIP_CONFIG $HOME/.config/starship/starship.toml
 set -xg ZSH $XDG_DATA_HOME/oh-my-zsh
-#set -xg LLVM /opt/homebrew/opt/llvm/
-#set -xg LDFLAGS -L/opt/homebrew/opt/llvm/lib
-#set -xg CPPFLAGS -L/opt/homebrew/opt/llvm/lib -Wl -rpath /opt/homebrew/opt/llvm/lib
-set -xg BUN_INSTALL $HOME/.bun
-
+set -x LIBTORCH_USE_PYTORCH 1
+set -x LIBTORCH_BYPASS_VERSION_CHECK 1
+set -Ux LIBTORCH /Users/baoyihui/miniconda3/envs/torch_env/lib/python3.10/site-packages/torch/
+set -Ux LIBTORCH_INCLUDE /Users/baoyihui/miniconda3/envs/torch_env/lib/python3.10/site-packages/torch/include/
+set -Ux LIBTORCH_LIB /Users/baoyihui/miniconda3/envs/torch_env/lib/python3.10/site-packages/torch/lib/
 
 # Path
-fish_add_path $LLVM/bin
+fish_add_path /Users/baoyihui/miniconda3/envs/torch_env/lib/python3.10/site-packages/torch/
+fish_add_path /Users/baoyihui/miniconda3/envs/torch_env/lib/python3.10/site-packages/torch/include/
+fish_add_path /Users/baoyihui/miniconda3/envs/torch_env/lib/python3.10/site-packages/torch/lib/
+fish_add_path $HOME/.dotnet/tools
 fish_add_path $XDG_BIN_HOME
 fish_add_path $GOPATH/bin
-fish_add_path /opt/homebrew/bin
-fish_add_path /opt/homebrew/sbin
+fish_add_path /usr/lib/rustup/bin
+fish_add_path /usr/lib/go/bin
+fish_add_path $HOME/.cargo/bin/
 fish_add_path /usr/local/bin
+fish_add_path /usr/local/sbin
 fish_add_path /usr/bin
 fish_add_path /usr/sbin
 fish_add_path /bin
 fish_add_path /sbin
-fish_add_path /usr/lib/rustup/bin
-fish_add_path /usr/lib/go/bin
-fish_add_path $HOME/.dotnet/tools
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/sbin
 fish_add_path $XDG_DATA_HOME/bob/nvim-bin
 fish_add_path $XDG_DATA_HOME/nvim/mason/bin
-fish_add_path $BUN_INSTALL/bin
 
 # Editor
 set -xg EDITOR nvim
 set -xg VISUAL $EDITOR
 set -xg SUDO_EDITOR $EDITOR
 
-# Zellij Runner
-set -xg ZELLIJ_RUNNER_ROOT_DIR Repos
-set -xg ZELLIJ_RUNNER_IGNORE_DIRS node_modules,target
-set -xg ZELLIJ_RUNNER_MAX_DIRS_DEPTH 3
-set -xg ZELLIJ_RUNNER_LAYOUTS_DIR .config/zellij/layouts
-set -xg ZELLIJ_RUNNER_BANNERS_DIR .config/zellij/banners
+## Zellij Runner
+#set -xg ZELLIJ_RUNNER_ROOT_DIR Repos
+#set -xg ZELLIJ_RUNNER_IGNORE_DIRS node_modules,target
+#set -xg ZELLIJ_RUNNER_MAX_DIRS_DEPTH 3
+#set -xg ZELLIJ_RUNNER_LAYOUTS_DIR .config/zellij/layouts
+#set -xg ZELLIJ_RUNNER_BANNERS_DIR .config/zellij/banners
 
 # GPG/LANG
 set -xg GPG_TTY (tty)
@@ -66,6 +69,7 @@ set -xg fzf_fd_opts --hidden --color=always
 
 # Other
 set -x THEFUCK_OVERRIDDEN_ALIASES 'vi, yarn, eza, vim, neofetch, onefetch, cat, tty-clock, dua i'
-set -xg LS_COLORS (vivid generate nord)
+set -xg LS_COLORS (vivid generate catppuccin-macchiato)
 set -xg BAT_THEME Catppuccin-macchiato
 set -xg STARSHIP_LOG error
+set -x VCPKG_ROOT "$HOME/vcpkg"
