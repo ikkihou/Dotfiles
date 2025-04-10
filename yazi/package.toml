@@ -1,5 +1,24 @@
-[plugin]
-deps = [{ use = "yazi-rs/plugins#full-border", commit = "ba2a7d7" }, { use = "imsi32/yatline", commit = "439b9d0" }, { use = "imsi32/yatline-githead", commit = "2f2b000" }]
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "a1738e8"
+hash = "1f3dad061209081a6b04dd6ff2cb06c7"
 
-[flavor]
-deps = []
+[[plugin.deps]]
+use = "imsi32/yatline-githead"
+rev = "3b0eb7c"
+hash = "bfd30c396bbe2af526cb949d97ce3dcf"
+
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "6c639b4"
+hash = "5614c46d5de76623c283d415bfac8025"
+
+[[plugin.deps]]
+use = "llanosrocas/githead"
+rev = "7104df2"
+hash = "407bdfbed7b052dad108eeac88270f25"
+
+[[plugin.deps]]
+use = "imsi32/yatline"
+rev = "6b0fc1e"
+hash = "ab115c6cc77f5710c27f39dfa2f3d4d"

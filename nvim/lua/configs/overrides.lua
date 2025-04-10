@@ -1,53 +1,4 @@
 local M = {}
-local icons = {
-	kind = require("configs.utils.icons").get("kind"),
-	type = require("configs.utils.icons").get("type"),
-	cmp = require("configs.utils.icons").get("cmp"),
-}
-
------------------- cmp -------------------
-M.cmp = {
-	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "nvim_lua" },
-		{ name = "path" },
-	},
-	formatting = {
-		fields = { "abbr", "kind", "menu" },
-		format = function(entry, vim_item)
-			local lspkind_icons = vim.tbl_deep_extend("force", icons.kind, icons.type, icons.cmp)
-			vim_item.kind =
-				string.format(" %s  %s", lspkind_icons[vim_item.kind] or icons.cmp.undefined, vim_item.kind or "")
-			vim_item.menu = setmetatable({
-				cmp_tabnine = "[TN]",
-				copilot = "[CPLT]",
-				buffer = "[BUF]",
-				orgmode = "[ORG]",
-				nvim_lsp = "[LSP]",
-				nvim_lua = "[LUA]",
-				path = "[PATH]",
-				tmux = "[TMUX]",
-				treesitter = "[TS]",
-				luasnip = "[SNIP]",
-				spell = "[SPELL]",
-			}, {
-				__index = function()
-					return "[BTN]"
-				end,
-			})[entry.source.name]
-
-			local label = vim_item.abbr
-			local truncated_label = vim.fn.strcharpart(label, 0, 80)
-			if truncated_label ~= label then
-				vim_item.abbr = truncated_label .. "..."
-			end
-
-			return vim_item
-		end,
-	},
-}
 
 ------------------ treesitter ---------------------
 M.treesitter = {
@@ -72,7 +23,6 @@ M.treesitter = {
 		"toml",
 	},
 	indent = {
-		enable = true,
 		disable = {
 			"python",
 		},
@@ -92,13 +42,11 @@ M.treesitter = {
 		},
 	},
 }
--------------------- mason --------------------------
 
 ------------------- nvimtree ----------------------
 M.nvimtree = {
 	filters = {
 		dotfiles = false,
-		exclude = { vim.fn.stdpath("config") .. "/lua/custom" },
 	},
 	hijack_directories = {
 		enable = true,
@@ -107,7 +55,6 @@ M.nvimtree = {
 	open_on_tab = false,
 	disable_netrw = false,
 	hijack_netrw = true,
-	hijack_cursor = true,
 	hijack_unnamed_buffer_when_opening = true,
 	respect_buf_cwd = true,
 	sync_root_with_cwd = true,
@@ -117,7 +64,7 @@ M.nvimtree = {
 	},
 	diagnostics = {
 		enable = true,
-		show_on_dirs = false,
+		show_on_dirs = true,
 		debounce_delay = 50,
 		icons = {
 			hint = "",
@@ -133,7 +80,7 @@ M.nvimtree = {
 		preserve_window_proportions = true,
 		signcolumn = "yes",
 		float = {
-			enable = true,
+			enable = false,
 			open_win_config = {
 				relative = "editor",
 				border = "rounded",
@@ -244,7 +191,6 @@ M.telescope = {
 			"--smart-case",
 		},
 		file_ignore_patterns = { ".git/", ".cache", "build/", "%.class", "%.pdf", "%.mkv", "%.mp4", "%.zip" },
-		prompt_prefix = "  ",
 		selection_caret = "  ",
 		entry_prefix = "  ",
 		initial_mode = "insert",
@@ -270,20 +216,8 @@ M.telescope = {
 		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 		color_devicons = true,
 		set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
-		-- file_sorter = require("telescope.sorters").get_fuzzy_file,
-		-- generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-		-- file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-		-- grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-		-- qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-		-- -- Developer configurations: Not meant for general override
-		-- buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
-		-- mappings = {
-		-- 	n = { ["q"] = require("telescope.actions").close },
-		-- },
 	},
 	extensions_list = {
-		"themes",
-		"terms",
 		"notify",
 		"frecency",
 		"undo",

@@ -1,46 +1,40 @@
-# yatline-githead.yazi
+# githead.yazi
 
-Manual clone of [githead.yazi](https://github.com/llanosrocas/githead.yazi) for supporting [yatline.yazi](https://github.com/imsi32/yatline.yazi)
+Git status header for yazi inspired by [powerlevel10k](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#what-do-different-symbols-in-git-status-mean).
 
-> [!IMPORTANT]
-> This repository will not add new features other than coming from original repository.  
-> The latest commit in there is 23750247d59da485e4b5257ad5e83837bb86a685.
-> Which can be found in [here](https://github.com/llanosrocas/githead.yazi/blob/23750247d59da485e4b5257ad5e83837bb86a685/main.lua)
+![preview](https://github.com/llanosrocas/githead.yazi/blob/main/.github/images/preview.png)
 
 All supported features are listed [here](#features)
 
 ## Requirements
 
-- yazi version >= 0.3.0
+- yazi version >= 25.2.11
 - Font with symbol support. For example [Nerd Fonts](https://www.nerdfonts.com/).
-- yatline.yazi (Optional)
 
 ## Installation
 
 ```sh
-ya pack -a imsi32/yatline-githead
+ya pack -a llanosrocas/githead
 ```
+
+Or manually copy `init.lua` to the `~/.config/yazi/plugins/githead.yazi/init.lua`
 
 ## Usage
 
 Add this to your `~/.config/yazi/init.lua`:
 
-> [!IMPORTANT]
-> If you are using yatline.yazi, put this after its initialization.
-
 ```lua
-require("yatline-githead"):setup()
+require("githead"):setup()
 ```
 
 Read more about indicators [here](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#what-do-different-symbols-in-git-status-mean).
 
-Optionally, configuration:
+Optionally, configure header:
 
 ```lua
 require("githead"):setup({
   show_branch = true,
   branch_prefix = "on",
-  prefix_color = "white",
   branch_color = "blue",
   branch_symbol = "",
   branch_borders = "()",
@@ -77,39 +71,6 @@ require("githead"):setup({
 })
 ```
 
-You can also use a [theme](https://github.com/imsi32/yatline-themes):
-
-```lua
-local your_theme = {
-  prefix_color = "white",
-  branch_color = "blue",
-  commit_color = "bright magenta",
-  stashes_color = "bright magenta",
-  state_color = "red",
-  staged_color = "bright yellow",
-  unstaged_color = "bright yellow",
-  untracked_color = "blue",
-}
-
-require("githead"):setup({
--- ===
-    
-  theme = your_theme,
-
--- ===
-})
-```
-
-If you are using yatline.yazi, you can use this component:
-
-``` lua
--- ===
-
-  {type = "coloreds", custom = false, name = "githead"},
-
--- ===
-```
-
 ## Features
 
 - [x] Current branch (or current commit if branch is not presented)
@@ -135,7 +96,6 @@ This command provides information about branches, stashes, staged files, unstage
 
 ## Credits
 
-- [githead.yazi](https://github.com/llanosrocas/githead.yazi)
 - [yazi source code](https://github.com/sxyazi/yazi)
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 - [twio142](https://github.com/twio142/githead.yazi)

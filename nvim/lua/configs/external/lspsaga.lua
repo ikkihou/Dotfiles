@@ -59,9 +59,9 @@ lspsaga.setup({
 		virtual_text = true,
 	},
 	diagnostic = {
-		show_code_action = true,
-		show_source = true,
-		jump_num_shortcut = true,
+		show_code_action = false,
+		show_source = false,
+		jump_num_shortcut = false,
 		keys = {
 			exec_action = "o",
 			quit = "q",

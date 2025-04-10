@@ -1,6 +1,5 @@
 local colors = require("colors")
 local icons = require("icons")
-local settings = require("settings")
 local sbar = require("sketchybar")
 
 -- Padding item required because of bracket

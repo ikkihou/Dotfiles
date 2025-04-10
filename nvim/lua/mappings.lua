@@ -4,8 +4,8 @@ require("nvchad.mappings")
 
 local map = vim.keymap.set
 
-map({ "i", "n" }, "<S-l>", "$", { desc = "Move cursor to end of the line" })
-map({ "i", "n" }, "<S-h>", "^", { desc = "Move cursor to beginning of the line" })
+map({ "n" }, "<S-l>", "$", { desc = "Move cursor to end of the line" })
+map({ "n" }, "<S-h>", "^", { desc = "Move cursor to beginning of the line" })
 map("n", ";", ":", { desc = "CMD enter command mode" })
 
 map("n", "<leader>fm", function()
@@ -106,36 +106,34 @@ M.telescope = {
 	},
 }
 
-M.lspsaga = {
+M.lsp = {
 	n = {
-		["gn"] = { "<cmd> Lspsaga rename <CR>", "Rename" },
-		["<leader>."] = { "<cmd>Lspsaga code_action<CR>", "Code Action" },
-		["gh"] = {
-			"<cmd>Lspsaga finder ref+def<cr>",
-			"Lspsaga Lsp_Finder",
-		},
+		["gn"] = { vim.lsp.buf.rename, "Rename" },
 		["gd"] = {
-			"<cmd>Lspsaga goto_definition<cr>",
+			vim.lsp.buf.definition,
 			"Go to definition",
 		},
-		["<leader>lp"] = {
-			"<cmd>Lspsaga peek_definition<cr>",
-			"Peek definition",
+		["gD"] = {
+			vim.lsp.buf.declaration,
+			"Go to definition",
 		},
 		["<leader>k"] = {
-			"<Cmd>lua vim.lsp.buf.hover()<cr>",
+			vim.lsp.buf.hover,
 			"Hover lsp",
 		},
-		["<leader>o"] = { "<cmd>Lspsaga outline<CR>", "Show Outline" },
-		--  LSP
-		["gr"] = { "<cmd>Telescope lsp_references<CR>", "Lsp references" },
-		-- ["[d"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostic" },
-		-- ["]d"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
-		["<leader>lq"] = {
+		["<leader>wa"] = {
+			vim.lsp.buf.add_workspace_folder,
+			"Add workspace folder",
+		},
+		["<leader>wr"] = {
+			vim.lsp.buf.remove_workspace_folder,
+			"Remove workspace folder",
+		},
+		["<leader>wl"] = {
 			function()
-				vim.diagnostic.setloclist()
+				print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 			end,
-			"󰁨 Lsp Quickfix",
+			"List workspace folders",
 		},
 	},
 }
@@ -167,11 +165,9 @@ end, { desc = "Terminal Toggle Floating term" })
 vim.keymap.set("n", "<C-t>", function()
 	require("menu").open("default")
 end, {})
-
 -- mouse users + nvimtree users!
 vim.keymap.set("n", "<RightMouse>", function()
 	vim.cmd.exec('"normal! \\<RightMouse>"')
-
 	local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
 	require("menu").open(options, { mouse = true })
 end, {})

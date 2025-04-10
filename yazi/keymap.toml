@@ -40,19 +40,15 @@ append_keymap = [
   { on = [
     "g",
     "s",
-  ], run = "cd ~/Pictures/Screenshots/", desc = "Go to the screenshots directory" },
+  ], run = "cd ~/Pictures/Xnip/", desc = "Go to the screenshots directory" },
   { on = [
     "g",
     "D",
   ], run = "cd ~/Documents/", desc = "Go to the docs directory" },
   { on = [
     "g",
-    "o",
-  ], run = "cd ~/Documents/Obsidian/obsidianVault/", desc = "Go to the obsidian directory" },
-  { on = [
-    "g",
     "r",
-  ], run = "cd ~/Repos/", desc = "Go to the repos directory" },
+  ], run = "cd ~/Documents/GitHub/", desc = "Go to the repos directory" },
 ]
 
 [input]

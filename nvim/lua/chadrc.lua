@@ -1,13 +1,17 @@
 local M = {}
 
+-- Path to overriding theme and highlights files
+local highlights = require("highlights")
+-- highlights.get_alpha_hl()
+--
 M.base46 = {
-	theme = "onenord", -- default theme
+	theme = "catppuccin", -- default theme
 	hl_add = {},
 	hl_override = {},
 	integrations = {},
 	changed_themes = {},
 	transparency = false,
-	theme_toggle = { "onenord", "one_light" },
+	theme_toggle = { "catppuccin", "one_light" },
 }
 
 M.ui = {
@@ -22,31 +26,9 @@ M.ui = {
 	},
 
 	telescope = { style = "bordered" },
-
-	----------------- statusline -----------------
-	statusline = {
-		theme = "default",
-		separator_style = "default",
-	},
-
-	-- tabufline
-	-- tabufline = {
-	-- 	enabled = true,
-	-- 	lazyload = true,
-	-- 	order = { "treeOffset", "buffers", "tabs", "btns" },
-	-- 	modules = nil,
-	-- },
-
-	-- nvdash
-	nvdash = {
-		load_on_startup = false,
-	},
 }
 
-M.term = {
-	sizes = { vsp = 0.4 },
-}
-
+-------------------- mason --------------------------
 M.mason = {
 	pkgs = {
 		--bash
@@ -56,7 +38,6 @@ M.mason = {
 		-- go
 		"gopls",
 		"gofumpt",
-		-- "golangci_lint",
 		-- json
 		-- "jq",
 		"json-lsp",
@@ -85,7 +66,12 @@ M.mason = {
 		-- "latexindent",
 		-- complementary
 		"codespell",
+		"taplo",
 	},
+}
+
+M.term = {
+	sizes = { vsp = 0.4 },
 }
 
 return M

@@ -8,11 +8,11 @@ venv.setup({
 	settings = {
 		search = {
 			anaconda_base = {
-				command = "fd '/python$' /Users/baoyihui/miniconda3/bin --full-path --color never -E /proc",
+				command = "fd '/python$' /opt/miniconda3/bin/ --full-path --color never -E /proc",
 				type = "anaconda",
 			},
 			anaconda_envs = {
-				command = "fd '/bin/python$' /Users/baoyihui/miniconda3/envs/ --full-path --color never -E /proc",
+				command = "fd '/bin/python$' /home/paul/.conda/envs/ --full-path --color never -E /proc",
 				type = "anaconda",
 			},
 		},

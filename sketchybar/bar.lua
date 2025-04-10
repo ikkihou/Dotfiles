@@ -6,6 +6,6 @@ sbar.bar({
 	topmost = "everything",
 	height = 40,
 	color = colors.bar.bg,
-	padding_right = 4,
-	padding_left = 4,
+	padding_right = 0,
+	padding_left = 0,
 })

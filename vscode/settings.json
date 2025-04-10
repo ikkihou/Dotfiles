@@ -1,6 +1,6 @@
 {
 	"RainbowBrackets.depreciation-notice": false,
-	"editor.fontFamily": "Menlo, monospace, JetBrainsMonoNL Nerd Font, Monaco, 'Courier New', 'LXGW WenKai'",
+	"editor.fontFamily": "ComicShannsMono Nerd Font, Menlo, monospace, JetBrainsMonoNL Nerd Font, Monaco, 'Courier New', 'LXGW WenKai'",
 	"editor.fontWeight": "normal",
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.black-formatter"
@@ -193,10 +193,9 @@
 		}
 	],
 	"files.autoSave": "afterDelay",
-	"editor.fontSize": 16,
+	"editor.fontSize": 15,
 	"jupyter.askForKernelRestart": false,
 	"editor.indentSize": "tabSize",
-	"editor.minimap.enabled": false,
 	"explorer.confirmDelete": false,
 	"[cpp]": {
 		"editor.defaultFormatter": "xaver.clang-format"
@@ -240,7 +239,6 @@
 	"cmake.additionalCompilerSearchDirs": [
 		"/usr/bin/"
 	],
-	"cmake.debugConfig": {},
 	"cmake.defaultVariants": {
 		"buildType": {
 			"default": "debug",
@@ -362,12 +360,13 @@
 			"name": "latexmk",
 			"command": "latexmk",
 			"args": [
+				"-xelatex",
 				"-synctex=1",
 				"-interaction=nonstopmode",
 				"-file-line-error",
-				"-pdf",
-				"-outdir=%OUTDIR%",
-				"%DOCFILE%"
+				"-halt-on-error",
+				"-time",
+				"%DOC%"
 			]
 		},
 		{
@@ -407,7 +406,7 @@
 			"name": "xelatex -> bibtex -> xelatex*2",
 			"tools": [
 				"xelatex",
-				"bibtex",
+				"biber",
 				"xelatex",
 				"xelatex"
 			]
@@ -469,7 +468,6 @@
 	"vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf'",
 	"C_Cpp.intelliSenseEngine": "disabled",
 	"animations.Install-Method": "Apc Customize UI++",
-	"update.mode": "manual",
 	"apc.imports": [
 		"file:///Users/baoyihui/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.1/dist/updateHandler.js"
 	],
@@ -496,12 +494,10 @@
 	"workbench.productIconTheme": "adwaita",
 	"leetcode.nodePath": "/opt/homebrew/bin/node",
 	"leetcode.hint.commandShortcut": false,
-	"workbench.colorTheme": "Catppuccin Mocha",
 	"everforest.darkContrast": "hard",
 	"window.commandCenter": false,
-	"workbench.iconTheme": "catppuccin-mocha",
 	"python.condaPath": "/Users/baoyihui/miniconda3/condabin/conda",
-	"terminal.integrated.defaultProfile.osx": "fish (2)",
+	"terminal.integrated.defaultProfile.osx": "fish",
 	"terminal.integrated.profiles.osx": {
 		"bash": {
 			"path": "bash",
@@ -542,4 +538,66 @@
 	"terminal.integrated.tabs.defaultColor": "terminal.ansiMagenta",
 	"terminal.sourceControlRepositoriesKind": "external",
 	"terminal.integrated.inheritEnv": false,
+	"terminal.integrated.profiles.linux": {
+		"bash": {
+			"path": "bash",
+			"icon": "terminal-bash"
+		},
+		"zsh": {
+			"path": "zsh"
+		},
+		"fish": {
+			"path": "fish"
+		},
+		"tmux": {
+			"path": "tmux",
+			"icon": "terminal-tmux"
+		},
+		"pwsh": {
+			"path": "pwsh",
+			"icon": "terminal-powershell"
+		},
+		"dash (2)": {
+			"path": "/usr/bin/dash"
+		},
+		"bash (2)": {
+			"path": "/usr/bin/bash"
+		}
+	},
+	"terminal.integrated.defaultProfile.linux": "bash (2)",
+	"extensions.ignoreRecommendations": true,
+	"markdown.preview.fontFamily": "LXGW WenKai, -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
+	"workbench.colorTheme": "Catppuccin Mocha",
+	"clangd.arguments": [
+		"-j=12",
+		"--enable-config",
+		"--background-index",
+		"--pch-storage=memory",
+		"--clang-tidy",
+		"--all-scopes-completion",
+		"--completion-style=detailed",
+		"--header-insertion-decorators",
+		"--header-insertion=iwyu",
+		"--limit-references=3000",
+		"--limit-results=350",
+	],
+	"markdown-preview-github-styles.darkTheme": "dark_colorblind",
+	"notebook.defaultFormatter": "ms-python.black-formatter",
+	"fortran-ls.executablePath": "/Users/baoyihui/.local/share/nvim/mason/bin/fortls",
+	"fortran-ls.incrementalSync": false,
+	"workbench.iconTheme": "catppuccin-mocha",
+	"cmake.showConfigureWithDebuggerNotification": false,
+	"cmake.configureArgs": [
+		"-DCMAKE_TOOLCHAIN_FILE=/Users/baoyihui/vcpkg/scripts/buildsystems/vcpkg.cmake"
+	],
+	"diffEditor.ignoreTrimWhitespace": true,
+	"lldb.suppressUpdateNotifications": true,
+	"github.copilot.enable": {
+		"*": false,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false,
+		"python": false,
+		"rust": false
+	},
 }

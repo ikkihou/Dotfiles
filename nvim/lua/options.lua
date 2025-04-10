@@ -1,3 +1,2 @@
-require "nvchad.options"
-
--- add yours here!
+require("nvchad.options")
+-- require("diagnostic")

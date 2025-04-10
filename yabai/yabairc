@@ -5,14 +5,14 @@ sudo yabai --load-sa
 
 # window related
 yabai -m config window_placement second_child
-yabai -m config external_bar main:36:0 \
-	window_shadow float \
-	window_opacity on \
-	window_opacity_duration 0.2 \
-	active_window_opacity 1.0 \
-	normal_window_opacity 1.0 \
-	window_animation_duration 0.5 \
-	window_animation_easing ease_out_quint
+yabai -m config external_bar main:33:0 \
+    window_shadow float \
+    window_opacity off \
+    window_opacity_duration 0.2 \
+    active_window_opacity 1.0 \
+    normal_window_opacity 0.8 \
+    window_animation_duration 0.5 \
+    window_animation_easing ease_out_quint
 
 # mouse related
 yabai -m config mouse_follows_focus on
@@ -29,26 +29,30 @@ yabai -m config top_padding 5
 yabai -m config bottom_padding 5
 yabai -m config left_padding 5
 yabai -m config right_padding 5
-yabai -m config window_gap 10
+yabai -m config window_gap 5
 
 # disable specific apps from being managed with yabai
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
-yabai -m rule --add app="^Finder|Activity Monitor|Archive Utility|Photo Booth|Preview|App Store|Calendar|Weather$" manage=off
+yabai -m rule --add app="^Finder|Activity Monitor|Archive Utility|Photo Booth|Preview|App Store|Calendar|Weather|iPhone Mirroring$" manage=off
 yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Notion$" manage=off
 yabai -m rule --add app="^Steam$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
-yabai -m rule --add app="^WeChat$" manage=off
-yabai -m rule --add app="^kitty$" manage=off
+yabai -m rule --add app="^WeChat|QQ$" manage=off
+yabai -m rule --add app="^kitty|Sublime Text$" manage=off
 yabai -m rule --add app="^Arc$" title="^byh|General|Profiles|Max|Links|Shortcuts|Icon|Advanced$" manage=off
 yabai -m rule --add app="^Zotero$" title="^Add/Edit Citation|Add-ons Manager|Zotero Settings$" manage=off
 yabai -m rule --add app="^GIMP$" title=".*" manage=off
 yabai -m rule --add app="^Inkscape$" title=".*" manage=off
 yabai -m rule --add app="^Raycast$" title=".*" manage=off
-yabai -m rule --add app="^Clash Verge$" title=".*" manage=off
+yabai -m rule --add app="^Clash Verge|Mihomo Party$" title=".*" manage=off
+yabai -m rule --add app="^ChatGPT$" title=".*" manage=off
+
+yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
+yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
 
 # jankyborders
 # borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &

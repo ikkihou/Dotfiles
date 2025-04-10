@@ -9,10 +9,27 @@ local leet_arg = "leetcode.nvim"
 return {
 	"nvim-lua/plenary.nvim",
 	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		-- dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+		-- dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons" }, -- if you use standalone mini plugins
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+		---@module 'render-markdown'
+		---@type render.md.UserConfig
+		ft = "markdown",
+		opts = {},
+	},
+	{
 		"nvchad/ui",
 		config = function()
 			require("nvchad")
 		end,
+	},
+	{
+		"nvzone/typr",
+        enabled=false,
+		cmd = "TyprStats",
+		dependencies = "nvzone/volt",
+		opts = {},
 	},
 	{
 		"nvchad/base46",
@@ -64,7 +81,7 @@ return {
 			-- OPTIONAL:
 			--   `nvim-notify` is only needed, if you want to use the notification view.
 			--   If not available, we use `mini` as the fallback
-			-- "rcarriga/nvim-notify",
+			"rcarriga/nvim-notify",
 		},
 		config = function()
 			require("configs.external.noice")
@@ -90,15 +107,13 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			{ "williamboman/mason-lspconfig.nvim" },
-			{
-				"ray-x/lsp_signature.nvim",
-			},
+			"williamboman/mason-lspconfig.nvim",
+			"ray-x/lsp_signature.nvim",
+			"saghen/blink.cmp",
 		},
 		config = function()
-			require("nvchad.configs.lspconfig").defaults()
 			require("configs.lspconfig")
-		end, -- Override to setup mason-lspconfig
+		end,
 	},
 	------------------ Override plugin definition options----------------------
 	{
@@ -112,15 +127,33 @@ return {
 		},
 	},
 	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+		-- use opts = {} for passing setup options
+		-- this is equivalent to setup({}) function
+	},
+	{
+		"saghen/blink.cmp",
+		enabled = false,
+		version = "1.*",
+		dependencies = {
+			-- { "L3MON4D3/LuaSnip", version = "v2.*" },
+			"rafamadriz/friendly-snippets",
+			"nvim-tree/nvim-web-devicons",
+			"onsails/lspkind.nvim",
+			"xzbdmw/colorful-menu.nvim",
+		},
+		opts = require("configs.blink_cmp"),
+		opts_extend = { "sources.default" },
+	},
+	{
 		"hrsh7th/nvim-cmp",
-		opts = overrides.cmp,
+		enabled = true,
 		config = function(_, opts)
 			local cmp = require("cmp")
-			opts.mapping["<C-d>"] = cmp.mapping.scroll_docs(-4)
-			opts.mapping["<C-f>"] = cmp.mapping.scroll_docs(4)
 			opts.mapping["<C-j>"] = cmp.mapping.select_next_item()
 			opts.mapping["<C-k>"] = cmp.mapping.select_prev_item()
-			opts.mapping["<C-e>"] = cmp.mapping.abort()
 			opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.confirm({
@@ -235,6 +268,7 @@ return {
 	------------------tools------------------------
 	{
 		"folke/trouble.nvim",
+		enabled = false,
 		opts = {}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",
 		keys = {
@@ -318,13 +352,27 @@ return {
 			vim.g.vimtex_view_method = "skim"
 			vim.g.vimtex_view_skim_sync = 1
 			vim.g.vimtex_view_skim_activate = 1
-			vim.g.vimtex_compiler_latexmk_engines = {
-				_ = "-xelatex",
-			}
+			-- vim.g.vimtex_compiler_latexmk_engines = {
+			-- 	_ = "-xelatex",
+			-- }
 			vim.g.tex_comment_nospell = 1
 			vim.g.vimtex_compiler_progname = "nvr"
 			vim.g.vimtex_view_general_options = [[--unique file:@pdf\#src:@line@tex]]
 			vim.g.vimtex_fold_enabled = 1
+			vim.g.vimtex_compiler_latexmk = {
+				build_dir = "",
+				callback = 1,
+				continuous = 1,
+				executable = "latexmk",
+				options = {
+					"-xelatex",
+					"-shell-escape",
+					"-interaction=nonstopmode",
+					"-file-line-error",
+					"-synctex=1",
+					"-bib", -- 启用 biber/bibtex
+				},
+			}
 		end,
 	},
 	{
@@ -424,14 +472,15 @@ return {
 	},
 	{
 		"rcarriga/nvim-notify",
+		priority = 99999,
 		config = function()
-			require("notify").setup()
+			require("configs.external.notify")
 		end,
 	},
 	-------------- lsp ---------------
 	{
 		"nvimdev/lspsaga.nvim",
-		-- enabled = false,
+		enabled = false,
 		event = "LspAttach",
 		config = function()
 			require("configs.external.lspsaga")
@@ -449,11 +498,12 @@ return {
 	},
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^4", -- Recommended
+		version = "^5", -- Recommended
 		ft = { "rust" },
 	},
 	{
 		"kawre/leetcode.nvim",
+		enabled = false,
 		build = ":TSUpdate html",
 		dependencies = {
 			"nvim-telescope/telescope.nvim",
@@ -473,9 +523,9 @@ return {
 				translator = true, ---@type boolean
 				translate_problems = true, ---@type boolean
 			},
-            storage={
-                home = "/Users/baoyihui/Documents/coding/vscode/cpp_space/leetcode"
-            }
+			storage = {
+				home = "/Users/baoyihui/Documents/coding/vscode/cpp_space/leetcode",
+			},
 		},
 	},
 }

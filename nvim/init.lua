@@ -1,4 +1,3 @@
--- vim.g.base46_cache = vim.fn.stdpath("data") .. "/NvChad/base46/"
 vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46_cache/"
 vim.g.mapleader = " "
 

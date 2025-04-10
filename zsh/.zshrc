@@ -199,3 +199,6 @@ eval "$(atuin init zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export LIBTORCH="/Users/baoyihui/miniconda3/envs/torch_env/lib/python3.10/site-packages/torch/"
+export LIBTORCH_INCLUDE="/Users/baoyihui/miniconda3/envs/torch_env/lib/python3.10/site-packages/torch/include/"
+export LIBTORCH_LIB="/Users/baoyihui/miniconda3/envs/torch_env/lib/python3.10/site-packages/torch/lib/"
