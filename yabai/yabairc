@@ -26,10 +26,10 @@ yabai -m config mouse_action2 resize
 # general space settings
 yabai -m config layout bsp
 yabai -m config top_padding 5
-yabai -m config bottom_padding 5
+yabai -m config bottom_padding 3 
 yabai -m config left_padding 5
 yabai -m config right_padding 5
-yabai -m config window_gap 5
+yabai -m config window_gap 3 
 
 # disable specific apps from being managed with yabai
 yabai -m rule --add app="^System Settings$" manage=off
@@ -44,9 +44,10 @@ yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^WeChat|QQ$" manage=off
 yabai -m rule --add app="^kitty|Sublime Text$" manage=off
 yabai -m rule --add app="^Arc$" title="^byh|General|Profiles|Max|Links|Shortcuts|Icon|Advanced$" manage=off
-yabai -m rule --add app="^Zotero$" title="^Add/Edit Citation|Add-ons Manager|Zotero Settings$" manage=off
+yabai -m rule --add app="^Zotero$" title="^Add/Edit Citation|Add-ons Manager|Zotero Settings|Found Duplicate Items|Zotero Style Repository|Zotero - Document Preferences|Edit Bibliography$" manage=off
 yabai -m rule --add app="^GIMP$" title=".*" manage=off
 yabai -m rule --add app="^Inkscape$" title=".*" manage=off
+yabai -m rule --add app="^DeepL$" title=".*" manage=off
 yabai -m rule --add app="^Raycast$" title=".*" manage=off
 yabai -m rule --add app="^Clash Verge|Mihomo Party$" title=".*" manage=off
 yabai -m rule --add app="^ChatGPT$" title=".*" manage=off

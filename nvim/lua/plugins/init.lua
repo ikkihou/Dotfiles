@@ -26,7 +26,7 @@ return {
 	},
 	{
 		"nvzone/typr",
-        enabled=false,
+		enabled = false,
 		cmd = "TyprStats",
 		dependencies = "nvzone/volt",
 		opts = {},
@@ -175,6 +175,7 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
+		enabled = true,
 		event = { "CursorHold", "CursorHoldI" },
 		opts = overrides.treesitter,
 	},
@@ -186,6 +187,7 @@ return {
 	-----------------@telescope-------------------
 	{
 		"nvim-telescope/telescope.nvim",
+		tag = "0.1.8",
 		opts = overrides.telescope,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -457,7 +459,6 @@ return {
 	{
 		"rainbowhxch/accelerated-jk.nvim",
 		event = "VeryLazy",
-		dependencies = "nvim-treesitter",
 		config = function()
 			require("configs.external.accelerated-jk")
 		end,

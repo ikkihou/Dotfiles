@@ -1,6 +1,6 @@
 {
 	"RainbowBrackets.depreciation-notice": false,
-	"editor.fontFamily": "ComicShannsMono Nerd Font, Menlo, monospace, JetBrainsMonoNL Nerd Font, Monaco, 'Courier New', 'LXGW WenKai'",
+	"editor.fontFamily": "JetBrainsMonoNL Nerd Font, ComicShannsMono Nerd Font, Menlo, monospace, Monaco, 'Courier New', 'LXGW WenKai'",
 	"editor.fontWeight": "normal",
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.black-formatter"
@@ -600,4 +600,5 @@
 		"python": false,
 		"rust": false
 	},
-}
+	"gitlens.views.branches.showRemoteBranches": true,
+	"window.systemColorTheme": "dark",}

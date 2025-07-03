@@ -147,13 +147,6 @@ for _, maps in pairs(M) do
 end
 
 -- more keybinds!
--- M.accelerated_jk = {
--- 	n = {
--- 		k = { "<Plug>(accelerated_jk_gk)", "accelerated up movement" },
--- 		j = { "<Plug>(accelerated_jk_gj)", "accelerated down movement" },
--- 	},
--- }
---
 map("n", "j", "<Plug>(accelerated_jk_gj)", { desc = "accelerated up movement" })
 map("n", "k", "<Plug>(accelerated_jk_gk)", { desc = "accelerated down movement" })
 map({ "n", "t" }, "<leader>tf", function()
