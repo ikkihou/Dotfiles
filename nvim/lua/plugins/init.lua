@@ -156,26 +156,38 @@ return {
 		opts = overrides.telescope,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"debugloop/telescope-undo.nvim",
-			"tsakirist/telescope-lazy.nvim",
-			{
-				"ahmedkhalf/project.nvim",
-				event = "VeryLazy",
-				config = function()
-					require("configs.external.project")
-				end,
-			},
-			{
-				"nvim-telescope/telescope-fzf-native.nvim",
-				build = "make",
-			},
-			{
-				"nvim-telescope/telescope-frecency.nvim",
-			},
-			{ "nvim-telescope/telescope-live-grep-args.nvim" },
+			-- "debugloop/telescope-undo.nvim",
 		},
 	},
-
+	{
+		"nvim-telescope/telescope-live-grep-args.nvim",
+		-- This will not install any breaking changes.
+		-- For major updates, this must be adjusted manually.
+		version = "^1.0.0",
+		config = function()
+			require("telescope").load_extension("live_grep_args")
+		end,
+	},
+	{
+		"DrKJeff16/project.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		}, -- OPTIONAL
+		config = function()
+			require("configs.external.project")
+		end,
+		cond = vim.fn.has("nvim-0.11") == 1,
+	},
+	{
+		"nvim-telescope/telescope-frecency.nvim",
+		-- install any compatible version of 0.9.x
+		version = "^0.9.0",
+		config = function()
+			require("telescope").load_extension("frecency")
+		end,
+	},
 	--------------- dap ---------------------
 	{
 		"mfussenegger/nvim-dap",
