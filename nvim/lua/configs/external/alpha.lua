@@ -95,7 +95,8 @@ dashboard.section.buttons.val = {
 		nowait = true,
 		callback = function()
 			-- require("telescope").extensions.projects.projects {}
-			vim.api.nvim_command("Telescope projects theme=dropdown")
+			-- vim.api.nvim_command("Telescope projects theme=dropdown")
+			require("telescope").extensions.projects.projects()
 		end,
 	}),
 	button("space f f", "󰈞  File find", leader, nil, {
@@ -111,7 +112,7 @@ dashboard.section.buttons.val = {
 		silent = true,
 		nowait = true,
 		callback = function()
-			require("telescope.builtin").live_grep()
+			require("telescope").extensions.live_grep_args.live_grep_args()
 		end,
 	}),
 	button("space f n", "  File new", leader, nil, {
@@ -127,7 +128,7 @@ dashboard.section.buttons.val = {
 		silent = true,
 		nowait = true,
 		callback = function()
-			vim.api.nvim_command("Telescope themes")
+            require("nvchad.themes").open()
 		end,
 	}),
 }

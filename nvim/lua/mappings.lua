@@ -102,7 +102,12 @@ M.telescope = {
 	n = {
 		["<leader>fr"] = { "<cmd> Telescope frecency <CR> ", "Find files given frecency" },
 		["<leader>fp"] = { "<cmd> Telescope projects theme=dropdown <CR>", "Find projects" },
-		-- ["<leader>ft"] = { "<cmd> Telescope themes <CR>", "NcChad themes " },
+		["<leader>ft"] = {
+			function()
+				require("nvchad.themes").open()
+			end,
+			"NvChad themes ",
+		},
 	},
 }
 
