@@ -3,52 +3,36 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
+-- capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+
+require("nvchad.configs.lspconfig").defaults()
+
 local lsp_config = require("lspconfig")
 local util = require("lspconfig/util")
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "pyright", "clangd", "bashls", "cmake", "jsonls", "ts_ls", "texlab", "gopls" }
+local servers = { "pyright", "clangd", "bashls", "cmake", "jsonls", "ts_ls", "texlab", "gopls", "taplo" }
 
 for _, lsp in ipairs(servers) do
 	lsp_config[lsp].setup({
-		on_init = on_init,
 		on_attach = on_attach,
+		on_init = on_init,
 		capabilities = capabilities,
 	})
 end
 
 ---------------- cmake ----------------
--- lsp_config.cmake.setup({
--- 	on_attach = function(client, bufnr)
--- 		require("lsp_signature").on_attach(bufnr, {
--- 			bind = true,
--- 			handler_opts = {
--- 				border = "rounded",
--- 			},
--- 		})
--- 	end,
--- })
-
----------------- rust ----------------
--- lsp_config.rust_analyzer.setup {
---     on_attach = function(client, bufnr)
---         require("lsp_signature").on_attach(bufnr, {
---             bind = true,
---             handler_opts = {
---                 border = "rounded",
---             },
---         })
---     end,
---     filetypes = { "rust" },
---     root_dir = util.root_pattern "Cargo.toml",
---     settings = {
---         ["rust-analyzer"] = {
---             cargo = {
---                 allFeatures = true,
---             },
---         },
---     },
--- }
+lsp_config.cmake.setup({
+	-- on_attach = function(client, bufnr)
+	-- 	require("lsp_signature").on_attach(bufnr, {
+	-- 		bind = true,
+	-- 		handler_opts = {
+	-- 			border = "rounded",
+	-- 		},
+	-- 	})
+	-- end,
+	filetypes = { "cmake" },
+})
 
 ---------------- go ----------------
 lsp_config.gopls.setup({
@@ -223,8 +207,8 @@ lsp_config.clangd.setup({
 		"--clang-tidy",
 		"--all-scopes-completion",
 		"--completion-style=detailed",
-		-- "--header-insertion-decorators",
-		-- "--header-insertion=iwyu",
+		"--header-insertion-decorators",
+		"--header-insertion=iwyu",
 		"--limit-references=3000",
 		"--limit-results=350",
 	},
@@ -260,4 +244,16 @@ lsp_config.bashls.setup({
 		}, bufnr)
 	end,
 	filetype = { "sh", "zsh" },
+})
+
+lsp_config.taplo.setup({
+	on_attach = function(client, bufnr)
+		require("lsp_signature").on_attach({
+			bind = true,
+			handler_opts = {
+				border = "rounded",
+			},
+		}, bufnr)
+	end,
+	filetype = { "toml" },
 })

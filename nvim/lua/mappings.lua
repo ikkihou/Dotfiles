@@ -111,36 +111,34 @@ M.telescope = {
 	},
 }
 
-M.lspsaga = {
+M.lsp = {
 	n = {
-		["gn"] = { "<cmd> Lspsaga rename <CR>", "Rename" },
-		["<leader>."] = { "<cmd>Lspsaga code_action<CR>", "Code Action" },
-		["gh"] = {
-			"<cmd>Lspsaga finder ref+def<cr>",
-			"Lspsaga Lsp_Finder",
-		},
+		["gn"] = { vim.lsp.buf.rename, "Rename" },
 		["gd"] = {
-			"<cmd>Lspsaga goto_definition<cr>",
+			vim.lsp.buf.definition,
 			"Go to definition",
 		},
-		["<leader>lp"] = {
-			"<cmd>Lspsaga peek_definition<cr>",
-			"Peek definition",
+		["gD"] = {
+			vim.lsp.buf.declaration,
+			"Go to definition",
 		},
 		["<leader>k"] = {
-			"<Cmd>lua vim.lsp.buf.hover()<cr>",
+			vim.lsp.buf.hover,
 			"Hover lsp",
 		},
-		["<leader>o"] = { "<cmd>Lspsaga outline<CR>", "Show Outline" },
-		--  LSP
-		["gr"] = { "<cmd>Telescope lsp_references<CR>", "Lsp references" },
-		-- ["[d"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostic" },
-		-- ["]d"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
-		["<leader>lq"] = {
+		["<leader>wa"] = {
+			vim.lsp.buf.add_workspace_folder,
+			"Add workspace folder",
+		},
+		["<leader>wr"] = {
+			vim.lsp.buf.remove_workspace_folder,
+			"Remove workspace folder",
+		},
+		["<leader>wl"] = {
 			function()
-				vim.diagnostic.setloclist()
+				print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 			end,
-			"󰁨 Lsp Quickfix",
+			"List workspace folders",
 		},
 	},
 }
@@ -154,13 +152,6 @@ for _, maps in pairs(M) do
 end
 
 -- more keybinds!
--- M.accelerated_jk = {
--- 	n = {
--- 		k = { "<Plug>(accelerated_jk_gk)", "accelerated up movement" },
--- 		j = { "<Plug>(accelerated_jk_gj)", "accelerated down movement" },
--- 	},
--- }
---
 map("n", "j", "<Plug>(accelerated_jk_gj)", { desc = "accelerated up movement" })
 map("n", "k", "<Plug>(accelerated_jk_gk)", { desc = "accelerated down movement" })
 map({ "n", "t" }, "<leader>tf", function()
