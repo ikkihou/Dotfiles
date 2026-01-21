@@ -1,4 +1,3 @@
-local colors = require("colors")
 local settings = require("settings")
 local sbar = require("sketchybar")
 

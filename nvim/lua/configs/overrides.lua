@@ -11,6 +11,7 @@ M.treesitter = {
 		"css",
 		"javascript",
 		"typescript",
+		"vue",
 		"tsx",
 		"c",
 		"cpp",

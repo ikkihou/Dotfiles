@@ -202,3 +202,12 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export LIBTORCH="/Users/baoyihui/miniconda3/envs/torch_env/lib/python3.10/site-packages/torch/"
 export LIBTORCH_INCLUDE="/Users/baoyihui/miniconda3/envs/torch_env/lib/python3.10/site-packages/torch/include/"
 export LIBTORCH_LIB="/Users/baoyihui/miniconda3/envs/torch_env/lib/python3.10/site-packages/torch/lib/"
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/Users/baoyihui/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<

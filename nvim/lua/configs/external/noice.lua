@@ -17,6 +17,8 @@ noice.setup({
 			["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 			["vim.lsp.util.stylize_markdown"] = true,
 			["cmp.entry.get_documentation"] = true,
+			-- ["vim.lsp.buf.hover"] = true,
+			-- ["vim.lsp.buf.signature_help"] = true,
 		},
 	},
 	-- you can enable a preset for easier configuration
@@ -27,12 +29,7 @@ noice.setup({
 		inc_rename = false, -- enables an input dialog for inc-rename.nvim
 		lsp_doc_border = true, -- add a border to hover docs and signature help
 	},
-	-- 	routes = {
-	-- 		{
-	-- 			filter = {
-	-- 				event = "notify",
-	-- 			},
-	--             view = "split"
-	-- 		},
-	-- 	},
+	notify = {
+		enabled = false,
+	},
 })

@@ -14,6 +14,8 @@ local options = {
 
 		typescipt = { "prettier" },
 
+		vue = { "prettier" },
+
 		css = { "prettier" },
 
 		html = { "prettier" },
@@ -31,6 +33,8 @@ local options = {
 		xml = { "xmlformatter" },
 
 		toml = { "taplo" },
+
+		julia = { "jupytext" },
 	},
 
 	-- adding same formatter for multiple filetypes can look too much work for some

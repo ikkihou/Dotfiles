@@ -1,7 +1,7 @@
 local status_ok, swenv = pcall(require, "swenv")
 
 if not status_ok then
-	require("notify")("swenv fails loading")
+	vim.notify("swenv fails loading")
 	return
 end
 

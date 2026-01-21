@@ -1,4 +1,4 @@
-local status_ok, project = pcall(require, "project_nvim")
+local status_ok, project = pcall(require, "project")
 
 if not status_ok then
 	return
@@ -6,7 +6,7 @@ end
 
 project.setup({
 	manual_mode = false,
-	detection_methods = { "lsp", "pattern" },
+	use_lsp = true,
 	patterns = { ".git", "_darcs", "src", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
 	ignore_lsp = { "copilot" },
 	exclude_dirs = {},
@@ -14,4 +14,7 @@ project.setup({
 	silent_chdir = true,
 	scope_chdir = "global",
 	datapath = vim.fn.stdpath("data"),
+	telescope = {
+		enabled = true,
+	},
 })

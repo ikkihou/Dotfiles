@@ -601,4 +601,7 @@
 		"rust": false
 	},
 	"gitlens.views.branches.showRemoteBranches": true,
-	"window.systemColorTheme": "dark",}
+	"window.systemColorTheme": "dark",
+	"julia.symbolCacheDownload": true,
+	"http.systemCertificatesNode": true,
+}

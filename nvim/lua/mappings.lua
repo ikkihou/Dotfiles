@@ -10,7 +10,7 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 
 map("n", "<leader>fm", function()
 	require("conform").format()
-	require("notify")("File formatted with conform")
+	vim.notify("File formatted with conform")
 end, { desc = "File Format with conform" })
 
 map("i", "jk", "<ESC>", { desc = "Escape insert mode" })

@@ -1,4 +1,5 @@
 local overrides = require("configs.overrides")
+local lazy = require("lazy")
 local leet_arg = "leetcode.nvim"
 -- local icons = {
 -- 	kind = require("configs.utils.icons").get("kind"),
@@ -53,7 +54,6 @@ return {
 			{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
 		},
 		lazy = true,
-		branch = "regexp", -- This is the regexp branch, use this for the new version
 		config = function()
 			require("configs.external.venv-selector")
 		end,
@@ -81,7 +81,12 @@ return {
 			-- OPTIONAL:
 			--   `nvim-notify` is only needed, if you want to use the notification view.
 			--   If not available, we use `mini` as the fallback
-			"rcarriga/nvim-notify",
+			{
+				"rcarriga/nvim-notify",
+				config = function()
+					require("configs.external.notify")
+				end,
+			},
 		},
 		config = function()
 			require("configs.external.noice")
@@ -176,7 +181,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		enabled = true,
-		event = { "CursorHold", "CursorHoldI" },
+		-- event = { "CursorHold", "CursorHoldI" },
 		opts = overrides.treesitter,
 	},
 	{
@@ -205,15 +210,15 @@ return {
 	},
 	{
 		"DrKJeff16/project.nvim",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
+			"ibhagwan/fzf-lua",
 		}, -- OPTIONAL
 		config = function()
 			require("configs.external.project")
 		end,
-		cond = vim.fn.has("nvim-0.11") == 1,
 	},
 	{
 		"nvim-telescope/telescope-frecency.nvim",
@@ -483,13 +488,13 @@ return {
 			require("tabout").setup()
 		end,
 	},
-	{
-		"rcarriga/nvim-notify",
-		priority = 99999,
-		config = function()
-			require("configs.external.notify")
-		end,
-	},
+	-- {
+	-- 	"rcarriga/nvim-notify",
+	-- 	priority = 99999,
+	-- 	config = function()
+	-- 		require("configs.external.notify")
+	-- 	end,
+	-- },
 	-------------- lsp ---------------
 	{
 		"nvimdev/lspsaga.nvim",

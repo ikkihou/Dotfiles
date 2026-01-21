@@ -5,13 +5,13 @@ local highlights = require("highlights")
 -- highlights.get_alpha_hl()
 --
 M.base46 = {
-	theme = "aquarium", -- default theme
+	theme = "catppuccin", -- default theme
 	hl_add = {},
 	hl_override = {},
 	integrations = {},
 	changed_themes = {},
 	transparency = false,
-	theme_toggle = { "aquarium", "one_light" },
+	theme_toggle = { "catppuccin", "one_light" },
 }
 
 M.ui = {
@@ -26,6 +26,13 @@ M.ui = {
 	},
 
 	telescope = { style = "bordered" },
+
+	-- statusline = {
+	-- 	modules = {
+	-- 		venv = require("venv-selector.statusline.nvchad").render(), -- calls the default method to render, but can be overridden.
+	-- 	},
+	-- 	order = { "mode", "file", "git", "%=", "lsp_msg", "diagnostics", "venv", "lsp", "cwd" }, -- "venv" is our venvselect module here
+	-- },
 }
 
 -------------------- mason --------------------------

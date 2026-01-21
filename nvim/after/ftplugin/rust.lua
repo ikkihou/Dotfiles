@@ -16,7 +16,7 @@ end, { silent = true, buffer = bufnr })
 
 vim.keymap.set("n", "<leader>fm", function()
 	vim.lsp.buf.format()
-	require("notify")("File formatted with rust-analyzer")
+	vim.notify("File formatted with rust-analyzer")
 end, { silent = false, buffer = bufnr, desc = "Format rust code" })
 
 vim.keymap.set("n", "<leader>rr", function()
@@ -32,8 +32,7 @@ vim.g.rustaceanvim = {
 	tools = {},
 	-- LSP configuration
 	server = {
-		on_attach = function(client, bufnr)
-		end,
+		on_attach = function(client, bufnr) end,
 		default_settings = {
 			-- rust-analyzer language server configuration
 			["rust-analyzer"] = {

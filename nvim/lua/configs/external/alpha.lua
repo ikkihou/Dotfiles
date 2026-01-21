@@ -94,8 +94,6 @@ dashboard.section.buttons.val = {
 		silent = true,
 		nowait = true,
 		callback = function()
-			-- require("telescope").extensions.projects.projects {}
-			-- vim.api.nvim_command("Telescope projects theme=dropdown")
 			require("telescope").extensions.projects.projects()
 		end,
 	}),
@@ -128,7 +126,7 @@ dashboard.section.buttons.val = {
 		silent = true,
 		nowait = true,
 		callback = function()
-            require("nvchad.themes").open()
+			require("nvchad.themes").open()
 		end,
 	}),
 }
