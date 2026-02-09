@@ -40,6 +40,7 @@ return {
 	},
 	{
 		"stevearc/conform.nvim",
+		event = { "BufWritePre" },
 		config = function()
 			require("configs.conform")
 		end,
@@ -53,7 +54,6 @@ return {
 			{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
 		},
 		lazy = true,
-		branch = "regexp", -- This is the regexp branch, use this for the new version
 		config = function()
 			require("configs.external.venv-selector")
 		end,
@@ -106,10 +106,10 @@ return {
 	------------------ override plugin configs---------------------
 	{
 		"neovim/nvim-lspconfig",
+		event = "User FilePost", -- 仅在打开实际文件后加载 LSP
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
 			"ray-x/lsp_signature.nvim",
-			"saghen/blink.cmp",
 		},
 		config = function()
 			require("configs.lspconfig")
@@ -118,6 +118,7 @@ return {
 	------------------ Override plugin definition options----------------------
 	{
 		"lukas-reineke/indent-blankline.nvim",
+		event = "BufReadPre",
 		opts = overrides.blankline,
 		dependencies = {
 			"HiPhish/rainbow-delimiters.nvim",
@@ -144,12 +145,15 @@ return {
 			"onsails/lspkind.nvim",
 			"xzbdmw/colorful-menu.nvim",
 		},
-		opts = require("configs.blink_cmp"),
+		opts = function()
+			return require("configs.blink_cmp")
+		end,
 		opts_extend = { "sources.default" },
 	},
 	{
 		"hrsh7th/nvim-cmp",
 		enabled = true,
+		event = "InsertEnter", -- 只有进入插入模式才加载补全引擎
 		config = function(_, opts)
 			local cmp = require("cmp")
 			opts.mapping["<C-j>"] = cmp.mapping.select_next_item()
@@ -175,8 +179,7 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
-		enabled = true,
-		event = { "CursorHold", "CursorHoldI" },
+		-- event = { "CursorHold", "CursorHoldI" },
 		opts = overrides.treesitter,
 	},
 	{
@@ -205,7 +208,6 @@ return {
 	},
 	{
 		"DrKJeff16/project.nvim",
-		event = "VeryLazy",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
@@ -226,6 +228,7 @@ return {
 	--------------- dap ---------------------
 	{
 		"mfussenegger/nvim-dap",
+		cmd = { "DapContinue", "DapToggleBreakpoint", "DapStepInto", "DapStepOver", "DapStepOut", "DapTerminate", "DapRestart", "DapSuspend", "DapSetLogLevel" },
 		config = function(_, opts)
 			-- require("core.utils").load_mappings("dap")
 		end,
@@ -391,6 +394,7 @@ return {
 	},
 	{
 		"L3MON4D3/LuaSnip",
+		lazy = true, -- 设置为纯插件，由依赖项触发
 		-- follow latest release.
 		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 		-- install jsregexp (optional!).
@@ -398,6 +402,7 @@ return {
 	},
 	{
 		"iurimateus/luasnip-latex-snippets.nvim",
+		ft = { "tex", "latex" }, -- 仅在 LaTeX 文件中加载
 		-- vimtex isn't required if using treesitter
 		dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
 		config = function()

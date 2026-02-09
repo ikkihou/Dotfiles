@@ -102,7 +102,7 @@ M.treesitter = {
 		"cpp",
 		"cmake",
 		"python",
-		"latex",
+		-- "latex",
 		"markdown",
 		"markdown_inline",
 		"rust",
