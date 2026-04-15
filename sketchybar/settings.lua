@@ -3,7 +3,7 @@ return {
 	group_paddings = 3,
 
 	-- icons = "sf-symbols", -- alternatively available: NerdFont
-	icons = require("helpers.app_icons"),
+	icons = require("helpers.icon_map"),
 
 	-- This is a font configuration for SF Pro and SF Mono (installed manually)
 	font = require("helpers.default_font"),

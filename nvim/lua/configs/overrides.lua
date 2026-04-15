@@ -3,6 +3,7 @@ local M = {}
 ------------------ treesitter ---------------------
 M.treesitter = {
 	ensure_installed = {
+		"bash",
 		"vim",
 		"lua",
 		"json",
@@ -21,6 +22,7 @@ M.treesitter = {
 		"markdown",
 		"markdown_inline",
 		"rust",
+		"swift",
 		"toml",
 	},
 	indent = {

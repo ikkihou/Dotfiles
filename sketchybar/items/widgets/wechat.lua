@@ -5,6 +5,7 @@ local sbar = require("sketchybar")
 local wechat = sbar.add("item", "WeChat", {
 	position = "right",
 	update_freq = 1,
+	updates = "on",
 	background = {
 		height = 22,
 		color = { alpha = 0 },
@@ -20,7 +21,7 @@ local wechat = sbar.add("item", "WeChat", {
 	},
 })
 
-sbar.add("bracket", "widget.wechat.bracket", { wechat.name }, {
+sbar.add("bracket", "wechat.bracket", { wechat.name }, {
 	background = { color = colors.with_alpha(colors.black, 0.7), border_color = colors.transparent },
 })
 
@@ -29,41 +30,51 @@ wechat:subscribe("mouse.clicked", function(env)
 end)
 
 wechat:subscribe("routine", function()
-	local command =
-		'lsappinfo -all list | grep WeChat | egrep -o \'"StatusLabel"=\\{ "label"="?(.*?)"? \\}\' | sed \'s/\\"StatusLabel\\"={ \\"label\\"=\\(.*\\) }/\\1/g\''
+	sbar.exec("/usr/bin/pgrep -x WeChat", function(pid)
+		if pid == "" or pid == nil then
+			-- WeChat is not running, hide the item and bracket
+			wechat:set({ drawing = false })
+			sbar.set("wechat.bracket", { drawing = false })
+		else
+			-- WeChat is running, show the item and bracket
+			wechat:set({ drawing = true })
+			sbar.set("wechat.bracket", { drawing = true })
 
-	sbar.exec(command, function(statusLabel)
-		statusLabel = statusLabel:gsub('"', "") -- string
+			-- Now, get the status label
+			local status_command =
+				'/usr/bin/lsappinfo -all list | /usr/bin/grep WeChat | /usr/bin/egrep -o \'"StatusLabel"=\\{ "label"="?(.*?)"? \\}\' | /usr/bin/sed \'s/\\"StatusLabel\\"={ \\"label\\"=\\(.*\\) }/\\1/g\''
+			sbar.exec(status_command, function(statusLabel)
+				-- Remove quotes and whitespace
+				statusLabel = statusLabel:gsub('"', ""):gsub("%s+", "")
 
-		if statusLabel ~= nil then
-			local icon_color
-			local new_label
+				local icon_color
+				local new_label
 
-			if tonumber(statusLabel) ~= nil then
-				icon_color = colors.green
-				new_label = statusLabel
-			else
-				new_label = ""
-			end
+				if tonumber(statusLabel) ~= nil and tonumber(statusLabel) > 0 then
+					icon_color = colors.green
+					new_label = statusLabel
+				else
+					new_label = ""
+				end
 
-			if new_label == "" then
-				wechat:set({
-					icon = { color = colors.white },
-					label = {
-						drawing = false,
-					},
-				})
-				return
-			elseif new_label ~= "" then
-				wechat:set({
-					drawing = true,
-					icon = { color = icon_color, padding_right = 2 },
-					label = { string = new_label, padding_right = 5, padding_left = 3, y_offset = 1, drawing = true },
-				})
-				return
-			else
-				return
-			end
+				if new_label == "" then
+					wechat:set({
+						icon = { color = colors.white },
+						label = { drawing = false },
+					})
+				else
+					wechat:set({
+						icon = { color = icon_color, padding_right = 2 },
+						label = {
+							string = new_label,
+							padding_right = 5,
+							padding_left = 3,
+							y_offset = 1,
+							drawing = true,
+						},
+					})
+				end
+			end)
 		end
 	end)
 end)

@@ -51,7 +51,7 @@ return {
 			"neovim/nvim-lspconfig",
 			"mfussenegger/nvim-dap",
 			"mfussenegger/nvim-dap-python", --optional
-			{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
+			{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 		},
 		lazy = true,
 		config = function()
@@ -188,11 +188,33 @@ return {
 		"nvim-tree/nvim-tree.lua",
 		opts = overrides.nvimtree,
 	},
+	{
+		"wojciech-kulik/xcodebuild.nvim",
+		dependencies = {
+			-- Uncomment a picker that you want to use, snacks.nvim might be additionally
+			-- useful to show previews and failing snapshots.
+
+			-- You must select at least one:
+			-- "nvim-telescope/telescope.nvim",
+			-- "ibhagwan/fzf-lua",
+			-- "folke/snacks.nvim", -- (optional) to show previews
+
+			"MunifTanjim/nui.nvim",
+			"nvim-tree/nvim-tree.lua", -- (optional) to manage project files
+			-- "stevearc/oil.nvim", -- (optional) to manage project files
+			"nvim-treesitter/nvim-treesitter", -- (optional) for Quick tests support (required Swift parser)
+		},
+		config = function()
+			require("xcodebuild").setup({
+				-- put some options here or leave it empty to use default settings
+			})
+		end,
+	},
 
 	-----------------@telescope-------------------
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
+		-- tag = "0.1.8",
 		opts = overrides.telescope,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -287,7 +309,7 @@ return {
 	------------------tools------------------------
 	{
 		"folke/trouble.nvim",
-		enabled = false,
+		enabled = true,
 		opts = {}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",
 		keys = {
@@ -507,16 +529,16 @@ return {
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
 	},
-	{
-		"rust-lang/rust.vim",
-		ft = "rust",
-		init = function(_)
-			vim.g.rustfmt_autosave = true
-		end,
-	},
+	-- {
+	-- 	"rust-lang/rust.vim",
+	-- 	ft = "rust",
+	-- 	init = function(_)
+	-- 		vim.g.rustfmt_autosave = true
+	-- 	end,
+	-- },
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^5", -- Recommended
+		version = "^8", -- Recommended
 		ft = { "rust" },
 	},
 	{

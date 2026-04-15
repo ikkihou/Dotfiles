@@ -35,6 +35,8 @@ local options = {
 		toml = { "taplo" },
 
 		julia = { "jupytext" },
+
+		swift = { "swiftformat", "swiftlint" },
 	},
 
 	-- adding same formatter for multiple filetypes can look too much work for some

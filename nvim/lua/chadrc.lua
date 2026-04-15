@@ -43,8 +43,8 @@ M.mason = {
 		--rust
 		"rust-analyzer",
 		-- go
-		"gopls",
-		"gofumpt",
+		-- "gopls",
+		-- "gofumpt",
 		-- json
 		-- "jq",
 		"json-lsp",
@@ -69,11 +69,12 @@ M.mason = {
 		"cmakelint",
 		"codelldb",
 		-- latex stuff
-		"texlab",
+		-- "texlab",
 		-- "latexindent",
 		-- complementary
 		"codespell",
 		"taplo",
+		"swiftformat",
 	},
 }
 

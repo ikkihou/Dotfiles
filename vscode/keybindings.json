@@ -156,5 +156,13 @@
         "key": "enter",
         "command": "-renameFile",
         "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001b\r"
+        },
+        "when": "terminalFocus"
     }
 ]

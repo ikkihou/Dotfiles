@@ -1,10 +1,10 @@
 local settings = require("settings")
 
-local icons = {
+	local icons = {
 	sf_symbols = {
 		plus = "􀅼",
 		loading = "􀖇",
-		apple = "􀣺",
+		apple = "􀣺 ",
 		gear = "􀍟",
 		cpu = "􀫥",
 		clipboard = "􀉄",
@@ -36,9 +36,14 @@ local icons = {
 			router = "􁓤",
 		},
 		media = {
-			back = "􀊊",
-			forward = "􀊌",
-			play_pause = "􀊈",
+			back = "􀊊 ",
+			forward = "􀊌 ",
+			play_pause = "􀊈 ",
+		},
+		input_method = {
+			chinese = "􀦇 ",
+			english = "􀂝 ",
+			keyboard = "􀆍",
 		},
 	},
 
@@ -81,6 +86,11 @@ local icons = {
 			back = "",
 			forward = "",
 			play_pause = "",
+		},
+		input_method = {
+			chinese = "󰗊",
+			english = "A",
+			keyboard = "",
 		},
 	},
 }

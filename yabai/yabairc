@@ -31,7 +31,6 @@ yabai -m config right_padding 5
 yabai -m config window_gap 3
 
 # enable specific apps control by yabai
-yabai -m rule --add app="^kitty$" manage=on
 
 # disable specific apps from being managed with yabai
 yabai -m rule --add app="^System Settings$" manage=off
@@ -56,6 +55,7 @@ yabai -m rule --add app="^Clash Verge|Mihomo Party|Clash Party$" title=".*" mana
 yabai -m rule --add app="^ChatGPT$" title=".*" manage=off
 yabai -m rule --add app="^python$" title=".*" manage=off
 
+yabai -m rule --add app="^kitty$" manage=off
 yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
 yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
 

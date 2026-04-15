@@ -2,6 +2,7 @@
 local on_init = require("nvchad.configs.lspconfig").on_init
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local capabilities = require("nvchad.configs.lspconfig").capabilities
+-- capabilities.workspace = { didChangeWatchedFiles = { dynamicRegistration = true } }
 
 require("nvchad.configs.lspconfig").defaults()
 
@@ -18,6 +19,7 @@ local servers = {
 	"taplo",
 	"julials",
 	-- "vue_ls",
+	"sourcekit",
 	"vtsls",
 }
 

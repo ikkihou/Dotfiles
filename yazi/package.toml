@@ -1,27 +1,27 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "aeca767"
-hash = "3996fc74044bc44144b323686f887e1"
+rev = "25918dc"
+hash = "6fa6a05a81c98dd000fbca3cca6e9682"
 
 [[plugin.deps]]
 use = "Rolv-Apneseth/starship"
-rev = "6a0f3f7"
-hash = "d5a74d95c2e8194ac352c5e10e81e64f"
+rev = "eca1861"
+hash = "e519d894e94ded741e06aae4d4775981"
 
 [[plugin.deps]]
 use = "llanosrocas/githead"
-rev = "74c4ea4"
-hash = "3e8d22864bfef7452f9a106841b5268"
+rev = "317d09f"
+hash = "41dc37a724b2afd21da4f1ea6c1182d8"
 
 [[plugin.deps]]
 use = "imsi32/yatline"
-rev = "88bd1c5"
-hash = "981acbe9b758b1af3a8154c932bb936d"
+rev = "c5d4b48"
+hash = "e6e98d12b1648d1894c2b560d85eeaa7"
 
 [[plugin.deps]]
 use = "imsi32/yatline-githead"
-rev = "f8f969e"
-hash = "4d441b38138ce6492a4e10fa349fd65"
+rev = "929e52c"
+hash = "8282baf02fcd6aac00ccad2276775358"
 
 [flavor]
 deps = []
